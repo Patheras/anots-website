@@ -85,7 +85,7 @@ export default function FAQPage() {
 
           <div className="mt-16 space-y-6">
             {faqs.map((faq, index) => (
-              <ScrollReveal key={index} delay={index * 50}>
+              <ScrollReveal key={index}>
                 <Card>
                   <CardContent className="p-6">
                     <h3 className="text-lg font-semibold text-[#FAFAFA]">
@@ -100,7 +100,7 @@ export default function FAQPage() {
             ))}
           </div>
 
-          <FadeIn delay={600}>
+          <FadeIn>
             <div className="mt-16 text-center">
               <h2 className="text-2xl font-bold text-[#FAFAFA]">
                 Still have questions?
