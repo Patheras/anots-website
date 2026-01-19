@@ -22,15 +22,15 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-[#FAFAFA]">ANOTS</span>
             {/* AI Thinking Indicator */}
-            <div className="ai-thinking ml-2">
+            <div className="ai-thinking mr-2">
               <div className="bar"></div>
               <div className="bar"></div>
               <div className="bar"></div>
               <div className="bar"></div>
               <div className="bar"></div>
             </div>
+            <span className="text-xl font-bold text-[#FAFAFA]">ANOTS</span>
           </Link>
 
           {/* Desktop Navigation */}
