@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { AITeamVisualization } from '@/components/infographics/AITeamVisualization';
-import { AsciiStarfield } from '@/components/animations/AsciiStarfield';
 
 interface HeroProps {
   headline: string;
@@ -22,15 +21,20 @@ interface HeroProps {
 export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-[#0A0A0B] py-20 sm:py-32">
-      {/* ASCII Starfield Background */}
-      <AsciiStarfield />
+      {/* Animated Gradient Mesh Background */}
+      <div className="absolute inset-0">
+        {/* Gradient orbs */}
+        <div className="absolute left-1/4 top-1/4 h-96 w-96 animate-pulse rounded-full bg-[#5E6AD2] opacity-[0.03] blur-3xl" style={{ animationDuration: '8s' }} />
+        <div className="absolute right-1/4 top-1/3 h-80 w-80 animate-pulse rounded-full bg-[#DC2626] opacity-[0.02] blur-3xl" style={{ animationDuration: '10s', animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 left-1/3 h-72 w-72 animate-pulse rounded-full bg-[#9333EA] opacity-[0.02] blur-3xl" style={{ animationDuration: '12s', animationDelay: '4s' }} />
+      </div>
       
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#5E6AD2]/5 to-transparent" />
+      {/* Subtle gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#5E6AD2]/5 via-transparent to-transparent" />
       
       {/* Grid pattern */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className="absolute inset-0 opacity-[0.15]"
         style={{
           backgroundImage: `linear-gradient(#1A1A1B 1px, transparent 1px), linear-gradient(90deg, #1A1A1B 1px, transparent 1px)`,
           backgroundSize: '64px 64px',
