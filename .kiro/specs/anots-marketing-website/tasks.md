@@ -203,8 +203,8 @@ This implementation plan breaks down the ANOTS marketing website into discrete, 
     - Style with dark theme and clear visual hierarchy
     - _Requirements: 2.4_
 
-- [-] 12. Create page layouts and routing
-  - [ ] 12.1 Set up root layout with metadata
+- [x] 12. Create page layouts and routing
+  - [x] 12.1 Set up root layout with metadata
     - Configure app/layout.tsx with fonts and global styles
     - Add default metadata (title, description, Open Graph, Twitter)
     - Include organization JSON-LD structured data
@@ -309,8 +309,8 @@ This implementation plan breaks down the ANOTS marketing website into discrete, 
     - **Property 17: Form error announcement**
     - **Validates: Requirements 9.7**
 
-- [ ] 16. Implement SEO optimization
-  - [ ] 16.1 Configure page metadata
+- [x] 16. Implement SEO optimization
+  - [x] 16.1 Configure page metadata
     - Add unique titles for each page (50-60 characters)
     - Add meta descriptions (150-160 characters)
     - Add Open Graph tags for all pages
@@ -323,7 +323,7 @@ This implementation plan breaks down the ANOTS marketing website into discrete, 
     - **Property 20: Open Graph tags**
     - **Validates: Requirements 10.1, 10.2, 10.4**
   
-  - [ ] 16.3 Generate sitemap and robots.txt
+  - [x] 16.3 Generate sitemap and robots.txt
     - Create app/sitemap.ts with all public pages
     - Create app/robots.ts with crawling directives
     - Test sitemap.xml is accessible

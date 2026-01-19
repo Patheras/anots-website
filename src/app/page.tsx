@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
+import Image from "next/image";
 import { Navigation } from "@/components/ui/Navigation";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Card, CardContent } from "@/components/ui/card";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Meet ANOTS: Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Just chat, approve, and watch them work.",
+  openGraph: {
+    title: "ANOTS - Your AI Marketing Team That Never Sleeps",
+    description: "Three AI agents that create, review, and manage your marketing automations. Start free with 3 ANOTs.",
+    url: "https://anots.com",
+    images: ["/og-image.png"],
+  },
+};
 
 export default function Home() {
   const features = [
@@ -73,6 +86,110 @@ export default function Home() {
         primaryCTA={{ text: "Start Free - 3 ANOTs", href: "https://app.anots.com/signup" }}
         secondaryCTA={{ text: "See How It Works", href: "#how-it-works" }}
       />
+
+      {/* See It In Action Section */}
+      <section className="bg-[#0A0A0B] py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-[#FAFAFA] sm:text-4xl">
+                This is How ANOTS Works
+              </h2>
+              <p className="mt-6 text-lg text-[#D4D4D8]">
+                Watch Qubik propose, Themis review, and Core synthesize—all before you approve
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="perspective-container">
+              {/* Browser Window Mockup with Perspective */}
+              <div className="browser-mockup mx-auto max-w-5xl overflow-hidden rounded-2xl border border-[#1A1A1B] bg-[#111113]">
+                {/* Browser Chrome */}
+                <div className="flex items-center gap-2 border-b border-[#1A1A1B] bg-[#0F0F10] px-4 py-3">
+                  {/* Traffic Lights */}
+                  <div className="flex items-center gap-2">
+                    <div className="h-3 w-3 rounded-full bg-[#FF5F57]"></div>
+                    <div className="h-3 w-3 rounded-full bg-[#FEBC2E]"></div>
+                    <div className="h-3 w-3 rounded-full bg-[#28C840]"></div>
+                  </div>
+                  {/* URL Bar */}
+                  <div className="ml-4 flex-1 rounded-md bg-[#1A1A1B] px-4 py-1.5">
+                    <div className="flex items-center gap-2">
+                      <svg className="h-3.5 w-3.5 text-[#71717A]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                      </svg>
+                      <span className="text-xs text-[#A1A1AA]">app.anots.com/directors-console</span>
+                    </div>
+                  </div>
+                </div>
+                {/* Browser Content */}
+                <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '900px' }}>
+                  <Image
+                    src="/directors-console-preview.png"
+                    alt="ANOTS Directors Console - Qubik Proposal and Themis Analysis"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#DC2626]/10">
+                      <span className="text-sm font-bold text-[#DC2626]">Q</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#FAFAFA]">Qubik Proposes</h3>
+                      <p className="mt-2 text-sm text-[#D4D4D8]">
+                        Creative proposals with content, visuals, and strategy
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#9333EA]/10">
+                      <span className="text-sm font-bold text-[#9333EA]">T</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#FAFAFA]">Themis Reviews</h3>
+                      <p className="mt-2 text-sm text-[#D4D4D8]">
+                        Risk analysis, cost estimates, and constraint validation
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[#3B82F6]/10">
+                      <span className="text-sm font-bold text-[#3B82F6]">C</span>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-[#FAFAFA]">Core Synthesizes</h3>
+                      <p className="mt-2 text-sm text-[#D4D4D8]">
+                        Combined perspective and clear recommendation for you
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <Features features={features} layout="grid" />
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { StructuredData } from "@/components/StructuredData";
 
 const geistSans = localFont({
   src: "../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
@@ -15,12 +16,77 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://anots.com'),
   title: {
-    default: "ANOTS - AI-Powered Marketing Automation",
+    default: "ANOTS - Your AI Marketing Team That Never Sleeps",
     template: "%s | ANOTS",
   },
-  description: "AI-powered marketing automation made simple. Chat-based interface for creating automations without technical knowledge.",
-  keywords: ["marketing automation", "AI marketing", "campaign management", "ActivePieces", "ANOTS"],
+  description: "Meet ANOTS: Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Just chat, approve, and watch them work. Start free with 3 ANOTs.",
+  keywords: [
+    "AI marketing automation",
+    "marketing automation platform",
+    "AI marketing team",
+    "ANOT",
+    "Qubik",
+    "Themis",
+    "Core AI",
+    "ActivePieces",
+    "marketing AI agents",
+    "automated marketing",
+    "campaign automation",
+    "social media automation",
+    "content automation",
+    "AI-powered marketing",
+    "marketing orchestration",
+    "no-code marketing",
+    "marketing workflow",
+  ],
+  authors: [{ name: "ANOTS" }],
+  creator: "ANOTS",
+  publisher: "ANOTS",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://anots.com",
+    siteName: "ANOTS",
+    title: "ANOTS - Your AI Marketing Team That Never Sleeps",
+    description: "Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Start free with 3 ANOTs.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ANOTS - AI Marketing Automation Platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ANOTS - Your AI Marketing Team That Never Sleeps",
+    description: "Three AI agents that create, review, and manage your marketing automations. Start free with 3 ANOTs.",
+    images: ["/og-image.png"],
+    creator: "@anots",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // google: 'your-google-verification-code',
+    // yandex: 'your-yandex-verification-code',
+  },
 };
 
 export default function RootLayout({
@@ -30,6 +96,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <StructuredData />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -1,10 +1,16 @@
+import type { Metadata } from "next";
 import { Navigation } from "@/components/ui/Navigation";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Pricing",
-  description: "Simple, transparent pricing for ANOTS. Choose the plan that's right for you.",
+  description: "Simple, transparent pricing for ANOTS. Standard (Free) with 3 ANOTs, Pro ($9.90/mo) with 30 ANOTs, Agency ($49.90/mo) with unlimited ANOTs. Start free today.",
+  openGraph: {
+    title: "ANOTS Pricing - Start Free with 3 ANOTs",
+    description: "Choose the plan that's right for you. Standard (Free), Pro ($9.90/mo), or Agency ($49.90/mo).",
+    url: "https://anots.com/pricing",
+  },
 };
 
 export default function PricingPage() {

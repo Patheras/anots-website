@@ -1,11 +1,17 @@
+import type { Metadata } from "next";
 import { Navigation } from "@/components/ui/Navigation";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FadeIn } from "@/components/animations/FadeIn";
 
-export const metadata = {
-  title: "Contact",
-  description: "Get in touch with the ANOTS team. We're here to help with any questions.",
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: "Get in touch with ANOTS. Have questions about AI marketing automation? We're here to help. Contact our team today.",
+  openGraph: {
+    title: "Contact ANOTS - Get in Touch",
+    description: "Have questions about AI marketing automation? Contact our team today.",
+    url: "https://anots.com/contact",
+  },
 };
 
 export default function ContactPage() {

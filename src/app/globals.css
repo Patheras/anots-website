@@ -259,66 +259,27 @@
 
 
 /* ============================================
-   AI THINKING INDICATOR (Sound Wave)
+   BROWSER MOCKUP WITH PERSPECTIVE
    ============================================ */
 
-@keyframes wave {
-  0%, 100% {
-    transform: scaleY(0.3);
-  }
-  50% {
-    transform: scaleY(1);
-  }
+.perspective-container {
+  perspective: 1500px;
+  perspective-origin: center top;
+  padding: 60px 0;
 }
 
-@keyframes pulse-wave {
-  0%, 100% {
-    opacity: 0;
-  }
-  10%, 90% {
-    opacity: 1;
-  }
+.browser-mockup {
+  transform: rotateX(12deg) rotateY(0deg) translateZ(0);
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  box-shadow: 
+    0 50px 100px -20px rgba(0, 0, 0, 0.5),
+    0 30px 60px -30px rgba(0, 0, 0, 0.4);
 }
 
-.ai-thinking {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  height: 20px;
-  opacity: 0;
-  animation: pulse-wave 12s ease-in-out infinite;
-}
-
-.ai-thinking .bar {
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    var(--gradient-start) 0%,
-    var(--gradient-mid) 50%,
-    var(--gradient-end) 100%
-  );
-  border-radius: 2px;
-  animation: wave 2s ease-in-out infinite;
-}
-
-.ai-thinking .bar:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.ai-thinking .bar:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.ai-thinking .bar:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.ai-thinking .bar:nth-child(4) {
-  animation-delay: 0.45s;
-}
-
-.ai-thinking .bar:nth-child(5) {
-  animation-delay: 0.6s;
+.browser-mockup:hover {
+  transform: rotateX(8deg) rotateY(0deg) translateZ(20px);
+  box-shadow: 
+    0 60px 120px -20px rgba(0, 0, 0, 0.6),
+    0 40px 80px -30px rgba(0, 0, 0, 0.5);
 }

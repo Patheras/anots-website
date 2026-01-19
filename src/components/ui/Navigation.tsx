@@ -21,15 +21,7 @@ export function Navigation() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            {/* AI Thinking Indicator */}
-            <div className="ai-thinking mr-2">
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-              <div className="bar"></div>
-            </div>
+          <Link href="/" className="flex items-center">
             <span className="text-xl font-bold text-[#FAFAFA]">ANOTS</span>
           </Link>
 
