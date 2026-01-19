@@ -37,7 +37,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
           {/* Headline */}
           <FadeIn delay={0}>
             <h1 className="text-4xl font-bold tracking-tight text-[#FAFAFA] sm:text-6xl">
-              {headline}
+              Your <span className="anots-gradient-text">AI Marketing Team</span> That Never Sleeps
             </h1>
           </FadeIn>
 
