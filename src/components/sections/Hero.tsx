@@ -21,20 +21,12 @@ interface HeroProps {
 export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-[#0A0A0B] py-20 sm:py-32">
-      {/* Animated Gradient Mesh Background */}
-      <div className="absolute inset-0">
-        {/* Gradient orbs - very subtle */}
-        <div className="absolute left-[20%] top-[15%] h-[500px] w-[500px] animate-pulse rounded-full bg-[#5E6AD2] opacity-[0.015] blur-3xl" style={{ animationDuration: '8s' }} />
-        <div className="absolute right-[15%] top-[25%] h-[450px] w-[450px] animate-pulse rounded-full bg-[#DC2626] opacity-[0.012] blur-3xl" style={{ animationDuration: '10s', animationDelay: '2s' }} />
-        <div className="absolute bottom-[20%] left-[35%] h-[400px] w-[400px] animate-pulse rounded-full bg-[#9333EA] opacity-[0.012] blur-3xl" style={{ animationDuration: '12s', animationDelay: '4s' }} />
-      </div>
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#5E6AD2]/5 to-transparent" />
       
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#5E6AD2]/[0.02] via-transparent to-transparent" />
-      
-      {/* Grid pattern - very subtle */}
+      {/* Grid pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.08]"
+        className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: `linear-gradient(#1A1A1B 1px, transparent 1px), linear-gradient(90deg, #1A1A1B 1px, transparent 1px)`,
           backgroundSize: '64px 64px',
