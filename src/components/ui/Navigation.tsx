@@ -23,6 +23,14 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <span className="text-xl font-bold text-[#FAFAFA]">ANOTS</span>
+            {/* AI Thinking Indicator */}
+            <div className="ai-thinking ml-2">
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

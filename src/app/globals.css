@@ -249,6 +249,76 @@
   animation: flow 8s ease-in-out infinite;
 }
 
+.anots-hover:hover {
+  background-color: #18181B !important; /* zinc-900 - koyu gri */
+}
+
 .anots-hover:hover::before {
   opacity: 1;
+}
+
+
+/* ============================================
+   AI THINKING INDICATOR (Sound Wave)
+   ============================================ */
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes pulse-wave {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+}
+
+.ai-thinking {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 20px;
+  opacity: 0;
+  animation: pulse-wave 8s ease-in-out infinite;
+}
+
+.ai-thinking .bar {
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    var(--gradient-start) 0%,
+    var(--gradient-mid) 50%,
+    var(--gradient-end) 100%
+  );
+  border-radius: 2px;
+  animation: wave 1.2s ease-in-out infinite;
+}
+
+.ai-thinking .bar:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.ai-thinking .bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.ai-thinking .bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.ai-thinking .bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.ai-thinking .bar:nth-child(5) {
+  animation-delay: 0.4s;
 }
