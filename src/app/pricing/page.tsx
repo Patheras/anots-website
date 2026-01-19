@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Navigation } from "@/components/ui/Navigation";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { FadeIn } from "@/components/animations/FadeIn";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { PricingComparison } from "@/components/infographics/PricingComparison";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -30,6 +32,10 @@ export default function PricingPage() {
               </p>
             </div>
           </FadeIn>
+
+          <ScrollReveal>
+            <PricingComparison />
+          </ScrollReveal>
         </div>
       </div>
 

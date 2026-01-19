@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
+import { AITeamVisualization } from '@/components/infographics/AITeamVisualization';
 
 interface HeroProps {
   headline: string;
@@ -41,15 +42,22 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
             </h1>
           </FadeIn>
 
-          {/* Subheadline */}
+          {/* AI Team Visualization */}
           <FadeIn delay={100}>
-            <p className="mt-6 text-lg leading-8 text-[#D4D4D8]">
+            <div className="mt-12">
+              <AITeamVisualization />
+            </div>
+          </FadeIn>
+
+          {/* Subheadline */}
+          <FadeIn delay={200}>
+            <p className="mt-8 text-lg leading-8 text-[#D4D4D8]">
               {subheadline}
             </p>
           </FadeIn>
 
           {/* CTAs */}
-          <FadeIn delay={200}>
+          <FadeIn delay={300}>
             <div className="mt-10 flex items-center justify-center gap-4">
               <a href={primaryCTA.href}>
                 <Button variant="primary" size="lg">
