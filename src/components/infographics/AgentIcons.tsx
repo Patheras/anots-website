@@ -1,35 +1,40 @@
 export const QubikIcon = ({ size = 64 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Ghost body - Creative & Energetic */}
+    {/* Lightbulb - Creative Ideas */}
     <path
-      d="M32 12 C22 12 16 18 16 28 L16 44 C16 46 17 48 18 48 C19 48 20 47 20 45 L20 42 C20 40 22 40 22 42 L22 46 C22 48 24 48 24 46 L24 42 C24 40 26 40 26 42 L26 46 C26 48 28 48 28 46 L28 42 C28 40 30 40 30 42 L30 46 C30 48 32 48 32 46 L32 42 C32 40 34 40 34 42 L34 46 C34 48 36 48 36 46 L36 42 C36 40 38 40 38 42 L38 46 C38 48 40 48 40 46 L40 42 C40 40 42 40 42 42 L42 45 C42 47 43 48 44 48 C45 48 46 46 46 44 L46 28 C46 18 40 12 32 12 Z"
-      fill="url(#qubikGhost)"
+      d="M32 10 C24 10 18 16 18 24 C18 28 20 31 22 33 L22 40 C22 42 24 44 26 44 L38 44 C40 44 42 42 42 40 L42 33 C44 31 46 28 46 24 C46 16 40 10 32 10 Z"
+      fill="url(#qubikGradient)"
       opacity="0.9"
     />
     
-    {/* Eyes - Excited & Creative */}
-    <ellipse cx="24" cy="26" rx="3" ry="4" fill="#0A0A0B" />
-    <ellipse cx="40" cy="26" rx="3" ry="4" fill="#0A0A0B" />
-    <circle cx="24.5" cy="25" r="1.5" fill="#DC2626" />
-    <circle cx="40.5" cy="25" r="1.5" fill="#DC2626" />
-    
-    {/* Sparkle on head - Creative energy */}
+    {/* Filament - Creative spark */}
     <path
-      d="M32 8 L33 11 L36 12 L33 13 L32 16 L31 13 L28 12 L31 11 Z"
-      fill="url(#qubikGhost)"
+      d="M32 18 L32 28 M28 22 L32 26 L36 22"
+      stroke="#DC2626"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     
-    {/* Floating sparkles around */}
-    <circle cx="18" cy="20" r="1.5" fill="#DC2626" opacity="0.6">
-      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="46" cy="22" r="1.5" fill="#EF4444" opacity="0.6">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
-    </circle>
+    {/* Base */}
+    <rect x="28" y="44" width="8" height="4" rx="1" fill="#DC2626" opacity="0.6" />
+    <rect x="29" y="48" width="6" height="2" rx="1" fill="#DC2626" opacity="0.4" />
+    
+    {/* Sparkles around - Ideas flowing */}
+    <path d="M16 20 L17 22 L19 23 L17 24 L16 26 L15 24 L13 23 L15 22 Z" fill="#EF4444" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
+    </path>
+    <path d="M48 18 L49 20 L51 21 L49 22 L48 24 L47 22 L45 21 L47 20 Z" fill="#DC2626" opacity="0.7">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.8s" repeatCount="indefinite" />
+    </path>
+    <path d="M42 8 L43 10 L45 11 L43 12 L42 14 L41 12 L39 11 L41 10 Z" fill="#EF4444" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.2s" repeatCount="indefinite" />
+    </path>
     
     <defs>
-      <linearGradient id="qubikGhost" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#EF4444" />
+      <linearGradient id="qubikGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#FCA5A5" />
+        <stop offset="50%" stopColor="#EF4444" />
         <stop offset="100%" stopColor="#DC2626" />
       </linearGradient>
     </defs>
@@ -38,44 +43,77 @@ export const QubikIcon = ({ size = 64 }: { size?: number }) => (
 
 export const ThemisIcon = ({ size = 64 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Ghost body - Wise & Analytical */}
+    {/* Balance Scale - Justice & Analysis */}
     <path
-      d="M32 12 C22 12 16 18 16 28 L16 44 C16 46 17 48 18 48 C19 48 20 47 20 45 L20 42 C20 40 22 40 22 42 L22 46 C22 48 24 48 24 46 L24 42 C24 40 26 40 26 42 L26 46 C26 48 28 48 28 46 L28 42 C28 40 30 40 30 42 L30 46 C30 48 32 48 32 46 L32 42 C32 40 34 40 34 42 L34 46 C34 48 36 48 36 46 L36 42 C36 40 38 40 38 42 L38 46 C38 48 40 48 40 46 L40 42 C40 40 42 40 42 42 L42 45 C42 47 43 48 44 48 C45 48 46 46 46 44 L46 28 C46 18 40 12 32 12 Z"
-      fill="url(#themisGhost)"
-      opacity="0.9"
+      d="M32 12 L32 44"
+      stroke="url(#themisGradient)"
+      strokeWidth="2.5"
+      strokeLinecap="round"
     />
     
-    {/* Eyes - Wise & Analytical */}
-    <ellipse cx="24" cy="26" rx="2.5" ry="3.5" fill="#0A0A0B" />
-    <ellipse cx="40" cy="26" rx="2.5" ry="3.5" fill="#0A0A0B" />
-    <circle cx="24.5" cy="25.5" r="1" fill="#9333EA" />
-    <circle cx="40.5" cy="25.5" r="1" fill="#9333EA" />
+    {/* Top ornament */}
+    <circle cx="32" cy="12" r="3" fill="url(#themisGradient)" />
     
-    {/* Glasses - Analytical look */}
-    <ellipse cx="24" cy="26" rx="5" ry="4" fill="none" stroke="#9333EA" strokeWidth="1" opacity="0.6" />
-    <ellipse cx="40" cy="26" rx="5" ry="4" fill="none" stroke="#9333EA" strokeWidth="1" opacity="0.6" />
-    <line x1="29" y1="26" x2="35" y2="26" stroke="#9333EA" strokeWidth="1" opacity="0.6" />
-    
-    {/* Shield symbol on head */}
+    {/* Horizontal beam */}
     <path
-      d="M32 8 L28 10 L28 14 C28 16 29 17 32 18 C35 17 36 16 36 14 L36 10 Z"
+      d="M18 22 L46 22"
+      stroke="url(#themisGradient)"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+    
+    {/* Left scale */}
+    <path
+      d="M18 22 L14 32 L22 32 Z"
       fill="none"
-      stroke="url(#themisGhost)"
+      stroke="url(#themisGradient)"
       strokeWidth="1.5"
+      strokeLinejoin="round"
     />
-    <path d="M30 13 L31.5 14.5 L34 12" stroke="url(#themisGhost)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M14 32 L22 32" stroke="#9333EA" strokeWidth="2" strokeLinecap="round" />
     
-    {/* Floating balance symbols */}
-    <circle cx="18" cy="22" r="1.5" fill="#9333EA" opacity="0.4">
-      <animate attributeName="cy" values="22;20;22" dur="3s" repeatCount="indefinite" />
+    {/* Right scale */}
+    <path
+      d="M46 22 L42 32 L50 32 Z"
+      fill="none"
+      stroke="url(#themisGradient)"
+      strokeWidth="1.5"
+      strokeLinejoin="round"
+    />
+    <path d="M42 32 L50 32" stroke="#9333EA" strokeWidth="2" strokeLinecap="round" />
+    
+    {/* Base */}
+    <path
+      d="M26 44 L38 44 L36 50 L28 50 Z"
+      fill="url(#themisGradient)"
+      opacity="0.8"
+    />
+    
+    {/* Checkmark on left scale - Approved */}
+    <path
+      d="M16 30 L17.5 31.5 L20 29"
+      stroke="#9333EA"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    
+    {/* Warning symbol on right scale */}
+    <circle cx="46" cy="30" r="1" fill="#9333EA" />
+    <path d="M46 27 L46 29" stroke="#9333EA" strokeWidth="1.5" strokeLinecap="round" />
+    
+    {/* Floating analysis particles */}
+    <circle cx="12" cy="18" r="1.5" fill="#A855F7" opacity="0.5">
+      <animate attributeName="cy" values="18;16;18" dur="3s" repeatCount="indefinite" />
     </circle>
-    <circle cx="46" cy="22" r="1.5" fill="#A855F7" opacity="0.4">
-      <animate attributeName="cy" values="22;20;22" dur="3s" repeatCount="indefinite" />
+    <circle cx="52" cy="18" r="1.5" fill="#9333EA" opacity="0.5">
+      <animate attributeName="cy" values="18;16;18" dur="3s" begin="0.5s" repeatCount="indefinite" />
     </circle>
     
     <defs>
-      <linearGradient id="themisGhost" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#A855F7" />
+      <linearGradient id="themisGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#C084FC" />
+        <stop offset="50%" stopColor="#A855F7" />
         <stop offset="100%" stopColor="#9333EA" />
       </linearGradient>
     </defs>
@@ -84,56 +122,64 @@ export const ThemisIcon = ({ size = 64 }: { size?: number }) => (
 
 export const CoreIcon = ({ size = 64 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Ghost body - Calm & Guiding */}
+    {/* Compass Rose - Guidance & Direction */}
+    <circle cx="32" cy="32" r="20" fill="none" stroke="url(#coreGradient)" strokeWidth="2" opacity="0.3" />
+    <circle cx="32" cy="32" r="16" fill="none" stroke="url(#coreGradient)" strokeWidth="2" />
+    
+    {/* Cardinal points */}
     <path
-      d="M32 12 C22 12 16 18 16 28 L16 44 C16 46 17 48 18 48 C19 48 20 47 20 45 L20 42 C20 40 22 40 22 42 L22 46 C22 48 24 48 24 46 L24 42 C24 40 26 40 26 42 L26 46 C26 48 28 48 28 46 L28 42 C28 40 30 40 30 42 L30 46 C30 48 32 48 32 46 L32 42 C32 40 34 40 34 42 L34 46 C34 48 36 48 36 46 L36 42 C36 40 38 40 38 42 L38 46 C38 48 40 48 40 46 L40 42 C40 40 42 40 42 42 L42 45 C42 47 43 48 44 48 C45 48 46 46 46 44 L46 28 C46 18 40 12 32 12 Z"
-      fill="url(#coreGhost)"
-      opacity="0.9"
+      d="M32 12 L32 20 M32 44 L32 52 M12 32 L20 32 M44 32 L52 32"
+      stroke="url(#coreGradient)"
+      strokeWidth="2"
+      strokeLinecap="round"
     />
     
-    {/* Eyes - Calm & Focused */}
-    <ellipse cx="24" cy="27" rx="2.5" ry="3" fill="#0A0A0B" />
-    <ellipse cx="40" cy="27" rx="2.5" ry="3" fill="#0A0A0B" />
-    <circle cx="24.5" cy="26.5" r="1" fill="#3B82F6" />
-    <circle cx="40.5" cy="26.5" r="1" fill="#3B82F6" />
-    
-    {/* Smile - Friendly guide */}
+    {/* North arrow - Primary direction */}
     <path
-      d="M26 32 Q32 35 38 32"
+      d="M32 16 L36 28 L32 26 L28 28 Z"
+      fill="url(#coreGradient)"
+    />
+    
+    {/* Intercardinal points */}
+    <path
+      d="M22 22 L26 26 M38 22 L34 26 M22 42 L26 38 M38 42 L34 38"
       stroke="#3B82F6"
       strokeWidth="1.5"
       strokeLinecap="round"
-      fill="none"
-      opacity="0.6"
+      opacity="0.5"
     />
     
-    {/* Compass on head */}
-    <circle cx="32" cy="8" r="5" fill="none" stroke="url(#coreGhost)" strokeWidth="1.5" />
-    <path
-      d="M32 4 L32 6 M32 10 L32 12 M28 8 L30 8 M34 8 L36 8"
-      stroke="url(#coreGhost)"
-      strokeWidth="1"
-      strokeLinecap="round"
-    />
-    <path
-      d="M32 6 L33.5 8 L32 7.5 L30.5 8 Z"
-      fill="url(#coreGhost)"
-    />
+    {/* Center circle - Core */}
+    <circle cx="32" cy="32" r="6" fill="url(#coreGradient)" opacity="0.8" />
+    <circle cx="32" cy="32" r="3" fill="#60A5FA" />
     
-    {/* Floating guide dots */}
-    <circle cx="18" cy="20" r="1.5" fill="#3B82F6" opacity="0.5">
-      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2.5s" repeatCount="indefinite" />
+    {/* Rotating guide ring */}
+    <circle cx="32" cy="32" r="12" fill="none" stroke="#3B82F6" strokeWidth="1" strokeDasharray="2 4" opacity="0.4">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 32 32"
+        to="360 32 32"
+        dur="20s"
+        repeatCount="indefinite"
+      />
     </circle>
-    <circle cx="46" cy="20" r="1.5" fill="#60A5FA" opacity="0.5">
-      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="32" cy="16" r="1" fill="#3B82F6" opacity="0.4">
-      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite" />
-    </circle>
+    
+    {/* Floating guide stars */}
+    <path d="M32 6 L32.5 7.5 L34 8 L32.5 8.5 L32 10 L31.5 8.5 L30 8 L31.5 7.5 Z" fill="#60A5FA" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M58 32 L58.5 33.5 L60 34 L58.5 34.5 L58 36 L57.5 34.5 L56 34 L57.5 33.5 Z" fill="#3B82F6" opacity="0.7">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.8s" repeatCount="indefinite" />
+    </path>
+    <path d="M6 32 L6.5 33.5 L8 34 L6.5 34.5 L6 36 L5.5 34.5 L4 34 L5.5 33.5 Z" fill="#60A5FA" opacity="0.7">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" />
+    </path>
     
     <defs>
-      <linearGradient id="coreGhost" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stopColor="#60A5FA" />
+      <linearGradient id="coreGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#93C5FD" />
+        <stop offset="50%" stopColor="#60A5FA" />
         <stop offset="100%" stopColor="#3B82F6" />
       </linearGradient>
     </defs>
