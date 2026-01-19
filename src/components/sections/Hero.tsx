@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { AITeamVisualization } from '@/components/infographics/AITeamVisualization';
+import { AsciiStarfield } from '@/components/animations/AsciiStarfield';
 
 interface HeroProps {
   headline: string;
@@ -21,6 +22,9 @@ interface HeroProps {
 export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-[#0A0A0B] py-20 sm:py-32">
+      {/* ASCII Starfield Background */}
+      <AsciiStarfield />
+      
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#5E6AD2]/5 to-transparent" />
       
