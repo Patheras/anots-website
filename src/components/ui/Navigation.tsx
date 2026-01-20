@@ -49,6 +49,11 @@ const navLinks = [
             description: 'Build unlimited marketing automations',
             href: '/features/anot-creation'
           },
+          { 
+            label: 'ANOT Library', 
+            description: 'Browse and install community templates',
+            href: '/features/anot-library'
+          },
         ]
       }
     ]
