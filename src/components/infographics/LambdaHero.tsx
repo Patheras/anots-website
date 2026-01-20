@@ -131,6 +131,7 @@ export function LambdaHero() {
     let animationFrame: number;
 
     function animate() {
+      if (!canvas || !ctx) return;
       animationFrame = requestAnimationFrame(animate);
 
       ctx.fillStyle = '#0A0A0B';
