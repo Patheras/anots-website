@@ -100,6 +100,24 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
+        {/* Google Consent Mode v2 - Must be loaded BEFORE gtag */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              
+              // Set default consent to denied (will be updated by CookieConsent component)
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied',
+                'wait_for_update': 500
+              });
+            `,
+          }}
+        />
         {/* Google Analytics */}
         <script
           async
@@ -108,8 +126,6 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-TFHJ92RC6J');
             `,
