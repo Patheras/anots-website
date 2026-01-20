@@ -108,25 +108,25 @@ export default function ActivityHubPage() {
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span><strong>Draft:</strong> Being created by AI team</span>
+                      <span><strong>Pending:</strong> Awaiting execution start</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span><strong>Pending:</strong> Awaiting your approval</span>
+                      <span><strong>Running:</strong> Currently executing</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span><strong>Scheduled:</strong> Approved and queued</span>
+                      <span><strong>Completed:</strong> Successfully finished</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span><strong>Published:</strong> Live and running</span>
+                      <span><strong>Failed:</strong> Requires attention</span>
                     </li>
                   </ul>
                 </CardContent>

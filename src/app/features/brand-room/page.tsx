@@ -163,7 +163,7 @@ export default function BrandRoomPage() {
                   </div>
                   <h3 className="text-xl font-bold text-[#FAFAFA] mb-4">Social Media Learning</h3>
                   <p className="text-[#D4D4D8] text-sm mb-6">
-                    Connect Meta accounts via OAuth to learn brand voice from your actual social presence.
+                    Connect Meta accounts via OAuth to learn brand voice from your actual social presence. (Coming soon - OAuth integration in development)
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start gap-2 text-sm text-[#D4D4D8]">
