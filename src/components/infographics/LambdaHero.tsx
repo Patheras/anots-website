@@ -194,22 +194,23 @@ export function LambdaHero() {
         if (p.scale <= 0) continue;
 
         const isAccent = p.type !== 'purple';
-        const radius = (isAccent ? 3 : 1.5) * p.scale;
+        const radius = (isAccent ? 4 : 2.5) * p.scale; // 3/1.5'ten 4/2.5'e büyüttük
 
         ctx.beginPath();
         ctx.arc(p.sx, p.sy, radius, 0, Math.PI * 2);
 
         if (p.type === 'red') {
-          ctx.fillStyle = `rgba(220, 38, 38, ${p.scale})`;
-          ctx.shadowBlur = 10 * p.scale;
+          ctx.fillStyle = `rgba(220, 38, 38, ${p.scale * 1.2})`; // Opacity artırdık
+          ctx.shadowBlur = 15 * p.scale; // 10'dan 15'e
           ctx.shadowColor = '#DC2626';
         } else if (p.type === 'blue') {
-          ctx.fillStyle = `rgba(59, 130, 246, ${p.scale})`;
-          ctx.shadowBlur = 10 * p.scale;
+          ctx.fillStyle = `rgba(59, 130, 246, ${p.scale * 1.2})`;
+          ctx.shadowBlur = 15 * p.scale;
           ctx.shadowColor = '#3B82F6';
         } else {
-          ctx.fillStyle = `rgba(160, 100, 255, ${p.scale * 0.8})`;
-          ctx.shadowBlur = 0;
+          ctx.fillStyle = `rgba(160, 100, 255, ${p.scale})`; // 0.8'den 1'e
+          ctx.shadowBlur = 5 * p.scale; // Subtle glow ekledik
+          ctx.shadowColor = '#9333EA';
         }
         ctx.fill();
       }
