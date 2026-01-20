@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   description: "Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Brand Room learns from your website, documents, and social media to extract logos, colors, fonts, and brand voice automatically.",
   keywords: ["AI marketing automation", "brand intelligence", "marketing AI agents", "brand extraction", "automated marketing", "brand standards", "AI brand analysis", "marketing workflow automation"],
   openGraph: {
-    title: "ANOTS - Your AI Marketing Team That Never Sleeps",
-    description: "Three AI agents that create, review, and manage your marketing automations. Brand Room extracts your brand intelligence from multiple sources automatically.",
+    title: "ANOTS - If You've Heard of Us, ANOTS is Working",
+    description: "The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use.",
     url: "https://anots.com",
     images: ["/og-image.png"],
   },

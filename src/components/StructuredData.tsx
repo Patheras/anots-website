@@ -23,7 +23,7 @@ export function StructuredData() {
     '@type': 'WebSite',
     name: 'ANOTS',
     url: 'https://anots.com',
-    description: 'Your AI Marketing Team That Never Sleeps',
+    description: 'The AI marketing team that markets itself. If you\'ve heard of us, ANOTS is working.',
     potentialAction: {
       '@type': 'SearchAction',
       target: 'https://anots.com/search?q={search_term_string}',

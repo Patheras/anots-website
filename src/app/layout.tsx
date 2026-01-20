@@ -20,10 +20,10 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://anots.com'),
   title: {
-    default: "ANOTS - Your AI Marketing Team That Never Sleeps",
+    default: "ANOTS - If You've Heard of Us, ANOTS is Working",
     template: "%s | ANOTS",
   },
-  description: "Meet ANOTS: Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Just chat, approve, and watch them work. Start free with 3 ANOTs.",
+  description: "The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use. Start free with 3 ANOTs.",
   keywords: [
     "AI marketing automation",
     "marketing automation platform",
@@ -56,8 +56,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://anots.com",
     siteName: "ANOTS",
-    title: "ANOTS - Your AI Marketing Team That Never Sleeps",
-    description: "Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Start free with 3 ANOTs.",
+    title: "ANOTS - If You've Heard of Us, ANOTS is Working",
+    description: "The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use.",
     images: [
       {
         url: "/og-image.png",
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ANOTS - Your AI Marketing Team That Never Sleeps",
-    description: "Three AI agents that create, review, and manage your marketing automations. Start free with 3 ANOTs.",
+    title: "ANOTS - If You've Heard of Us, ANOTS is Working",
+    description: "The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use.",
     images: ["/og-image.png"],
     creator: "@anots",
   },

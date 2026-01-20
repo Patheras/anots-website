@@ -76,7 +76,7 @@ export function Footer() {
               ANOTS
             </Link>
             <p className="mt-4 text-sm text-[#A1A1AA]">
-              Your AI Marketing Team That Never Sleeps
+              If you've heard of us, ANOTS is working.
             </p>
             {/* Social Links */}
             <div className="mt-6 flex space-x-4">
