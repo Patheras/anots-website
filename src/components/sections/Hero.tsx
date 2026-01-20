@@ -20,45 +20,30 @@ interface HeroProps {
 
 export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#5E6AD2]/5 to-transparent" />
-      
-      {/* Grid pattern */}
-      <div 
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: `linear-gradient(#1A1A1B 1px, transparent 1px), linear-gradient(90deg, #1A1A1B 1px, transparent 1px)`,
-          backgroundSize: '64px 64px',
-        }}
-      />
+    <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-[#0A0A0B]">
+      {/* Neural Network Background */}
+      <LambdaHero />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Content Overlay */}
+      <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           {/* Headline */}
           <FadeIn delay={0}>
-            <h1 className="text-[#FAFAFA]">
+            <h1 className="text-[#FAFAFA] mix-blend-overlay">
               Your <span className="anots-gradient-text">AI Marketing Team</span> That Never Sleeps
             </h1>
           </FadeIn>
 
-          {/* Lambda Hero Visual */}
-          <FadeIn delay={100}>
-            <div className="mt-8 sm:mt-12">
-              <LambdaHero />
-            </div>
-          </FadeIn>
-
           {/* Subheadline */}
           <FadeIn delay={200}>
-            <p className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8] max-w-3xl mx-auto px-4 sm:px-0">
+            <p className="mt-8 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8]/90 max-w-3xl mx-auto">
               {subheadline}
             </p>
           </FadeIn>
 
           {/* CTAs */}
           <FadeIn delay={300}>
-            <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 px-4 sm:px-0">
+            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <a href={primaryCTA.href} className="w-full sm:w-auto">
                 <Button variant="primary" size="lg" className="w-full sm:w-auto">
                   {primaryCTA.text}

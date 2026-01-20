@@ -21,10 +21,8 @@ export function Navigation() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-0 transition-opacity hover:opacity-80">
-            <span className="text-xl font-semibold text-[#FAFAFA]">
-              <span className="anots-gradient-text">Λ</span>NOTS
-            </span>
+          <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
+            <span className="text-xl font-bold text-[#FAFAFA]">ΛNOTS</span>
           </Link>
 
           {/* Desktop Navigation */}
