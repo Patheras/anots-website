@@ -73,7 +73,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="text-xl font-bold text-[#FAFAFA]">
-              ANOTS
+              ΛNOTS
             </Link>
             <p className="mt-4 text-sm text-[#A1A1AA]">
               If you've heard of us, ANOTS is working.

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     default: "ANOTS - If You've Heard of Us, ANOTS is Working",
     template: "%s | ANOTS",
   },
-  description: "The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use. Start free with 3 ANOTs.",
+  description: "Meet ANOTS: Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Chat with your AI team, approve their proposals, and watch them execute. Brand Room extracts your brand intelligence from websites, documents, and social media automatically. Start free with 3 ANOTs.",
   keywords: [
     "AI marketing automation",
     "marketing automation platform",
@@ -73,6 +73,13 @@ export const metadata: Metadata = {
     description: "The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use.",
     images: ["/og-image.png"],
     creator: "@anots",
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/apple-touch-icon.svg',
+    shortcut: '/favicon.svg',
   },
   robots: {
     index: true,
