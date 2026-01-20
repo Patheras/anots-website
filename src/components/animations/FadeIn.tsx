@@ -13,15 +13,15 @@ interface FadeInProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
 export function FadeIn({
   children,
   delay = 0,
-  duration = 150,
+  duration = 400,
   direction = 'none',
   ...props
 }: FadeInProps) {
   const directions = {
-    up: { y: 20 },
-    down: { y: -20 },
-    left: { x: 20 },
-    right: { x: -20 },
+    up: { y: 12 },
+    down: { y: -12 },
+    left: { x: 12 },
+    right: { x: -12 },
     none: {},
   };
 
@@ -39,7 +39,7 @@ export function FadeIn({
       transition={{
         duration: duration / 1000,
         delay: delay / 1000,
-        ease: [0.4, 0, 0.2, 1], // ease-in-out
+        ease: [0.16, 1, 0.3, 1], // Linear-style ease
       }}
       {...props}
     >

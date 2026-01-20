@@ -19,20 +19,20 @@ interface FeaturesProps {
 export function Features({ features, layout = 'grid' }: FeaturesProps) {
   if (layout === 'grid') {
     return (
-      <section className="bg-[#0A0A0B] py-20">
+      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <ScrollReveal key={index}>
                 <Card className="h-full">
                   <CardHeader>
                     {feature.icon && (
-                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#5E6AD2]/10">
+                      <div className="mb-3 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-[#5E6AD2]/10">
                         {feature.icon}
                       </div>
                     )}
-                    <CardTitle className="text-[#FAFAFA]">{feature.title}</CardTitle>
-                    <CardDescription className="text-[#71717A]">
+                    <CardTitle className="text-base sm:text-lg font-semibold text-[#FAFAFA]">{feature.title}</CardTitle>
+                    <CardDescription className="mt-2 sm:mt-3 text-sm sm:text-base leading-relaxed text-[#A1A1AA]">
                       {feature.description}
                     </CardDescription>
                   </CardHeader>
@@ -47,24 +47,24 @@ export function Features({ features, layout = 'grid' }: FeaturesProps) {
 
   // Alternating layout
   return (
-    <section className="bg-[#0A0A0B] py-20">
+    <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="space-y-20">
+        <div className="space-y-16 sm:space-y-24">
           {features.map((feature, index) => (
             <ScrollReveal key={index}>
               <div
-                className={`grid gap-8 md:grid-cols-2 md:items-center ${
+                className={`grid gap-8 sm:gap-12 md:grid-cols-2 md:items-center ${
                   index % 2 === 1 ? 'md:flex-row-reverse' : ''
                 }`}
               >
                 <div className={index % 2 === 1 ? 'md:order-2' : ''}>
                   {feature.icon && (
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#5E6AD2]/10">
+                    <div className="mb-3 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-[#5E6AD2]/10">
                       {feature.icon}
                     </div>
                   )}
-                  <h3 className="text-2xl font-bold text-[#FAFAFA]">{feature.title}</h3>
-                  <p className="mt-4 text-lg text-[#D4D4D8]">{feature.description}</p>
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[#FAFAFA]">{feature.title}</h3>
+                  <p className="mt-3 sm:mt-4 text-base sm:text-lg leading-relaxed text-[#D4D4D8]">{feature.description}</p>
                 </div>
                 <div className={index % 2 === 1 ? 'md:order-1' : ''}>
                   {feature.image ? (
