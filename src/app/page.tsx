@@ -17,12 +17,12 @@ import {
 } from "@/components/infographics/FeatureIcons";
 
 export const metadata: Metadata = {
-  title: "ANOTS - AI Marketing Team with Multi-Source Brand Intelligence",
-  description: "Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Brand Room learns from your website, documents, and social media to extract logos, colors, fonts, and brand voice automatically.",
-  keywords: ["AI marketing automation", "brand intelligence", "marketing AI agents", "brand extraction", "automated marketing", "brand standards", "AI brand analysis", "marketing workflow automation"],
+  title: "ANOTS - AI Marketing Automation Platform | 3 AI Agents + Brand Intelligence",
+  description: "AI marketing automation with 3 AI agents (Qubik, Themis, Core) that create, review, and execute campaigns. Brand Room automatically extracts logos, colors, fonts, and brand voice from your website, documents, and social media. Connect to 200+ apps via ActivePieces. Start free with 3 ANOTs.",
+  keywords: ["AI marketing automation", "brand intelligence", "marketing AI agents", "brand extraction", "automated marketing", "brand standards", "AI brand analysis", "marketing workflow automation", "ActivePieces", "no-code marketing", "ANOT"],
   openGraph: {
-    title: "ANOTS - If You've Heard of Us, ANOTS is Working",
-    description: "The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use.",
+    title: "ANOTS - AI Marketing Automation | If You've Heard of Us, We're Working",
+    description: "3 AI agents that create, review, and execute your marketing automations. Brand Room extracts your brand intelligence automatically. Start free with 3 ANOTs.",
     url: "https://anots.com",
     images: ["/og-image.png"],
   },
