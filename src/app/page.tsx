@@ -67,10 +67,10 @@ export default function Home() {
       <Navigation />
       
       <Hero
-        headline="Your AI Marketing Team That Never Sleeps"
-        subheadline="Meet ANOTS: Three AI agents (Qubik, Themis, Core) that create, review, and manage your marketing automations. Just chat, approve, and watch them work."
+        headline="If You've Heard of Us, ANOTS is Working"
+        subheadline="The AI marketing team that markets itself. Every mention, every share, every conversation—powered by the same ANOTs you'll use."
         primaryCTA={{ text: "Start Free - 3 ANOTs", href: "https://app.anots.com/signup" }}
-        secondaryCTA={{ text: "See How It Works", href: "#how-it-works" }}
+        secondaryCTA={{ text: "See How We Did It", href: "/use-cases" }}
       />
 
       {/* See It In Action Section */}

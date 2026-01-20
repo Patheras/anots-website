@@ -1,0 +1,67 @@
+import Link from "next/link";
+import { Navigation } from "@/components/ui/Navigation";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+
+export default function NotFound() {
+  return (
+    <>
+      <Navigation />
+      
+      <section className="bg-[#0A0A0B] min-h-[80vh] flex items-center justify-center py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <Card className="border-[#5E6AD2]/20 bg-gradient-to-br from-[#5E6AD2]/5 to-transparent">
+              <CardContent className="p-12 sm:p-16">
+                <div className="text-8xl sm:text-9xl font-bold text-[#5E6AD2] mb-6">
+                  404
+                </div>
+                
+                <h1 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">
+                  Page Not Found
+                </h1>
+                
+                <p className="text-lg text-[#D4D4D8] mb-6">
+                  But you found <span className="text-[#5E6AD2] font-semibold">us</span>, didn't you?
+                </p>
+                
+                <div className="text-6xl mb-6">🤖</div>
+                
+                <p className="text-xl text-[#FAFAFA] font-semibold mb-8">
+                  That's ANOTS working.
+                </p>
+                
+                <p className="text-sm text-[#A1A1AA] mb-8 max-w-md mx-auto">
+                  Even our 404 page is part of the experience. If you landed here, 
+                  one of our ANOTs probably brought you. Maybe it was a social post, 
+                  a blog link, or a search result. Either way, you're here now.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link href="/">
+                    <Button variant="primary" size="lg">
+                      Go Home
+                    </Button>
+                  </Link>
+                  <Link href="/use-cases">
+                    <Button variant="secondary" size="lg">
+                      See How We Did It
+                    </Button>
+                  </Link>
+                </div>
+                
+                <div className="mt-12 pt-8 border-t border-[#1A1A1B]">
+                  <p className="text-xs text-[#71717A] italic">
+                    P.S. This 404 page was designed by our Content ANOT. 
+                    It analyzed 100+ 404 pages and created this one to be helpful, 
+                    on-brand, and maybe a little clever. 😉
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
