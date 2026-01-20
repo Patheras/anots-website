@@ -29,8 +29,8 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
         <div className="mx-auto max-w-4xl text-center">
           {/* Headline */}
           <FadeIn delay={0}>
-            <h1 className="text-[#FAFAFA] mix-blend-overlay">
-              Your <span className="anots-gradient-text">AI Marketing Team</span> That Never Sleeps
+            <h1 className="text-[#FAFAFA]">
+              Your AI Marketing Team That Never Sleeps
             </h1>
           </FadeIn>
 

@@ -18,9 +18,9 @@ export function LambdaHero() {
     let targetMouse = { x: 0, y: 0 };
 
     const isMobile = window.innerWidth < 768;
-    const PARTICLE_COUNT = isMobile ? 80 : 180;
+    const PARTICLE_COUNT = isMobile ? 60 : 120; // 80/180'den düşürdük
     const CONNECTION_DIST = 140;
-    const ROTATION_SPEED = 0.002;
+    const ROTATION_SPEED = 0.001; // 0.002'den yavaşlattık
 
     // 3D Point Class
     class Point3D {
@@ -65,9 +65,9 @@ export function LambdaHero() {
         this.vz = (Math.random() - 0.5) * 0.5;
 
         const rand = Math.random();
-        if (rand > 0.92) {
+        if (rand > 0.96) { // 0.92'den 0.96'ya çıkardık (daha az red)
           this.type = 'red';
-        } else if (rand > 0.84) {
+        } else if (rand > 0.92) { // 0.84'ten 0.92'ye çıkardık (daha az blue)
           this.type = 'blue';
         } else {
           this.type = 'purple';
@@ -121,8 +121,8 @@ export function LambdaHero() {
 
     window.addEventListener('resize', resize);
     window.addEventListener('mousemove', (e) => {
-      targetMouse.x = (e.clientX - width / 2) * 0.001;
-      targetMouse.y = (e.clientY - height / 2) * 0.001;
+      targetMouse.x = (e.clientX - width / 2) * 0.0002; // 0.001'den 0.0002'ye düşürdük (%20)
+      targetMouse.y = (e.clientY - height / 2) * 0.0002;
     });
 
     let time = 0;
@@ -176,11 +176,11 @@ export function LambdaHero() {
               ctx.lineTo(p2.sx, p2.sy);
 
               if (p1.type === 'red' || p2.type === 'red') {
-                ctx.strokeStyle = `rgba(220, 38, 38, ${alpha * 0.8})`;
+                ctx.strokeStyle = `rgba(220, 38, 38, ${alpha * 0.4})`; // 0.8'den 0.4'e düşürdük
               } else if (p1.type === 'blue' || p2.type === 'blue') {
-                ctx.strokeStyle = `rgba(59, 130, 246, ${alpha * 0.8})`;
+                ctx.strokeStyle = `rgba(59, 130, 246, ${alpha * 0.4})`;
               } else {
-                ctx.strokeStyle = `rgba(147, 51, 234, ${alpha * 0.3})`;
+                ctx.strokeStyle = `rgba(147, 51, 234, ${alpha * 0.2})`; // 0.3'ten 0.2'ye düşürdük
               }
               ctx.stroke();
             }
