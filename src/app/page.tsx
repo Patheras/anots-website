@@ -17,15 +17,15 @@ import {
 } from "@/components/infographics/FeatureIcons";
 
 export const metadata: Metadata = {
-  title: "ANOTS - AI Marketing Automation Platform | 3 AI Agents + Brand Intelligence",
-  description: "AI marketing automation with 3 AI agents (Qubik, Themis, Core) that create, review, and execute campaigns. Brand Room automatically extracts logos, colors, fonts, and brand voice from your website, documents, and social media. Connect to 200+ apps via ActivePieces. Start free with 3 ANOTs.",
-  keywords: ["AI marketing automation", "brand intelligence", "marketing AI agents", "brand extraction", "automated marketing", "brand standards", "AI brand analysis", "marketing workflow automation", "ActivePieces", "no-code marketing", "ANOT"],
+  title: "ANOTS - AI Marketing Automation Platform | AI Team, Brand Room & Activity Hub",
+  description: "AI marketing automation with 3 AI agents (Qubik, Themis, Core) that create, review, and execute campaigns. Brand Room automatically extracts logos, colors, fonts, and brand voice from your website, documents, and social media. Activity Hub tracks all automations. Connect to 200+ apps via ActivePieces. Start free with 3 ANOTs.",
+  keywords: ["AI marketing automation", "AI team", "brand intelligence", "marketing AI agents", "brand extraction", "automated marketing", "brand standards", "AI brand analysis", "marketing workflow automation", "ActivePieces", "no-code marketing", "ANOT", "activity hub", "brand room", "qubik", "themis", "core", "social media automation", "blog articles", "logos colors", "reviews for risks"],
   alternates: {
     canonical: "https://anots.com",
   },
   openGraph: {
-    title: "ANOTS - AI Marketing Automation | If You've Heard of Us, We're Working",
-    description: "3 AI agents that create, review, and execute your marketing automations. Brand Room extracts your brand intelligence automatically. Start free with 3 ANOTs.",
+    title: "ANOTS - AI Marketing Automation | AI Team + Brand Room + Activity Hub",
+    description: "3 AI agents (Qubik, Themis, Core) that create, review, and execute your marketing automations. Brand Room extracts logos, colors, and brand voice. Activity Hub tracks everything. Start free with 3 ANOTs.",
     url: "https://anots.com",
     images: ["/og-image.png"],
   },
