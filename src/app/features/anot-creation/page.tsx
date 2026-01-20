@@ -37,8 +37,8 @@ export default function AnotCreationPage() {
                 ANOT Creation: Build by Talking
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-[#D4D4D8] leading-relaxed">
-                Create unlimited marketing automations through natural conversation. Each ANOT is a complete, self-contained task. 
-                No coding, no complexity—just tell us what you want.
+                Create unlimited marketing automations through natural conversation. Each ANOT is a complete, self-contained task powered by ActivePieces workflows. 
+                No coding, no complexity—just tell us what you want, and AI builds the automation.
               </p>
             </div>
           </FadeIn>
@@ -70,8 +70,8 @@ export default function AnotCreationPage() {
               },
               {
                 step: "2",
-                title: "AI Team Creates",
-                description: "Qubik generates creative proposals, Themis reviews for risks, Core synthesizes recommendations.",
+                title: "AI Team Creates Workflow",
+                description: "Qubik generates creative proposals and builds ActivePieces workflows. Themis reviews for risks. Core synthesizes recommendations.",
                 color: "text-[#9333EA]",
                 bgColor: "bg-[#9333EA]/10",
               },
@@ -84,8 +84,8 @@ export default function AnotCreationPage() {
               },
               {
                 step: "4",
-                title: "ANOT Runs",
-                description: "Your approved ANOT executes automatically. Track progress in Activity Hub.",
+                title: "ActivePieces Executes",
+                description: "Your approved ANOT runs as an ActivePieces workflow. Connects to 200+ apps, executes steps, and tracks progress automatically.",
                 color: "text-[#10B981]",
                 bgColor: "bg-[#10B981]/10",
               },
@@ -158,20 +158,20 @@ export default function AnotCreationPage() {
                   </div>
                   <h3 className="text-2xl font-bold text-[#FAFAFA] mb-4">Unlimited ANOTs</h3>
                   <p className="text-[#D4D4D8] mb-6">
-                    Create as many ANOTs as you need. Each one is a complete, self-contained marketing automation with its own workflow and schedule.
+                    Create as many ANOTs as you need. Each one is a complete ActivePieces workflow with its own triggers, actions, and schedule.
                   </p>
                   <ul className="space-y-3 text-sm text-[#D4D4D8]">
                     <li className="flex items-start gap-2">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span>No limits on ANOT count</span>
+                      <span>No limits on ANOT count (Pro/Agency)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span>Each ANOT is independent</span>
+                      <span>Each ANOT = ActivePieces workflow</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -183,7 +183,7 @@ export default function AnotCreationPage() {
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span>Duplicate successful ANOTs</span>
+                      <span>Duplicate successful workflows</span>
                     </li>
                   </ul>
                 </CardContent>
