@@ -54,6 +54,8 @@ const navLinks = [
     ]
   },
   { label: 'ANOTs', href: '/features/anot-library' },
+  { label: 'Use Cases', href: '/use-cases' },
+  { label: 'Ideas', href: '/ideas' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Docs', href: 'https://app.anots.com/docs', external: true },
   { label: 'Contact', href: '/contact' },
