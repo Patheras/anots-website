@@ -14,12 +14,13 @@ export interface Feature {
 interface FeaturesProps {
   features: Feature[];
   layout?: 'grid' | 'alternating';
+  id?: string;
 }
 
-export function Features({ features, layout = 'grid' }: FeaturesProps) {
+export function Features({ features, layout = 'grid', id }: FeaturesProps) {
   if (layout === 'grid') {
     return (
-      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+      <section id={id} className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
@@ -47,7 +48,7 @@ export function Features({ features, layout = 'grid' }: FeaturesProps) {
 
   // Alternating layout
   return (
-    <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+    <section id={id} className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="space-y-16 sm:space-y-24">
           {features.map((feature, index) => (

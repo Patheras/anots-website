@@ -7,6 +7,52 @@ import { Button } from './button';
 
 const navLinks = [
   { label: 'Home', href: '/' },
+  { 
+    label: 'Features', 
+    href: '#features',
+    dropdown: [
+      {
+        category: 'Core Features',
+        items: [
+          { 
+            label: 'AI Marketing Team', 
+            description: 'Three AI agents that create, review, and execute',
+            href: '/#features'
+          },
+          { 
+            label: 'Brand Room', 
+            description: 'Multi-source brand intelligence extraction',
+            href: '/#brand-room'
+          },
+          { 
+            label: 'Activity Hub', 
+            description: 'Track and manage all your automations',
+            href: '/#features'
+          },
+        ]
+      },
+      {
+        category: 'Capabilities',
+        items: [
+          { 
+            label: 'Website Analysis', 
+            description: 'Extract logos, colors, fonts from 12 pages',
+            href: '/#brand-room'
+          },
+          { 
+            label: 'Document Processing', 
+            description: 'Analyze PDF, DOCX, PPTX brand guidelines',
+            href: '/#brand-room'
+          },
+          { 
+            label: 'Social Learning', 
+            description: 'Learn brand voice from Meta posts',
+            href: '/#brand-room'
+          },
+        ]
+      }
+    ]
+  },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Docs', href: 'https://app.anots.com/docs', external: true },
   { label: 'Contact', href: '/contact' },
@@ -15,6 +61,7 @@ const navLinks = [
 export function Navigation() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-[#1A1A1B]/50 bg-[#0A0A0B]/80 backdrop-blur-xl">
@@ -28,7 +75,52 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             {navLinks.map((link) => (
-              link.external ? (
+              link.dropdown ? (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown(link.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <button
+                    className="flex items-center text-sm font-medium text-[#D4D4D8] transition-colors hover:text-[#FAFAFA]"
+                  >
+                    {link.label}
+                    <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </button>
+                  
+                  {/* Dropdown Mega Menu */}
+                  {activeDropdown === link.label && (
+                    <div className="absolute left-1/2 top-full -translate-x-1/2 pt-2">
+                      <div className="w-[600px] rounded-lg border border-[#1A1A1B] bg-[#0F0F10]/95 backdrop-blur-xl p-6 shadow-2xl">
+                        <div className="grid grid-cols-2 gap-6">
+                          {link.dropdown.map((section) => (
+                            <div key={section.category}>
+                              <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-[#71717A]">
+                                {section.category}
+                              </h3>
+                              <div className="space-y-2">
+                                {section.items.map((item) => (
+                                  <a
+                                    key={item.label}
+                                    href={item.href}
+                                    className="block rounded-md p-3 transition-colors hover:bg-[#1A1A1B]"
+                                  >
+                                    <div className="text-sm font-medium text-[#FAFAFA]">{item.label}</div>
+                                    <div className="mt-1 text-xs text-[#A1A1AA]">{item.description}</div>
+                                  </a>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ) : link.external ? (
                 <a
                   key={link.href}
                   href={link.href}
@@ -106,7 +198,31 @@ export function Navigation() {
         <div className="md:hidden border-t border-[#1A1A1B]">
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navLinks.map((link) => (
-              link.external ? (
+              link.dropdown ? (
+                <div key={link.label} className="space-y-1">
+                  <div className="px-3 py-2 text-sm font-semibold text-[#FAFAFA]">
+                    {link.label}
+                  </div>
+                  {link.dropdown.map((section) => (
+                    <div key={section.category} className="ml-4 space-y-1">
+                      <div className="px-3 py-1 text-xs font-medium uppercase tracking-wider text-[#71717A]">
+                        {section.category}
+                      </div>
+                      {section.items.map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          className="block rounded-md px-3 py-2 text-sm text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <div className="font-medium">{item.label}</div>
+                          <div className="text-xs text-[#A1A1AA]">{item.description}</div>
+                        </a>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              ) : link.external ? (
                 <a
                   key={link.href}
                   href={link.href}
