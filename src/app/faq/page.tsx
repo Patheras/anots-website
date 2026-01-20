@@ -29,6 +29,10 @@ const faqs = [
     answer: "Brand Room is ANOTS' multi-source brand intelligence system. It automatically extracts your brand standards from three sources: (1) Website - analyzes up to 12 pages for logos, colors, fonts, and brand voice, (2) Documents - processes PDF, DOCX, PPTX files for brand guidelines and visual assets, (3) Social Media - connects to Meta (Facebook/Instagram) via OAuth to learn tone from your last 10 posts. The AI Council (Qubik, Themis, Core) reviews all extracted data and creates a unified brand snapshot that powers all your ANOTs.",
   },
   {
+    question: "How does URL Archaeologist work?",
+    answer: "URL Archaeologist is our bounded multi-page crawler that intelligently extracts brand signals from your website. It starts from your homepage and prioritizes key pages (about, products, services, pricing, contact) while skipping irrelevant ones (blog, news, careers). Hard limits ensure safety: maximum 12 pages, 2MB total data, 10-second timeout, same-origin only, and SSRF protection against private IPs. From each page, it extracts compact signals—title, headings, 3 short text snippets (160-220 chars), logo candidates, CSS colors, font declarations, and tracking tag presence (boolean only). No raw HTML is stored or sent to LLMs, only structured data with full provenance tracking.",
+  },
+  {
     question: "What brand elements can ANOTS extract automatically?",
     answer: "ANOTS Brand Room extracts: Visual Identity (logo variations, color palette with primary/secondary/accent colors, typography and Google Fonts), Brand Voice (tone and communication style, key messaging and taglines, product/service descriptions), and Company Context (about summary and mission, product/service catalog, industry positioning). All extraction follows strict data limits: websites limited to 12 pages and 2MB total, documents to 20MB and 80k characters, social to bio plus 10 recent captions.",
   },

@@ -515,6 +515,135 @@ export default function Home() {
               </Card>
             </div>
           </ScrollReveal>
+
+          {/* URL Archaeologist Technical Deep Dive */}
+          <ScrollReveal>
+            <div className="mt-16 sm:mt-24">
+              <div className="mx-auto max-w-4xl">
+                <div className="text-center mb-12">
+                  <h3 className="text-2xl sm:text-3xl font-semibold text-[#FAFAFA]">
+                    URL Archaeologist: How Website Analysis Works
+                  </h3>
+                  <p className="mt-4 text-base sm:text-lg text-[#D4D4D8]">
+                    Our bounded multi-page crawler extracts brand signals without overwhelming your site
+                  </p>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="border-[#1A1A1B] bg-[#111113]">
+                    <CardContent className="p-6">
+                      <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">Intelligent Page Selection</h4>
+                      <div className="space-y-3 text-sm text-[#D4D4D8]">
+                        <div className="flex items-start gap-2">
+                          <span className="text-[#5E6AD2] font-mono">1.</span>
+                          <span>Starts from your homepage</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="text-[#5E6AD2] font-mono">2.</span>
+                          <span>Prioritizes: about, company, products, services, solutions, pricing, contact</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="text-[#5E6AD2] font-mono">3.</span>
+                          <span>Skips: blog, news, careers, terms, privacy, login, admin</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <span className="text-[#5E6AD2] font-mono">4.</span>
+                          <span>Stops at 12 pages or 2MB total</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-[#1A1A1B] bg-[#111113]">
+                    <CardContent className="p-6">
+                      <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">Strict Safety Limits</h4>
+                      <div className="space-y-3 text-sm text-[#D4D4D8]">
+                        <div className="flex items-start gap-2">
+                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                          </svg>
+                          <span>Same-origin only (same domain + scheme)</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                          </svg>
+                          <span>10s timeout (aborts if exceeded)</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                          </svg>
+                          <span>Max 5 redirects with SSRF validation</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                          </svg>
+                          <span>Blocks localhost, private IPs, file://</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <Card className="mt-6 border-[#1A1A1B] bg-[#111113]">
+                  <CardContent className="p-6">
+                    <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">What Gets Extracted (No LLM, No Full HTML Dumps)</h4>
+                    <div className="grid gap-6 md:grid-cols-2">
+                      <div>
+                        <h5 className="text-sm font-semibold text-[#A1A1AA] uppercase tracking-wider mb-3">From Each Page</h5>
+                        <ul className="space-y-2 text-sm text-[#D4D4D8]">
+                          <li className="flex items-start gap-2">
+                            <span className="text-[#5E6AD2]">•</span>
+                            <span>Title + meta description</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-[#5E6AD2]">•</span>
+                            <span>H1 and top 2-3 headings</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-[#5E6AD2]">•</span>
+                            <span>3 short text snippets (160-220 chars): hero, about, product, CTA, footer</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h5 className="text-sm font-semibold text-[#A1A1AA] uppercase tracking-wider mb-3">Brand Assets</h5>
+                        <ul className="space-y-2 text-sm text-[#D4D4D8]">
+                          <li className="flex items-start gap-2">
+                            <span className="text-[#5E6AD2]">•</span>
+                            <span>Logo candidates: favicon, og:image, header logos</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-[#5E6AD2]">•</span>
+                            <span>Colors: CSS variables + inline styles (HEX normalized)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-[#5E6AD2]">•</span>
+                            <span>Fonts: font-family declarations (Google Fonts only)</span>
+                          </li>
+                          <li className="flex items-start gap-2">
+                            <span className="text-[#5E6AD2]">•</span>
+                            <span>Tracking: GA4/gtag, Meta Pixel (boolean presence only)</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="mt-6 flex items-start gap-3 p-4 rounded-lg bg-[#5E6AD2]/5 border border-[#5E6AD2]/20">
+                  <svg className="h-5 w-5 flex-shrink-0 text-[#5E6AD2] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                  <div className="text-sm text-[#D4D4D8]">
+                    <strong className="text-[#FAFAFA]">Deterministic & Traceable:</strong> Every extracted signal includes provenance (which page, which source). Conflicts are surfaced for manual resolution. No raw HTML is stored or sent to LLMs—only compact, structured signals.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
