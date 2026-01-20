@@ -116,7 +116,7 @@ export default function TermsPage() {
               <section>
                 <h2 className="text-2xl font-bold text-[#FAFAFA]">7. Payment Terms</h2>
                 <p className="mt-4">
-                  <strong>Subscription Plans:</strong> ANOTS offers Free, Standard ($9.90/month), and Pro ($49.90/month) plans.
+                  <strong>Subscription Plans:</strong> ANOTS offers Standard (Free), Pro ($9.90/month), and Agency ($49.90/month) plans.
                 </p>
                 <p className="mt-4">
                   <strong>Billing:</strong> Paid subscriptions are billed monthly in advance. You authorize us to charge your payment method on file.
