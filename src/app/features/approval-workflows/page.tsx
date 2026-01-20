@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Approval Workflows - Trust by Design | ANOTS",
   description: "Nothing runs without your approval. Review proposals, check costs, assess risks, then decide. Complete control over your marketing automation.",
   keywords: ["approval workflows", "marketing approval", "campaign review", "trust by design", "marketing control"],
+  alternates: {
+    canonical: "https://anots.com/features/approval-workflows",
+  },
   openGraph: {
     title: "Approval Workflows - You're Always in Control | ANOTS",
     description: "Review every proposal before it runs. Trust by design.",

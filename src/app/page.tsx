@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "ANOTS - AI Marketing Automation Platform | 3 AI Agents + Brand Intelligence",
   description: "AI marketing automation with 3 AI agents (Qubik, Themis, Core) that create, review, and execute campaigns. Brand Room automatically extracts logos, colors, fonts, and brand voice from your website, documents, and social media. Connect to 200+ apps via ActivePieces. Start free with 3 ANOTs.",
   keywords: ["AI marketing automation", "brand intelligence", "marketing AI agents", "brand extraction", "automated marketing", "brand standards", "AI brand analysis", "marketing workflow automation", "ActivePieces", "no-code marketing", "ANOT"],
+  alternates: {
+    canonical: "https://anots.com",
+  },
   openGraph: {
     title: "ANOTS - AI Marketing Automation | If You've Heard of Us, We're Working",
     description: "3 AI agents that create, review, and execute your marketing automations. Brand Room extracts your brand intelligence automatically. Start free with 3 ANOTs.",

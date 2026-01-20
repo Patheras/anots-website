@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Use Cases - Real Marketing Automation Examples | ANOTS",
   description: "Discover how businesses use ANOTS for social media management, content marketing, email campaigns, SEO, and more. Real-world marketing automation use cases.",
   keywords: ["marketing automation use cases", "ANOT examples", "social media automation", "content marketing automation", "email automation examples"],
+  alternates: {
+    canonical: "https://anots.com/use-cases",
+  },
   openGraph: {
     title: "ANOTS Use Cases - Real Marketing Automation Examples",
     description: "See how businesses automate their marketing with ANOTS.",

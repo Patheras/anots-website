@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "ANOT Creation - Natural Language Marketing Automation | ANOTS",
   description: "Create unlimited marketing automations through natural conversation. Each ANOT is a complete, self-contained task. No coding, no complexity.",
   keywords: ["ANOT creation", "natural language automation", "conversational AI", "marketing automation creation", "no-code marketing"],
+  alternates: {
+    canonical: "https://anots.com/features/anot-creation",
+  },
   openGraph: {
     title: "ANOT Creation - Build Marketing Automations by Talking | ANOTS",
     description: "Create unlimited marketing automations through natural conversation.",

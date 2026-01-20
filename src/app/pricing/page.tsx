@@ -8,6 +8,9 @@ import { PricingComparison } from "@/components/infographics/PricingComparison";
 export const metadata: Metadata = {
   title: "Pricing",
   description: "Simple, transparent pricing for ANOTS. Standard (Free) with 3 ANOTs, Pro ($9.90/mo) with 30 ANOTs, Agency ($49.90/mo) with unlimited ANOTs. Start free today.",
+  alternates: {
+    canonical: "https://anots.com/pricing",
+  },
   openGraph: {
     title: "ANOTS Pricing - Start Free with 3 ANOTs",
     description: "Choose the plan that's right for you. Standard (Free), Pro ($9.90/mo), or Agency ($49.90/mo).",

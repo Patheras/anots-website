@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "About - How ANOTS Markets Itself | ANOTS",
   description: "Discover how ANOTS uses its own AI marketing automation to grow. If you're reading this, ANOTS is already working.",
   keywords: ["about ANOTS", "AI marketing automation", "dogfooding", "self-marketing", "ANOT examples"],
+  alternates: {
+    canonical: "https://anots.com/about",
+  },
   openGraph: {
     title: "About ANOTS - The AI Marketing Team That Markets Itself",
     description: "If you've heard of us, ANOTS is working.",

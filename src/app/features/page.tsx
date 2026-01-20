@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Features - AI Marketing Automation Platform",
   description: "Explore ANOTS features: Three AI agents, Brand Room intelligence, Activity Hub, approval workflows, and 200+ integrations. Everything you need for modern marketing automation.",
   keywords: ["AI marketing features", "marketing automation", "AI agents", "Brand Room", "Activity Hub", "marketing integrations"],
+  alternates: {
+    canonical: "https://anots.com/features",
+  },
   openGraph: {
     title: "ANOTS Features - Complete AI Marketing Automation",
     description: "Three AI agents, Brand Room intelligence, and 200+ integrations for modern marketing teams.",

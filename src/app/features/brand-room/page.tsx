@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Brand Room - Multi-Source Brand Intelligence | ANOTS",
   description: "Extract brand standards from websites, documents, and social media automatically. URL Archaeologist, document processing, and Meta OAuth integration for complete brand intelligence.",
   keywords: ["Brand Room", "brand intelligence", "URL Archaeologist", "brand extraction", "logo detection", "color palette", "font detection", "brand voice"],
+  alternates: {
+    canonical: "https://anots.com/features/brand-room",
+  },
   openGraph: {
     title: "Brand Room - Automatic Brand Intelligence Extraction | ANOTS",
     description: "Multi-source brand intelligence from websites, documents, and social media.",

@@ -5,6 +5,9 @@ import { FadeIn } from "@/components/animations/FadeIn";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "ANOTS Privacy Policy. Learn how we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: "https://anots.com/privacy",
+  },
   openGraph: {
     title: "ANOTS Privacy Policy",
     description: "Learn how we collect, use, and protect your personal information.",

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "Activity Hub - Track All Your Marketing Automations | ANOTS",
   description: "See all your ANOTs in one place. Track running, scheduled, and published campaigns. Daily focus view keeps you organized and in control.",
   keywords: ["Activity Hub", "marketing dashboard", "campaign tracking", "ANOT management", "marketing automation tracking"],
+  alternates: {
+    canonical: "https://anots.com/features/activity-hub",
+  },
   openGraph: {
     title: "Activity Hub - Central Command for Your Marketing | ANOTS",
     description: "Track all your ANOTs in one organized dashboard with daily focus view.",

@@ -5,6 +5,9 @@ import { FadeIn } from "@/components/animations/FadeIn";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "ANOTS Terms of Service. Read our terms and conditions for using the ANOTS platform.",
+  alternates: {
+    canonical: "https://anots.com/terms",
+  },
   openGraph: {
     title: "ANOTS Terms of Service",
     description: "Read our terms and conditions for using the ANOTS platform.",

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "200+ Integrations - Connect Everything | ANOTS",
   description: "Connect Instagram, WordPress, Google Drive, Mailchimp, and 200+ apps via ActivePieces workflow engine. Build custom workflows with no-code automation.",
   keywords: ["marketing integrations", "ActivePieces", "workflow automation", "Instagram integration", "WordPress integration", "no-code automation"],
+  alternates: {
+    canonical: "https://anots.com/features/integrations",
+  },
   openGraph: {
     title: "200+ Integrations - Connect Your Marketing Stack | ANOTS",
     description: "Connect to Instagram, WordPress, Google Drive, and 200+ apps with no-code workflows.",

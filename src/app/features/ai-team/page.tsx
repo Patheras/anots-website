@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "AI Marketing Team - Three Specialized Agents | ANOTS",
   description: "Meet your AI marketing team: Qubik (Creative Motor), Themis (Logic Motor), and Core (Guide). Three agents that work together to create, review, and execute your marketing automations.",
   keywords: ["AI marketing team", "Qubik", "Themis", "Core", "AI agents", "marketing automation agents"],
+  alternates: {
+    canonical: "https://anots.com/features/ai-team",
+  },
   openGraph: {
     title: "AI Marketing Team - Qubik, Themis, Core | ANOTS",
     description: "Three specialized AI agents that work together for perfect marketing automation.",

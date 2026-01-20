@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "FAQ - ANOTS AI Marketing Automation & Brand Intelligence",
   description: "Frequently asked questions about ANOTS: AI marketing automation, Brand Room multi-source brand intelligence, data collection limits, pricing plans, AI agents (Qubik, Themis, Core), and platform integrations. Learn how ANOTS extracts logos, colors, fonts, and brand voice from websites, documents, and social media.",
   keywords: ["ANOTS FAQ", "AI marketing automation questions", "Brand Room how it works", "brand intelligence extraction", "AI agents explained", "marketing automation pricing", "ANOT definition", "brand data collection", "multi-source brand learning"],
+  alternates: {
+    canonical: "https://anots.com/faq",
+  },
   openGraph: {
     title: "ANOTS FAQ - AI Marketing Automation & Brand Intelligence Questions",
     description: "Get answers about ANOTS AI marketing automation, Brand Room brand intelligence, data collection, pricing, and features.",

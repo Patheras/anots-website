@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "AI Marketing Ideas - Inspiration for Your Next ANOT | ANOTS",
   description: "Get inspired with creative AI marketing automation ideas. From viral campaigns to growth hacks, discover what you can build with ANOTS.",
   keywords: ["AI marketing ideas", "marketing automation ideas", "ANOT inspiration", "creative marketing automation", "growth hacking ideas"],
+  alternates: {
+    canonical: "https://anots.com/ideas",
+  },
   openGraph: {
     title: "AI Marketing Ideas - Get Inspired | ANOTS",
     description: "Creative marketing automation ideas you can build with ANOTS.",

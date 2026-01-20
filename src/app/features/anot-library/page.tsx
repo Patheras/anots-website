@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "ANOT Library - Community Automation Templates | ANOTS",
   description: "Browse, share, and install ready-made marketing automation templates. Community-driven ANOT library with pre-built workflows for Instagram, email, blogging, and more.",
   keywords: ["ANOT library", "automation templates", "marketing templates", "community automations", "workflow marketplace", "pre-built ANOTs"],
+  alternates: {
+    canonical: "https://anots.com/features/anot-library",
+  },
   openGraph: {
     title: "ANOT Library - Community Automation Templates | ANOTS",
     description: "Browse and install ready-made marketing automation templates from the community.",

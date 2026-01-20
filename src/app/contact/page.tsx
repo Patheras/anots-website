@@ -7,6 +7,9 @@ import { FadeIn } from "@/components/animations/FadeIn";
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Get in touch with ANOTS. Have questions about AI marketing automation? We're here to help. Contact our team today.",
+  alternates: {
+    canonical: "https://anots.com/contact",
+  },
   openGraph: {
     title: "Contact ANOTS - Get in Touch",
     description: "Have questions about AI marketing automation? Contact our team today.",
