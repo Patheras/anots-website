@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { 
     label: 'Features', 
-    href: '#features',
+    href: '/features',
     dropdown: [
       {
         category: 'Core Features',
@@ -17,17 +17,17 @@ const navLinks = [
           { 
             label: 'AI Marketing Team', 
             description: 'Three AI agents that create, review, and execute',
-            href: '/#features'
+            href: '/features/ai-team'
           },
           { 
             label: 'Brand Room', 
             description: 'Multi-source brand intelligence extraction',
-            href: '/#brand-room'
+            href: '/features/brand-room'
           },
           { 
             label: 'Activity Hub', 
             description: 'Track and manage all your automations',
-            href: '/#features'
+            href: '/features/activity-hub'
           },
         ]
       },
@@ -35,19 +35,19 @@ const navLinks = [
         category: 'Capabilities',
         items: [
           { 
-            label: 'Website Analysis', 
-            description: 'Extract logos, colors, fonts from 12 pages',
-            href: '/#brand-room'
+            label: 'Approval Workflows', 
+            description: 'Review and approve before execution',
+            href: '/features/approval-workflows'
           },
           { 
-            label: 'Document Processing', 
-            description: 'Analyze PDF, DOCX, PPTX brand guidelines',
-            href: '/#brand-room'
+            label: '200+ Integrations', 
+            description: 'Connect to your favorite tools',
+            href: '/features/integrations'
           },
           { 
-            label: 'Social Learning', 
-            description: 'Learn brand voice from Meta posts',
-            href: '/#brand-room'
+            label: 'ANOT Creation', 
+            description: 'Build unlimited marketing automations',
+            href: '/features/anot-creation'
           },
         ]
       }
