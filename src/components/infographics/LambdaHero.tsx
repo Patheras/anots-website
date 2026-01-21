@@ -215,27 +215,26 @@ export function LambdaHero() {
         ctx.fill();
       }
 
-      // Draw Transparent Purple Sphere with Outline
+      // Draw Subtle Purple Sphere - barely visible
       const sphereRadius = isMobile ? 250 : 400;
       const centerX = width / 2;
       const centerY = height / 2;
 
-      // Outer glow - dışa doğru yayılan
-      const outerGlow = ctx.createRadialGradient(centerX, centerY, sphereRadius, centerX, centerY, sphereRadius * 1.5);
-      outerGlow.addColorStop(0, 'rgba(147, 51, 234, 0.3)');
-      outerGlow.addColorStop(0.4, 'rgba(147, 51, 234, 0.15)');
-      outerGlow.addColorStop(0.7, 'rgba(147, 51, 234, 0.05)');
+      // Very subtle outer glow
+      const outerGlow = ctx.createRadialGradient(centerX, centerY, sphereRadius * 0.95, centerX, centerY, sphereRadius * 1.2);
+      outerGlow.addColorStop(0, 'rgba(147, 51, 234, 0.08)');
+      outerGlow.addColorStop(0.5, 'rgba(147, 51, 234, 0.04)');
       outerGlow.addColorStop(1, 'transparent');
       ctx.fillStyle = outerGlow;
       ctx.fillRect(0, 0, width, height);
 
-      // Sphere outline - belirgin çizgi
+      // Minimal outline - barely visible
       ctx.beginPath();
       ctx.arc(centerX, centerY, sphereRadius, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(147, 51, 234, 0.6)';
-      ctx.lineWidth = 1.5;
-      ctx.shadowBlur = 30;
-      ctx.shadowColor = 'rgba(147, 51, 234, 0.8)';
+      ctx.strokeStyle = 'rgba(147, 51, 234, 0.15)';
+      ctx.lineWidth = 1;
+      ctx.shadowBlur = 8;
+      ctx.shadowColor = 'rgba(147, 51, 234, 0.2)';
       ctx.stroke();
       ctx.shadowBlur = 0;
 
