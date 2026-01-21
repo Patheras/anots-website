@@ -215,6 +215,63 @@ export function LambdaHero() {
         ctx.fill();
       }
 
+      // Draw Transparent Purple Sphere
+      const sphereRadius = isMobile ? 250 : 400;
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      // Outer glow
+      const outerGlow = ctx.createRadialGradient(centerX, centerY, sphereRadius * 0.8, centerX, centerY, sphereRadius * 1.3);
+      outerGlow.addColorStop(0, 'rgba(147, 51, 234, 0.15)');
+      outerGlow.addColorStop(0.5, 'rgba(147, 51, 234, 0.08)');
+      outerGlow.addColorStop(1, 'transparent');
+      ctx.fillStyle = outerGlow;
+      ctx.fillRect(0, 0, width, height);
+
+      // Main sphere with gradient
+      const sphereGradient = ctx.createRadialGradient(
+        centerX - sphereRadius * 0.3, 
+        centerY - sphereRadius * 0.3, 
+        sphereRadius * 0.1,
+        centerX, 
+        centerY, 
+        sphereRadius
+      );
+      sphereGradient.addColorStop(0, 'rgba(147, 51, 234, 0.25)');
+      sphereGradient.addColorStop(0.4, 'rgba(147, 51, 234, 0.15)');
+      sphereGradient.addColorStop(0.7, 'rgba(147, 51, 234, 0.08)');
+      sphereGradient.addColorStop(1, 'rgba(147, 51, 234, 0.02)');
+
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, sphereRadius, 0, Math.PI * 2);
+      ctx.fillStyle = sphereGradient;
+      ctx.fill();
+
+      // Sphere border/rim with subtle glow
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, sphereRadius, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(147, 51, 234, 0.4)';
+      ctx.lineWidth = 2;
+      ctx.shadowBlur = 20;
+      ctx.shadowColor = 'rgba(147, 51, 234, 0.6)';
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // Inner highlight for 3D effect
+      const highlightGradient = ctx.createRadialGradient(
+        centerX - sphereRadius * 0.4,
+        centerY - sphereRadius * 0.4,
+        0,
+        centerX - sphereRadius * 0.4,
+        centerY - sphereRadius * 0.4,
+        sphereRadius * 0.6
+      );
+      highlightGradient.addColorStop(0, 'rgba(200, 150, 255, 0.2)');
+      highlightGradient.addColorStop(0.5, 'rgba(147, 51, 234, 0.1)');
+      highlightGradient.addColorStop(1, 'transparent');
+      ctx.fillStyle = highlightGradient;
+      ctx.fillRect(0, 0, width, height);
+
       // Center Glow
       const gradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, 500);
       gradient.addColorStop(0, 'rgba(147, 51, 234, 0.08)');
