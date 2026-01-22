@@ -14,15 +14,23 @@ export function LambdaHero() {
 
     let width: number, height: number;
     let particles: Point3D[] = [];
-    let mouse = { x: 0, y: 0 };
     let targetMouse = { x: 0, y: 0 };
 
     const isMobile = window.innerWidth < 768;
-    const PARTICLE_COUNT = isMobile ? 60 : 120; // 80/180'den düşürdük
-    const CONNECTION_DIST = 140;
-    const ROTATION_SPEED = 0.001; // 0.002'den yavaşlattık
+    const PARTICLE_COUNT = isMobile ? 100 : 250;
+    const CONNECTION_DIST = 250;
+    const ROTATION_SPEED = 0.001;
+    let sphereRadius = 0;
 
-    // 3D Point Class
+    function resize() {
+      if (!canvas) return;
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      sphereRadius = Math.min(width, height) * 0.40;
+      if (sphereRadius > 650) sphereRadius = 650;
+      if (particles.length === 0) init();
+    }
+
     class Point3D {
       x: number;
       y: number;
@@ -35,6 +43,8 @@ export function LambdaHero() {
       sy: number;
       scale: number;
       zDepth: number;
+      pulseSpeed: number;
+      pulseOffset: number;
 
       constructor() {
         this.x = 0;
@@ -48,42 +58,52 @@ export function LambdaHero() {
         this.sy = 0;
         this.scale = 0;
         this.zDepth = 0;
+        this.pulseSpeed = 0.02 + Math.random() * 0.03;
+        this.pulseOffset = Math.random() * Math.PI * 2;
         this.reset();
       }
 
       reset() {
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos((Math.random() * 2) - 1);
-        const radius = 450 + Math.random() * 500;
+        const maxR = sphereRadius * 2.0;
+        const minR = 0;
+        const radius = Math.cbrt(Math.random()) * (maxR - minR) + minR;
 
         this.x = radius * Math.sin(phi) * Math.cos(theta);
         this.y = radius * Math.sin(phi) * Math.sin(theta);
         this.z = radius * Math.cos(phi);
 
-        this.vx = (Math.random() - 0.5) * 0.5;
-        this.vy = (Math.random() - 0.5) * 0.5;
-        this.vz = (Math.random() - 0.5) * 0.5;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.vz = (Math.random() - 0.5) * 0.3;
 
         const rand = Math.random();
-        if (rand > 0.96) { // 0.92'den 0.96'ya çıkardık (daha az red)
+        if (rand > 0.90) {
           this.type = 'red';
-        } else if (rand > 0.92) { // 0.84'ten 0.92'ye çıkardık (daha az blue)
+        } else if (rand > 0.80) {
           this.type = 'blue';
         } else {
           this.type = 'purple';
         }
       }
 
-      update(rotationY: number, rotationX: number, w: number, h: number) {
-        this.x += this.vx;
-        this.y += this.vy;
+      update(rotationY: number, rotationX: number, w: number, h: number, time: number) {
+        this.x += this.vx + Math.sin(time * this.pulseSpeed + this.pulseOffset) * 0.15;
+        this.y += this.vy + Math.cos(time * this.pulseSpeed + this.pulseOffset) * 0.15;
         this.z += this.vz;
 
         const distSq = this.x * this.x + this.y * this.y + this.z * this.z;
-        if (distSq > 1000000) {
-          this.vx *= -1;
-          this.vy *= -1;
-          this.vz *= -1;
+        const limit = sphereRadius * 2.0;
+        if (distSq > limit * limit) {
+          const dist = Math.sqrt(distSq);
+          this.vx = -this.vx;
+          this.vy = -this.vy;
+          this.vz = -this.vz;
+          const scale = (limit - 1) / dist;
+          this.x *= scale;
+          this.y *= scale;
+          this.z *= scale;
         }
 
         const cosY = Math.cos(rotationY);
@@ -97,19 +117,12 @@ export function LambdaHero() {
         const z2 = z1 * cosX + this.y * sinX;
 
         const fov = 400;
-        const scale = fov / (fov + z2 + 800);
+        const scale = fov / (fov + z2 + 600);
         this.sx = x1 * scale + w / 2;
         this.sy = y1 * scale + h / 2;
         this.scale = scale;
         this.zDepth = z2;
       }
-    }
-
-    function resize() {
-      if (!canvas) return;
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-      if (particles.length === 0) init();
     }
 
     function init() {
@@ -121,8 +134,8 @@ export function LambdaHero() {
 
     window.addEventListener('resize', resize);
     window.addEventListener('mousemove', (e) => {
-      targetMouse.x = (e.clientX - width / 2) * 0.0002; // 0.001'den 0.0002'ye düşürdük (%20)
-      targetMouse.y = (e.clientY - height / 2) * 0.0002;
+      targetMouse.x = (e.clientX - width / 2) * 0.001;
+      targetMouse.y = (e.clientY - height / 2) * 0.001;
     });
 
     let time = 0;
@@ -134,23 +147,73 @@ export function LambdaHero() {
       if (!canvas || !ctx) return;
       animationFrame = requestAnimationFrame(animate);
 
-      ctx.fillStyle = '#0A0A0B';
+      ctx.fillStyle = '#030303';
       ctx.fillRect(0, 0, width, height);
+
+      const cx = width / 2;
+      const cy = height / 2;
+
+      // KATMAN 1: KÜRE ARKA PLANI
+      ctx.beginPath();
+      ctx.arc(cx, cy, sphereRadius, 0, Math.PI * 2);
+      const sphereGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, sphereRadius);
+      sphereGrad.addColorStop(0, 'rgba(0, 0, 0, 0)');
+      sphereGrad.addColorStop(0.85, 'rgba(0, 0, 0, 0)');
+      sphereGrad.addColorStop(0.95, 'rgba(60, 20, 100, 0.03)');
+      sphereGrad.addColorStop(1, 'rgba(100, 40, 180, 0.15)');
+      ctx.fillStyle = sphereGrad;
+      ctx.fill();
+
+      // KATMAN 2: KÜRE OUTLINE
+      ctx.beginPath();
+      ctx.arc(cx, cy, sphereRadius, 0, Math.PI * 2);
+      const outlineGrad = ctx.createLinearGradient(
+        cx + sphereRadius,
+        cy - sphereRadius,
+        cx - sphereRadius,
+        cy + sphereRadius
+      );
+      outlineGrad.addColorStop(0, 'rgba(139, 92, 246, 0.1)');
+      outlineGrad.addColorStop(0.5, 'rgba(139, 92, 246, 0.2)');
+      outlineGrad.addColorStop(1, 'rgba(255, 255, 255, 0.6)');
+      ctx.strokeStyle = outlineGrad;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+
+      // Alt Zemin Yansıması
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(cx, cy, sphereRadius, 0, Math.PI * 2);
+      const bottomGrad = ctx.createLinearGradient(cx, cy, cx, cy + sphereRadius);
+      bottomGrad.addColorStop(0.8, 'transparent');
+      bottomGrad.addColorStop(1, 'rgba(255, 255, 255, 0.03)');
+      ctx.fillStyle = bottomGrad;
+      ctx.fill();
+      ctx.restore();
 
       smoothMouseX += (targetMouse.x - smoothMouseX) * 0.05;
       smoothMouseY += (targetMouse.y - smoothMouseY) * 0.05;
 
       time += ROTATION_SPEED;
+      const pulseTime = Date.now() * 0.002;
 
       const pLen = particles.length;
       for (let i = 0; i < pLen; i++) {
-        particles[i].update(time + smoothMouseX * 5, smoothMouseY * 5, width, height);
+        particles[i].update(
+          time + smoothMouseX * 0.25,
+          smoothMouseY * 0.25,
+          width,
+          height,
+          pulseTime
+        );
       }
 
       particles.sort((a, b) => b.zDepth - a.zDepth);
 
-      // Draw Lines
-      ctx.lineWidth = 0.5;
+      // KATMAN 3: NETWORK AĞI
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.lineWidth = 0.8;
+
       for (let i = 0; i < pLen; i++) {
         const p1 = particles[i];
         if (p1.scale <= 0) continue;
@@ -169,18 +232,20 @@ export function LambdaHero() {
           if (distSq < maxDistSq) {
             const dist = Math.sqrt(distSq);
             const alpha = (1 - dist / maxDist) * p1.scale;
+            const pulse = (Math.sin(pulseTime + i) + 1) * 0.5;
+            const dynamicAlpha = alpha * (0.5 + pulse * 0.5);
 
-            if (alpha > 0.01) {
+            if (dynamicAlpha > 0.03) {
               ctx.beginPath();
               ctx.moveTo(p1.sx, p1.sy);
               ctx.lineTo(p2.sx, p2.sy);
 
               if (p1.type === 'red' || p2.type === 'red') {
-                ctx.strokeStyle = `rgba(220, 38, 38, ${alpha * 0.4})`; // 0.8'den 0.4'e düşürdük
+                ctx.strokeStyle = `rgba(255, 50, 100, ${dynamicAlpha * 0.06})`;
               } else if (p1.type === 'blue' || p2.type === 'blue') {
-                ctx.strokeStyle = `rgba(59, 130, 246, ${alpha * 0.4})`;
+                ctx.strokeStyle = `rgba(50, 220, 255, ${dynamicAlpha * 0.06})`;
               } else {
-                ctx.strokeStyle = `rgba(147, 51, 234, ${alpha * 0.2})`; // 0.3'ten 0.2'ye düşürdük
+                ctx.strokeStyle = `rgba(160, 100, 255, ${dynamicAlpha * 0.04})`;
               }
               ctx.stroke();
             }
@@ -188,64 +253,27 @@ export function LambdaHero() {
         }
       }
 
-      // Draw Nodes
+      // KATMAN 4: NOKTALAR
       for (let i = 0; i < pLen; i++) {
         const p = particles[i];
         if (p.scale <= 0) continue;
 
         const isAccent = p.type !== 'purple';
-        const radius = (isAccent ? 4 : 2.5) * p.scale; // 3/1.5'ten 4/2.5'e büyüttük
+        const radius = (isAccent ? 2.5 : 1.5) * p.scale;
 
         ctx.beginPath();
         ctx.arc(p.sx, p.sy, radius, 0, Math.PI * 2);
 
         if (p.type === 'red') {
-          ctx.fillStyle = `rgba(220, 38, 38, ${p.scale * 1.2})`; // Opacity artırdık
-          ctx.shadowBlur = 15 * p.scale; // 10'dan 15'e
-          ctx.shadowColor = '#DC2626';
+          ctx.fillStyle = `rgba(255, 60, 100, ${p.scale})`;
         } else if (p.type === 'blue') {
-          ctx.fillStyle = `rgba(59, 130, 246, ${p.scale * 1.2})`;
-          ctx.shadowBlur = 15 * p.scale;
-          ctx.shadowColor = '#3B82F6';
+          ctx.fillStyle = `rgba(60, 210, 255, ${p.scale})`;
         } else {
-          ctx.fillStyle = `rgba(160, 100, 255, ${p.scale})`; // 0.8'den 1'e
-          ctx.shadowBlur = 5 * p.scale; // Subtle glow ekledik
-          ctx.shadowColor = '#9333EA';
+          ctx.fillStyle = `rgba(170, 140, 255, ${p.scale})`;
         }
         ctx.fill();
       }
 
-      // Draw Subtle Purple Sphere - barely visible
-      const sphereRadius = isMobile ? 250 : 400;
-      const centerX = width / 2;
-      const centerY = height / 2;
-
-      // Very subtle outer glow
-      const outerGlow = ctx.createRadialGradient(centerX, centerY, sphereRadius * 0.95, centerX, centerY, sphereRadius * 1.2);
-      outerGlow.addColorStop(0, 'rgba(147, 51, 234, 0.08)');
-      outerGlow.addColorStop(0.5, 'rgba(147, 51, 234, 0.04)');
-      outerGlow.addColorStop(1, 'transparent');
-      ctx.fillStyle = outerGlow;
-      ctx.fillRect(0, 0, width, height);
-
-      // Minimal outline - barely visible
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, sphereRadius, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(147, 51, 234, 0.15)';
-      ctx.lineWidth = 1;
-      ctx.shadowBlur = 8;
-      ctx.shadowColor = 'rgba(147, 51, 234, 0.2)';
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-
-      // Center Glow
-      const gradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, 500);
-      gradient.addColorStop(0, 'rgba(147, 51, 234, 0.08)');
-      gradient.addColorStop(0.5, 'rgba(50, 20, 100, 0.02)');
-      gradient.addColorStop(1, 'transparent');
-      ctx.fillStyle = gradient;
-      ctx.globalCompositeOperation = 'lighter';
-      ctx.fillRect(0, 0, width, height);
       ctx.globalCompositeOperation = 'source-over';
     }
 
@@ -263,7 +291,7 @@ export function LambdaHero() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
-      style={{ background: '#0A0A0B' }}
+      style={{ background: '#030303' }}
     />
   );
 }
