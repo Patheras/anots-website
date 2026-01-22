@@ -26,9 +26,9 @@ export function LambdaHero() {
       if (!canvas) return;
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
-      // Küreyi daha büyük yap - ekranın %60'ı
-      sphereRadius = Math.min(width, height) * 0.60;
-      if (sphereRadius > 900) sphereRadius = 900; // Max limit artırıldı
+      // KÜRE BOYUTU: Ekranın %40'ı (Senin orijinal kodun)
+      sphereRadius = Math.min(width, height) * 0.40;
+      if (sphereRadius > 650) sphereRadius = 650;
       if (particles.length === 0) init();
     }
 
@@ -67,8 +67,8 @@ export function LambdaHero() {
       reset() {
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos((Math.random() * 2) - 1);
-        // Partiküller küre içinde kalacak - max radius = sphereRadius
-        const maxR = sphereRadius * 0.95; // Küre sınırının %95'i
+        // CLUSTER BOYUTU: 2.0 - Senin orijinal kodun
+        const maxR = sphereRadius * 2.0;
         const minR = 0;
         const radius = Math.cbrt(Math.random()) * (maxR - minR) + minR;
 
@@ -95,22 +95,15 @@ export function LambdaHero() {
         this.y += this.vy + Math.cos(time * this.pulseSpeed + this.pulseOffset) * 0.15;
         this.z += this.vz;
 
-        // KÜRE SINIRI KONTROLÜ - Partiküller küre içinde kalır
+        // SINIR KONTROLÜ - Senin orijinal kodun
         const distSq = this.x * this.x + this.y * this.y + this.z * this.z;
-        const limit = sphereRadius * 0.95; // Küre sınırının %95'i
-        const limitSq = limit * limit;
-
-        if (distSq > limitSq) {
-          // Partikül sınırı aştı - geri sek
+        const limit = sphereRadius * 2.0;
+        if (distSq > limit * limit) {
           const dist = Math.sqrt(distSq);
-          
-          // Hızı tersine çevir (elastik çarpışma)
-          this.vx = -this.vx * 0.8;
-          this.vy = -this.vy * 0.8;
-          this.vz = -this.vz * 0.8;
-          
-          // Pozisyonu sınır içine çek
-          const scale = limit / dist;
+          this.vx = -this.vx;
+          this.vy = -this.vy;
+          this.vz = -this.vz;
+          const scale = (limit - 1) / dist;
           this.x *= scale;
           this.y *= scale;
           this.z *= scale;
@@ -269,8 +262,8 @@ export function LambdaHero() {
         if (p.scale <= 0) continue;
 
         const isAccent = p.type !== 'purple';
-        // Node boyutları %50 büyütüldü
-        const radius = (isAccent ? 3.75 : 2.25) * p.scale; // 2.5->3.75, 1.5->2.25
+        // Senin orijinal node boyutların
+        const radius = (isAccent ? 2.5 : 1.5) * p.scale;
 
         ctx.beginPath();
         ctx.arc(p.sx, p.sy, radius, 0, Math.PI * 2);
