@@ -269,7 +269,8 @@ export function LambdaHero() {
         if (p.scale <= 0) continue;
 
         const isAccent = p.type !== 'purple';
-        const radius = (isAccent ? 2.5 : 1.5) * p.scale;
+        // Node boyutları %50 büyütüldü
+        const radius = (isAccent ? 3.75 : 2.25) * p.scale; // 2.5->3.75, 1.5->2.25
 
         ctx.beginPath();
         ctx.arc(p.sx, p.sy, radius, 0, Math.PI * 2);
