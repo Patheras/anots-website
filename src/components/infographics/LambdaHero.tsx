@@ -150,7 +150,12 @@ export function LambdaHero() {
       if (!canvas || !ctx) return;
       animationFrame = requestAnimationFrame(animate);
 
-      ctx.fillStyle = '#030303';
+      // Subtle gradient background - düz siyah yerine
+      const bgGradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height));
+      bgGradient.addColorStop(0, '#0a0a0f'); // Merkez hafif mor-siyah
+      bgGradient.addColorStop(0.5, '#050508'); // Orta koyu
+      bgGradient.addColorStop(1, '#030303'); // Kenarlar tam siyah
+      ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, width, height);
 
       const cx = width / 2;
