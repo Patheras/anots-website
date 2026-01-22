@@ -66,7 +66,8 @@ export function LambdaHero() {
       reset() {
         const theta = Math.random() * Math.PI * 2;
         const phi = Math.acos((Math.random() * 2) - 1);
-        const maxR = sphereRadius * 2.0;
+        // Partiküller küre içinde kalacak - max radius = sphereRadius
+        const maxR = sphereRadius * 0.95; // Küre sınırının %95'i
         const minR = 0;
         const radius = Math.cbrt(Math.random()) * (maxR - minR) + minR;
 
@@ -93,14 +94,22 @@ export function LambdaHero() {
         this.y += this.vy + Math.cos(time * this.pulseSpeed + this.pulseOffset) * 0.15;
         this.z += this.vz;
 
+        // KÜRE SINIRI KONTROLÜ - Partiküller küre içinde kalır
         const distSq = this.x * this.x + this.y * this.y + this.z * this.z;
-        const limit = sphereRadius * 2.0;
-        if (distSq > limit * limit) {
+        const limit = sphereRadius * 0.95; // Küre sınırının %95'i
+        const limitSq = limit * limit;
+
+        if (distSq > limitSq) {
+          // Partikül sınırı aştı - geri sek
           const dist = Math.sqrt(distSq);
-          this.vx = -this.vx;
-          this.vy = -this.vy;
-          this.vz = -this.vz;
-          const scale = (limit - 1) / dist;
+          
+          // Hızı tersine çevir (elastik çarpışma)
+          this.vx = -this.vx * 0.8;
+          this.vy = -this.vy * 0.8;
+          this.vz = -this.vz * 0.8;
+          
+          // Pozisyonu sınır içine çek
+          const scale = limit / dist;
           this.x *= scale;
           this.y *= scale;
           this.z *= scale;
