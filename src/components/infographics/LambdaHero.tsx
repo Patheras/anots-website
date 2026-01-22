@@ -26,8 +26,9 @@ export function LambdaHero() {
       if (!canvas) return;
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
-      sphereRadius = Math.min(width, height) * 0.40;
-      if (sphereRadius > 650) sphereRadius = 650;
+      // Küreyi daha büyük yap - ekranın %60'ı
+      sphereRadius = Math.min(width, height) * 0.60;
+      if (sphereRadius > 900) sphereRadius = 900; // Max limit artırıldı
       if (particles.length === 0) init();
     }
 
