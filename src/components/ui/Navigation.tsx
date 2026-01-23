@@ -5,7 +5,22 @@ import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { Button } from './button';
 
-const navLinks = [
+type NavLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+  dropdown?: {
+    category: string;
+    items: {
+      label: string;
+      description: string;
+      href: string;
+      external?: boolean;
+    }[];
+  }[];
+};
+
+const navLinks: NavLink[] = [
   { label: 'Home', href: '/' },
   { 
     label: 'Features', 
