@@ -113,19 +113,19 @@ export function AnotExplainer({ className = '' }: AnotExplainerProps) {
     <Tooltip
       className={className}
       content={
-        <div className="space-y-4">
-          <div className="font-semibold text-base text-[#FAFAFA] tracking-normal">
+        <div className="space-y-5">
+          <div className="text-base text-[#FAFAFA] tracking-normal leading-relaxed">
             What's an ANOT?
           </div>
-          <div className="text-sm text-[#A1A1AA] leading-relaxed tracking-wide">
+          <div className="text-sm text-[#A1A1AA] leading-loose tracking-wide">
             ANOT = Autonomous Narrative Orchestration Task
           </div>
-          <div className="text-sm text-[#D4D4D8] leading-relaxed tracking-normal">
+          <div className="text-sm text-[#D4D4D8] leading-loose tracking-normal">
             The atomic unit of AI-powered marketing. Each ANOT is a self-contained automation that runs after your approval.
           </div>
-          <div className="flex items-start gap-2 pt-3 border-t border-white/10">
-            <Sparkles className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
-            <div className="text-sm text-[#A1A1AA] leading-relaxed tracking-normal">
+          <div className="flex items-start gap-3 pt-4 border-t border-white/10">
+            <Sparkles className="h-4 w-4 text-purple-400 flex-shrink-0 mt-1" />
+            <div className="text-sm text-[#A1A1AA] leading-loose tracking-normal">
               Example: "Post to Instagram daily at 10am"
             </div>
           </div>
