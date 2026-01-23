@@ -2,11 +2,12 @@
   <!-- ΛNOTS Logotype (Lambda replaces A, no backslash) -->
   <text x="8" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#FAFAFA" filter="url(#glow)">ΛNOTS</text>
   
-  <!-- Glow Filter -->
+  <!-- Glow Filter - Stronger -->
   <defs>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
+        <feMergeNode in="coloredBlur"/>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>

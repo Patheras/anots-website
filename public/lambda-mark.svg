@@ -23,10 +23,11 @@
       <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0"/>
     </radialGradient>
     
-    <!-- Text Glow Filter -->
+  <!-- Text Glow Filter - Stronger -->
     <filter id="glow">
-      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
       <feMerge>
+        <feMergeNode in="coloredBlur"/>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
