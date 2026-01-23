@@ -37,30 +37,30 @@ export function ScrollDrivenImage({ src, alt, className = '' }: ScrollDrivenImag
 
   // Animation stages based on scroll progress
   const getTransform = () => {
-    if (scrollProgress < 0.3) {
-      // Stage 1: Start full size and flat (frontal view)
-      const scale = 1.0 - (scrollProgress / 0.3) * 0.5; // 1.0 to 0.5
-      const rotateX = (scrollProgress / 0.3) * 25; // 0 to 25deg
-      const rotateY = (scrollProgress / 0.3) * 35; // 0 to 35deg (right side view)
-      const rotateZ = (scrollProgress / 0.3) * -3; // 0 to -3deg
+    if (scrollProgress < 0.4) {
+      // Stage 1: Start full size, gradually shrink and add subtle rotation
+      const scale = 1.0 - (scrollProgress / 0.4) * 0.3; // 1.0 to 0.7
+      const rotateX = (scrollProgress / 0.4) * 12; // 0 to 12deg (subtle tilt)
+      const rotateY = (scrollProgress / 0.4) * 15; // 0 to 15deg (slight right turn)
+      const rotateZ = (scrollProgress / 0.4) * -2; // 0 to -2deg
       return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
-    } else if (scrollProgress < 0.6) {
-      // Stage 2: Continue shrinking and rotating to isometric right view
-      const localProgress = (scrollProgress - 0.3) / 0.3;
-      const scale = 0.5 - localProgress * 0.25; // 0.5 to 0.25
-      const rotateX = 25 + localProgress * 20; // 25 to 45deg
-      const rotateY = 35 + localProgress * 10; // 35 to 45deg (more side view)
-      const rotateZ = -3 - localProgress * 2; // -3 to -5deg
-      const translateY = -localProgress * 400; // Start scrolling through content
+    } else if (scrollProgress < 0.7) {
+      // Stage 2: Continue subtle rotation, scroll through content
+      const localProgress = (scrollProgress - 0.4) / 0.3;
+      const scale = 0.7 - localProgress * 0.1; // 0.7 to 0.6
+      const rotateX = 12 + localProgress * 3; // 12 to 15deg
+      const rotateY = 15 + localProgress * 5; // 15 to 20deg
+      const rotateZ = -2;
+      const translateY = -localProgress * 300; // Scroll through content
       return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
     } else {
-      // Stage 3: Settled in isometric view, scroll through content
-      const localProgress = (scrollProgress - 0.6) / 0.4;
-      const scale = 0.25;
-      const rotateX = 45;
-      const rotateY = 45; // Right side isometric view
-      const rotateZ = -5;
-      const translateY = -400 - localProgress * 400; // Continue scrolling
+      // Stage 3: Settled view, continue scrolling
+      const localProgress = (scrollProgress - 0.7) / 0.3;
+      const scale = 0.6;
+      const rotateX = 15;
+      const rotateY = 20; // Subtle right side view
+      const rotateZ = -2;
+      const translateY = -300 - localProgress * 300;
       return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
     }
   };
