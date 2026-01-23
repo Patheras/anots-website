@@ -1,0 +1,18 @@
+<svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lambda and Backslash Symbol -->
+  <text x="8" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="url(#lambdaGradient)">Λ\</text>
+  
+  <!-- ANOTS Text -->
+  <text x="48" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FAFAFA">
+    ANOTS
+  </text>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="lambdaGradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+</svg>

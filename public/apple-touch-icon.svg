@@ -1,4 +1,17 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="180" height="180" rx="40" fill="#5E6AD2"/>
-  <path d="M90 45L55 135H75L90 90L105 135H125L90 45Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Background with Gradient -->
+  <rect width="180" height="180" rx="40" fill="url(#bgGradient)"/>
+  
+  <!-- Lambda and Backslash with Inter Font -->
+  <text x="90" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" text-anchor="middle" fill="white">Λ\</text>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
 </svg>
+
