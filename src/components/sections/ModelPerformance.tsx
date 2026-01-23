@@ -118,6 +118,9 @@ export function ModelPerformance() {
                     <div className="text-xs text-[#A1A1AA]">
                       <span className="text-[#10B981]">Core:</span> Gemini 2.0 Flash
                     </div>
+                    <div className="text-xs text-[#A1A1AA]">
+                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -250,6 +253,9 @@ export function ModelPerformance() {
                     <div className="text-xs text-[#A1A1AA]">
                       <span className="text-[#10B981]">Core:</span> DeepSeek R1
                     </div>
+                    <div className="text-xs text-[#A1A1AA]">
+                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 1.5 Pro
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -381,7 +387,7 @@ export function ModelPerformance() {
                       <span className="text-[#10B981]">Core:</span> Claude 3.5 Sonnet Extended
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#F59E0B]">+</span> Gemini 1.5 Pro (Google)
+                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 1.5 Pro (Google)
                     </div>
                   </div>
                 </div>

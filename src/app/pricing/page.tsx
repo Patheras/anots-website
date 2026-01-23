@@ -43,7 +43,9 @@ export default function PricingPage() {
         </div>
       </div>
 
-      <ModelPerformance />
+      <div id="performance">
+        <ModelPerformance />
+      </div>
 
       <PricingTiers />
     </>
