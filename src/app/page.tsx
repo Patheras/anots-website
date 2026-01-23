@@ -213,13 +213,18 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            {/* Right: Browser Mockup with Perspective */}
+            {/* Right: Browser Mockup with Dramatic Perspective & Spotlight */}
             <ScrollReveal>
-              <div className="perspective-[2000px]">
+              <div className="relative perspective-[1200px]">
+                {/* Spotlight/Vignette Overlay */}
+                <div className="absolute inset-0 pointer-events-none z-10" style={{
+                  background: 'radial-gradient(ellipse 60% 50% at 50% 40%, transparent 0%, rgba(10, 10, 11, 0.4) 50%, rgba(10, 10, 11, 0.9) 100%)',
+                }}></div>
+                
                 <div 
-                  className="browser-mockup overflow-hidden rounded-xl border border-[#1A1A1B] bg-[#111113] shadow-2xl transform-gpu"
+                  className="browser-mockup overflow-hidden rounded-xl border border-[#1A1A1B] bg-[#111113] shadow-2xl transform-gpu relative"
                   style={{
-                    transform: 'rotateY(-8deg) rotateX(8deg)',
+                    transform: 'rotateY(-25deg) rotateX(15deg) rotateZ(2deg)',
                     transformStyle: 'preserve-3d',
                   }}
                 >
@@ -241,7 +246,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  {/* Browser Content */}
+                  {/* Browser Content with Gradient Fade */}
                   <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '500px' }}>
                     <Image
                       src="/Brand-Room-All.png"
@@ -250,8 +255,19 @@ export default function Home() {
                       className="object-cover object-top"
                       priority
                     />
+                    {/* Gradient fade to background */}
+                    <div className="absolute inset-0 pointer-events-none" style={{
+                      background: 'linear-gradient(to bottom, transparent 20%, transparent 40%, rgba(10, 10, 11, 0.3) 70%, rgba(10, 10, 11, 0.8) 95%, rgba(10, 10, 11, 1) 100%)',
+                    }}></div>
                   </div>
                 </div>
+                
+                {/* Edge blur effect */}
+                <div className="absolute inset-0 pointer-events-none" style={{
+                  backdropFilter: 'blur(0px)',
+                  WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 80%)',
+                  maskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 80%)',
+                }}></div>
               </div>
             </ScrollReveal>
           </div>
