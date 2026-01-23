@@ -234,13 +234,14 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                {/* Browser Content */}
-                <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '500px' }}>
+                {/* Browser Content - Full Height */}
+                <div className="relative w-full bg-[#0A0A0B]">
                   <Image
                     src="/Brand-Room-All.png"
                     alt="ANOTS Brand Room - MAGIC Import Interface"
-                    fill
-                    className="object-cover object-top"
+                    width={1920}
+                    height={3000}
+                    className="w-full h-auto"
                     priority
                   />
                 </div>
