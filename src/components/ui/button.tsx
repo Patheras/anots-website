@@ -9,8 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        primary: "bg-[#5E6AD2] text-white hover:bg-[#4E5AC2] active:bg-[#4E5AC2] shadow-lg shadow-purple-500/20 anots-hover",
-        magic: "group relative overflow-hidden bg-gradient-to-r from-[#5E6AD2] via-[#7C85E3] to-[#5E6AD2] bg-[length:200%_100%] text-white shadow-[0_0_16px_-4px_rgba(255,255,255,0.3)] hover:shadow-[0_0_24px_-6px_rgba(255,255,255,0.6)] hover:bg-[position:100%_0] hover:scale-[1.02] transition-all duration-500 disabled:hover:shadow-[0_0_16px_-4px_rgba(255,255,255,0.3)] disabled:hover:scale-100",
+        primary: "group relative overflow-hidden bg-[#0A0A0B] border border-white/10 text-white shadow-[0_0_16px_-4px_rgba(255,255,255,0.2)] hover:shadow-[0_0_24px_-6px_rgba(255,255,255,0.4)] hover:border-white/20 hover:scale-[1.02] transition-all duration-500",
+        magic: "group relative overflow-hidden bg-gradient-to-r from-[#5E6AD2] via-[#7C85E3] to-[#5E6AD2] bg-[length:200%_100%] text-white shadow-[0_0_16px_-4px_rgba(94,106,210,0.4)] hover:shadow-[0_0_24px_-6px_rgba(94,106,210,0.6)] hover:bg-[position:100%_0] hover:scale-[1.02] transition-all duration-500 disabled:hover:shadow-[0_0_16px_-4px_rgba(94,106,210,0.4)] disabled:hover:scale-100",
         secondary: "bg-transparent border border-white/20 text-[#D4D4D8] hover:border-[#5E6AD2] hover:text-[#FAFAFA] anots-hover",
         ghost: "bg-transparent text-[#D4D4D8] hover:bg-[#1A1A1B] hover:text-[#FAFAFA]",
       },
@@ -41,8 +41,8 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button"
 
-  // Magic variant with shimmer effect
-  if (variant === "magic") {
+  // Primary and Magic variants with shimmer effect
+  if (variant === "primary" || variant === "magic") {
     return (
       <Comp
         data-slot="button"
@@ -65,7 +65,7 @@ function Button({
         </span>
         
         {/* Border glow */}
-        <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-2 ring-white/20" />
+        <div className={`absolute inset-0 ${variant === "primary" ? "rounded-md" : "rounded-2xl"} opacity-0 group-hover:opacity-100 transition-opacity duration-500 ring-2 ${variant === "magic" ? "ring-[#5E6AD2]/30" : "ring-white/20"}`} />
       </Comp>
     )
   }
