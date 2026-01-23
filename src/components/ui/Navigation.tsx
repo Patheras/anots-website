@@ -202,7 +202,7 @@ export function Navigation() {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA] focus:outline-none focus:ring-2 focus:ring-[#5E6AD2]"
+            className="md:hidden inline-flex items-center justify-center rounded-md min-w-[44px] min-h-[44px] p-2 text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA] focus:outline-none focus:ring-2 focus:ring-[#5E6AD2]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -251,7 +251,7 @@ export function Navigation() {
                           key={item.label}
                           href={item.href}
                           {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                          className="block rounded-md px-3 py-2 text-sm text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
+                          className="block rounded-md px-3 py-3 min-h-[44px] text-sm text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           <div className="font-medium">{item.label}</div>
@@ -267,7 +267,7 @@ export function Navigation() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block rounded-md px-3 py-2 text-base font-medium text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
+                  className="block rounded-md px-3 py-3 min-h-[44px] text-base font-medium text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
                 >
                   {link.label}
                 </a>
@@ -275,7 +275,7 @@ export function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`block rounded-md px-3 py-2 text-base font-medium transition-colors ${
+                  className={`block rounded-md px-3 py-3 min-h-[44px] text-base font-medium transition-colors ${
                     pathname === link.href
                       ? 'bg-[#1A1A1B] text-[#5E6AD2]'
                       : 'text-[#D4D4D8] hover:bg-[#1A1A1B] hover:text-[#FAFAFA]'
@@ -291,12 +291,12 @@ export function Navigation() {
             <div className="space-y-2 pt-4 border-t border-[#1A1A1B]">
               <a
                 href="https://app.anots.com/login"
-                className="block rounded-md px-3 py-2 text-base font-medium text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
+                className="block rounded-md px-3 py-3 min-h-[44px] text-base font-medium text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
               >
                 Log in
               </a>
               <a href="https://app.anots.com/signup" className="block">
-                <Button variant="primary" size="md" className="w-full">
+                <Button variant="primary" size="md" className="w-full min-h-[44px]">
                   Sign Up
                 </Button>
               </a>

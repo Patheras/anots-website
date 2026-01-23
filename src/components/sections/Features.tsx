@@ -3,6 +3,7 @@
 import { type ReactNode } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
+import { Smartphone } from 'lucide-react';
 
 export interface Feature {
   title: string;
@@ -22,10 +23,27 @@ export function Features({ features, layout = 'grid', id }: FeaturesProps) {
     return (
       <section id={id} className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {/* Mobile-First Message */}
+          <ScrollReveal>
+            <div className="mb-12 sm:mb-16 text-center">
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-4 py-2 mb-4">
+                <Smartphone className="h-4 w-4 text-emerald-400" />
+                <span className="text-sm text-emerald-400 font-medium">Manage from anywhere</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#FAFAFA] leading-tight">
+                Full control from your phone
+              </h2>
+              <p className="mt-4 text-base sm:text-lg text-[#D4D4D8] max-w-2xl mx-auto">
+                Approve campaigns, track performance, and manage your AI team—all from your mobile device
+              </p>
+            </div>
+          </ScrollReveal>
+
+          {/* Responsive Grid: 1 col mobile, 2 col tablet, 3 col desktop */}
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {features.map((feature, index) => (
               <ScrollReveal key={index}>
-                <Card className="h-full">
+                <Card className="h-full hover:border-[#5E6AD2]/50 transition-all duration-300">
                   <CardHeader>
                     {feature.icon && (
                       <div className="mb-3 sm:mb-4 flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg bg-[#5E6AD2]/10">
