@@ -1,7 +1,35 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Black Square Background -->
-  <rect width="48" height="48" fill="#0A0A0B"/>
+  <!-- Gradient Background with Glow -->
+  <rect width="48" height="48" fill="url(#bgGradient)"/>
   
-  <!-- Lambda and Backslash - White -->
-  <text x="24" y="36" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FAFAFA">Λ\</text>
+  <!-- Subtle Glow Effect -->
+  <rect width="48" height="48" fill="url(#glowGradient)" opacity="0.3"/>
+  
+  <!-- Lambda and Backslash - White with Shadow -->
+  <text x="24" y="36" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" text-anchor="middle" fill="#FAFAFA" filter="url(#glow)">Λ\</text>
+  
+  <!-- Gradient and Filter Definitions -->
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0A0B"/>
+      <stop offset="50%" stop-color="#1A1A1F"/>
+      <stop offset="100%" stop-color="#0A0A0B"/>
+    </linearGradient>
+    
+    <!-- Glow Gradient -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Text Glow Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 </svg>

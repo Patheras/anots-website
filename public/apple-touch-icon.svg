@@ -1,8 +1,38 @@
 <svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Black Square Background -->
-  <rect width="180" height="180" fill="#0A0A0B"/>
+  <!-- Gradient Background with Glow -->
+  <rect width="180" height="180" fill="url(#bgGradient)"/>
   
-  <!-- Lambda and Backslash - White -->
-  <text x="90" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" text-anchor="middle" fill="#FAFAFA">Λ\</text>
+  <!-- Subtle Radial Glow -->
+  <rect width="180" height="180" fill="url(#glowGradient)" opacity="0.4"/>
+  
+  <!-- Lambda and Backslash - White with Glow -->
+  <text x="90" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" text-anchor="middle" fill="#FAFAFA" filter="url(#glow)">Λ\</text>
+  
+  <!-- Gradient and Filter Definitions -->
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A0A0B"/>
+      <stop offset="30%" stop-color="#1A1A1F"/>
+      <stop offset="70%" stop-color="#1A1A1F"/>
+      <stop offset="100%" stop-color="#0A0A0B"/>
+    </linearGradient>
+    
+    <!-- Radial Glow -->
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#5E6AD2" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Text Glow Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 </svg>
 

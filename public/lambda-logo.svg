@@ -1,9 +1,20 @@
 <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Lambda and Backslash Symbol - White -->
-  <text x="8" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#FAFAFA">Λ\</text>
+  <!-- Lambda and Backslash Symbol - White with Glow -->
+  <text x="8" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#FAFAFA" filter="url(#glow)">Λ\</text>
   
-  <!-- ANOTS Text - White -->
+  <!-- ΛNOTS Text (Lambda instead of A) - White -->
   <text x="48" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FAFAFA">
-    ANOTS
+    NOTS
   </text>
+  
+  <!-- Glow Filter -->
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
 </svg>
