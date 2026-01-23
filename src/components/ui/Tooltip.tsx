@@ -85,7 +85,7 @@ export function Tooltip({ children, content, className = '' }: TooltipProps) {
           ref={tooltipRef}
           id="tooltip-content"
           role="tooltip"
-          className={`absolute left-1/2 -translate-x-1/2 z-50 w-[280px] sm:w-[320px] px-4 py-3 bg-[#18181B] border border-white/10 rounded-lg shadow-xl backdrop-blur-xl ${
+          className={`absolute left-1/2 -translate-x-1/2 z-50 w-[280px] sm:w-[320px] px-5 py-4 bg-[#18181B] border border-white/10 rounded-lg shadow-xl ${
             position === 'top' ? 'bottom-full mb-2' : 'top-full mt-2'
           }`}
         >
@@ -113,18 +113,19 @@ export function AnotExplainer({ className = '' }: AnotExplainerProps) {
     <Tooltip
       className={className}
       content={
-        <div className="space-y-2">
-          <div className="font-semibold text-sm text-[#FAFAFA]">What's an ANOT?</div>
-          <div className="text-xs text-zinc-400">
+        <div className="space-y-4">
+          <div className="font-semibold text-base text-[#FAFAFA] tracking-normal">
+            What's an ANOT?
+          </div>
+          <div className="text-sm text-[#A1A1AA] leading-relaxed tracking-wide">
             ANOT = Autonomous Narrative Orchestration Task
           </div>
-          <div className="text-xs text-zinc-300 leading-relaxed">
-            The atomic unit of AI-powered marketing. Each ANOT is a self-contained automation
-            that runs after your approval.
+          <div className="text-sm text-[#D4D4D8] leading-relaxed tracking-normal">
+            The atomic unit of AI-powered marketing. Each ANOT is a self-contained automation that runs after your approval.
           </div>
-          <div className="flex items-start gap-2 pt-2 border-t border-white/10">
+          <div className="flex items-start gap-2 pt-3 border-t border-white/10">
             <Sparkles className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
-            <div className="text-xs text-zinc-500">
+            <div className="text-sm text-[#A1A1AA] leading-relaxed tracking-normal">
               Example: "Post to Instagram daily at 10am"
             </div>
           </div>
