@@ -1,11 +1,6 @@
 <svg width="120" height="40" viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Lambda and Backslash Symbol - White with Glow -->
-  <text x="8" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#FAFAFA" filter="url(#glow)">Λ\</text>
-  
-  <!-- ΛNOTS Text (Lambda instead of A) - White -->
-  <text x="48" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="700" fill="#FAFAFA">
-    NOTS
-  </text>
+  <!-- ΛNOTS Logotype (Lambda replaces A, no backslash) -->
+  <text x="8" y="30" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#FAFAFA" filter="url(#glow)">ΛNOTS</text>
   
   <!-- Glow Filter -->
   <defs>
