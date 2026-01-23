@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, PlayCircle } from 'lucide-react';
+import { ArrowRight, PlayCircle, CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { LambdaHero } from '@/components/infographics/LambdaHero';
@@ -103,6 +103,16 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
                   {secondaryCTA.text}
                 </Button>
               </Link>
+            </div>
+          </FadeIn>
+
+          {/* Pricing Transparency Badge */}
+          <FadeIn delay={400}>
+            <div className="mt-8 flex items-center justify-center gap-2">
+              <CheckCircle className="h-4 w-4 text-emerald-400" />
+              <span className="text-sm text-zinc-400">
+                Starting at $0/mo • No credit card required
+              </span>
             </div>
           </FadeIn>
         </div>

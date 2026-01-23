@@ -8,7 +8,7 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
 
 ## Tasks
 
-- [ ] 1. Hero Section Enhancement
+- [x] 1. Hero Section Enhancement
   
   **Goal:** Improve value proposition clarity, add ANOT explainer, enhance CTA hierarchy, and add pricing transparency.
   
@@ -102,7 +102,7 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
     - Hover states work correctly
     - Icons are properly sized and positioned
   
-  - [ ] 1.4 Add Pricing Transparency Badge
+  - [x] 1.4 Add Pricing Transparency Badge
     
     **Goal:** Add reassuring pricing badge below CTAs.
     
