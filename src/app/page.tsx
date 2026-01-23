@@ -6,6 +6,7 @@ import { Features } from "@/components/sections/Features";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { StickyCTA } from "@/components/ui/StickyCTA";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { ScrollDrivenImage } from "@/components/animations/ScrollDrivenImage";
 import { Card, CardContent } from "@/components/ui/card";
 import { QubikIcon, ThemisIcon, CoreIcon } from "@/components/infographics/AgentIcons";
 import { 
@@ -165,56 +166,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* See It In Action Section */}
-      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* See It In Action Section - Scroll Driven Animation */}
+      <section className="bg-[#0A0A0B]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-[#FAFAFA]">
                 This is How ANOTS Works
               </h2>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8] px-4 sm:px-0">
-                Watch Qubik propose, Themis review, and Core synthesize—all before you approve
+                Watch the Brand Room MAGIC import in action
               </p>
             </div>
           </ScrollReveal>
+        </div>
 
-          <ScrollReveal>
-            <div className="perspective-container">
-              {/* Browser Window Mockup with Perspective */}
-              <div className="browser-mockup mx-auto max-w-5xl overflow-hidden rounded-lg sm:rounded-2xl border border-[#1A1A1B] bg-[#111113]">
-                {/* Browser Chrome */}
-                <div className="flex items-center gap-2 border-b border-[#1A1A1B] bg-[#0F0F10] px-3 sm:px-4 py-2 sm:py-3">
-                  {/* Traffic Lights */}
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#FF5F57]"></div>
-                    <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#FEBC2E]"></div>
-                    <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#28C840]"></div>
-                  </div>
-                  {/* URL Bar */}
-                  <div className="ml-2 sm:ml-4 flex-1 rounded-md bg-[#1A1A1B] px-2 sm:px-4 py-1 sm:py-1.5">
-                    <div className="flex items-center gap-1.5 sm:gap-2">
-                      <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#71717A]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                      </svg>
-                      <span className="text-[10px] sm:text-xs text-[#A1A1AA] truncate">app.anots.com/brand-room</span>
-                    </div>
-                  </div>
-                </div>
-                {/* Browser Content */}
-                <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '500px', maxHeight: '70vh' }}>
-                  <Image
-                    src="/magic-preview.png"
-                    alt="ANOTS Brand Room - MAGIC Import Interface"
-                    fill
-                    className="object-cover object-top"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
+        {/* Scroll-Driven Animation */}
+        <ScrollDrivenImage 
+          src="/Brand-Room-All.png"
+          alt="ANOTS Brand Room - MAGIC Import Full Interface"
+        />
 
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
           <ScrollReveal>
             <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               {/* Qubik - Purple */}
