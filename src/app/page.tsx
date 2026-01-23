@@ -6,6 +6,7 @@ import { Features } from "@/components/sections/Features";
 import { PricingTiers } from "@/components/sections/PricingTiers";
 import { StickyCTA } from "@/components/ui/StickyCTA";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
+import { HorizontalScrollSection } from "@/components/animations/HorizontalScrollSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { QubikIcon, ThemisIcon, CoreIcon } from "@/components/infographics/AgentIcons";
 import { 
@@ -421,7 +422,153 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Horizontal Scroll Section - Apple Style */}
+      <HorizontalScrollSection className="bg-[#0A0A0B]">
+        {/* Panel 1: What is an ANOT? */}
+        <section id="about" className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl w-full">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-[#FAFAFA]">
+                What is an ANOT?
+              </h2>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8] px-4 sm:px-0">
+                ANOT = Atomic Unit of Agency. It's the smallest independent marketing automation you can create.
+              </p>
+            </div>
+
+            <div className="mt-12 sm:mt-20 grid gap-6 sm:gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+              <Card>
+                <CardContent className="p-6 sm:p-8">
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#FAFAFA]">Examples of ANOTs</h3>
+                  <ul className="mt-4 sm:mt-6 space-y-3 sm:space-y-4 text-[#D4D4D8]">
+                    <li className="flex items-start">
+                      <svg className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-sm sm:text-base leading-relaxed">"Post to Instagram daily"</span>
+                    </li>
+                    <li className="flex items-start">
+                      <svg className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-sm sm:text-base leading-relaxed">"Write blog articles weekly"</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-6 sm:p-8">
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#FAFAFA]">Your AI Team</h3>
+                  <div className="mt-4 sm:mt-6 space-y-4 sm:space-y-6">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="glow-dot glow-dot-purple mt-1.5"></div>
+                      <div>
+                        <h4 className="text-sm sm:text-base font-semibold text-[#9333EA]">Qubik</h4>
+                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#D4D4D8]">Creative proposals</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="glow-dot glow-dot-red mt-1.5"></div>
+                      <div>
+                        <h4 className="text-sm sm:text-base font-semibold text-[#DC2626]">Themis</h4>
+                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#D4D4D8]">Risk analysis</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="glow-dot glow-dot-cyan mt-1.5"></div>
+                      <div>
+                        <h4 className="text-sm sm:text-base font-semibold text-[#06B6D4]">Core</h4>
+                        <p className="mt-1 text-xs sm:text-sm leading-relaxed text-[#D4D4D8]">Synthesis</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Panel 2: Brand Room */}
+        <section id="brand-room" className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-[#0F0F10]">
+          <div className="mx-auto max-w-7xl w-full">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-[#FAFAFA]">
+                How Brand Room Works
+              </h2>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8] px-4 sm:px-0">
+                AI extracts your brand intelligence automatically
+              </p>
+            </div>
+
+            <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <div className="linear-card hover-glow p-6">
+                <div className="icon-container w-10 h-10 mb-4">
+                  <svg className="w-5 h-5 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                  </svg>
+                </div>
+                <h3 className="text-base font-semibold text-[#FAFAFA] mb-2">Connect</h3>
+                <p className="text-sm text-secondary">Website, docs, social</p>
+              </div>
+
+              <div className="linear-card hover-glow p-6">
+                <div className="icon-container w-10 h-10 mb-4">
+                  <svg className="w-5 h-5 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                  </svg>
+                </div>
+                <h3 className="text-base font-semibold text-[#FAFAFA] mb-2">Extract</h3>
+                <p className="text-sm text-secondary">Logos, colors, fonts</p>
+              </div>
+
+              <div className="linear-card hover-glow p-6">
+                <div className="icon-container w-10 h-10 mb-4">
+                  <svg className="w-5 h-5 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                  </svg>
+                </div>
+                <h3 className="text-base font-semibold text-[#FAFAFA] mb-2">Review</h3>
+                <p className="text-sm text-secondary">AI Council validates</p>
+              </div>
+
+              <div className="linear-card hover-glow p-6">
+                <div className="icon-container w-10 h-10 mb-4">
+                  <svg className="w-5 h-5 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-base font-semibold text-[#FAFAFA] mb-2">Ready</h3>
+                <p className="text-sm text-secondary">Brand standards set</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Panel 3: FAQ Preview */}
+        <section className="w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-[#0A0A0B]">
+          <div className="mx-auto max-w-7xl w-full">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-[#FAFAFA]">
+                Ready to Start?
+              </h2>
+              <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8] px-4 sm:px-0">
+                Create your first ANOT in minutes
+              </p>
+              <div className="mt-8">
+                <a
+                  href="https://app.anots.com/signup"
+                  className="inline-flex items-center justify-center rounded-lg bg-[#5E6AD2] px-8 py-3 text-base font-semibold text-white hover:bg-[#7C85E3] transition-colors"
+                >
+                  Start Free
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </HorizontalScrollSection>
+
+      {/* Continue with normal sections below */}
       <section id="about" className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
