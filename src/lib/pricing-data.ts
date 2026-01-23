@@ -17,7 +17,7 @@ export interface PricingTierData {
   cta: {
     text: string;
     href: string;
-    variant: 'primary' | 'secondary';
+    variant: 'primary' | 'secondary' | 'magic';
   };
   recommended: boolean;
 }
@@ -40,7 +40,7 @@ export const pricingTiers: PricingTierData[] = [
       { name: 'Premium AI models', included: false },
       { name: 'Cost estimates', included: false },
     ],
-    cta: { text: 'Start Free', href: 'https://app.anots.com/signup', variant: 'secondary' },
+    cta: { text: 'Start Free', href: 'https://app.anots.com/signup', variant: 'primary' },
     recommended: false,
   },
   {
@@ -60,7 +60,7 @@ export const pricingTiers: PricingTierData[] = [
       { name: 'Advanced analytics', included: true },
       { name: 'BYOK (Bring Your Own Keys)', included: false },
     ],
-    cta: { text: 'Go Pro', href: 'https://app.anots.com/signup?plan=pro', variant: 'primary' },
+    cta: { text: 'Go Pro', href: 'https://app.anots.com/signup?plan=pro', variant: 'magic' },
     recommended: true,
   },
   {
