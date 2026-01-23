@@ -5,10 +5,10 @@
   <!-- Subtle Radial Glow -->
   <rect width="180" height="180" fill="url(#glowGradient)" opacity="0.4"/>
   
-  <!-- Lambda and Backslash - White with Glow -->
-  <text x="90" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" text-anchor="middle" fill="#FAFAFA" filter="url(#glow)">Λ\</text>
+  <!-- Lambda and Backslash - White -->
+  <text x="90" y="120" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="80" font-weight="700" text-anchor="middle" fill="#FAFAFA">Λ\</text>
   
-  <!-- Gradient and Filter Definitions -->
+  <!-- Gradient Definitions -->
   <defs>
     <!-- Background Gradient -->
     <linearGradient id="bgGradient" x1="0" y1="0" x2="180" y2="180" gradientUnits="userSpaceOnUse">
@@ -24,16 +24,6 @@
       <stop offset="50%" stop-color="#5E6AD2" stop-opacity="0.1"/>
       <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0"/>
     </radialGradient>
-    
-    <!-- Text Glow Filter - Stronger -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 </svg>
 
