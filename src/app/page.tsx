@@ -4,6 +4,7 @@ import { Navigation } from "@/components/ui/Navigation";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
 import { PricingTiers } from "@/components/sections/PricingTiers";
+import { StickyCTA } from "@/components/ui/StickyCTA";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { QubikIcon, ThemisIcon, CoreIcon } from "@/components/infographics/AgentIcons";
@@ -897,6 +898,8 @@ export default function Home() {
       </section>
 
       <PricingTiers />
+
+      <StickyCTA />
     </>
   );
 }
