@@ -119,7 +119,10 @@ export function ModelPerformance() {
                       <span className="text-[#10B981]">Core:</span> Gemini 2.0 Flash
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash
+                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                    </div>
+                    <div className="text-xs text-[#71717A] mt-2">
+                      (3 imports/month)
                     </div>
                   </div>
                 </div>
@@ -254,7 +257,10 @@ export function ModelPerformance() {
                       <span className="text-[#10B981]">Core:</span> DeepSeek R1
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 1.5 Pro
+                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                    </div>
+                    <div className="text-xs text-[#71717A] mt-2">
+                      (10 imports/month)
                     </div>
                   </div>
                 </div>
@@ -387,7 +393,10 @@ export function ModelPerformance() {
                       <span className="text-[#10B981]">Core:</span> Claude 3.5 Sonnet Extended
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 1.5 Pro (Google)
+                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                    </div>
+                    <div className="text-xs text-[#71717A] mt-2">
+                      (Unlimited imports)
                     </div>
                   </div>
                 </div>
