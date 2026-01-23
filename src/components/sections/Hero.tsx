@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { ArrowRight, PlayCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { LambdaHero } from '@/components/infographics/LambdaHero';
@@ -83,12 +84,22 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
           <FadeIn delay={300}>
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <a href={primaryCTA.href} className="w-full sm:w-auto">
-                <Button variant="primary" size="lg" className="w-full sm:w-auto">
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  className="w-full sm:w-auto px-8 py-4 font-bold min-h-[44px]"
+                >
                   {primaryCTA.text}
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </a>
               <Link href={secondaryCTA.href} className="w-full sm:w-auto">
-                <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+                <Button 
+                  variant="secondary" 
+                  size="lg" 
+                  className="w-full sm:w-auto min-h-[44px]"
+                >
+                  <PlayCircle className="mr-2 h-5 w-5" />
                   {secondaryCTA.text}
                 </Button>
               </Link>

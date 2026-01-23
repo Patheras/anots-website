@@ -71,7 +71,7 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
     - InfoIcon is visible and purple-colored
     - Tooltip styling matches design system (dark theme)
   
-  - [ ] 1.3 Improve CTA Visual Hierarchy
+  - [x] 1.3 Improve CTA Visual Hierarchy
     
     **Goal:** Make primary CTA dominant and secondary CTA subdued.
     
