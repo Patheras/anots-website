@@ -69,13 +69,13 @@ export function StickyCTA() {
 
           {/* Right: CTA Button */}
           <Button
-            variant="primary"
+            variant="magic"
             size="lg"
             onClick={handleClick}
-            className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8"
+            className="w-full sm:w-auto min-h-[44px]"
           >
             Start Free
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="h-5 w-5" />
           </Button>
         </div>
       </div>

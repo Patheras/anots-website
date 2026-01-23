@@ -85,12 +85,12 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <a href={primaryCTA.href} className="w-full sm:w-auto">
                 <Button 
-                  variant="primary" 
-                  size="lg" 
-                  className="w-full sm:w-auto px-8 py-4 font-bold min-h-[44px]"
+                  variant="magic" 
+                  size="xl" 
+                  className="w-full sm:w-auto font-bold min-h-[44px]"
                 >
                   {primaryCTA.text}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  <ArrowRight className="h-5 w-5" />
                 </Button>
               </a>
               <Link href={secondaryCTA.href} className="w-full sm:w-auto">
