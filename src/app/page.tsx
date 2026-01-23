@@ -165,92 +165,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* See It In Action Section */}
+      {/* See It In Action Section - Linear Style */}
       <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-[#FAFAFA]">
-                This is How ANOTS Works
-              </h2>
-              <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8] px-4 sm:px-0">
-                Watch the Brand Room MAGIC import in action
-              </p>
-            </div>
-          </ScrollReveal>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: Text Content */}
+            <ScrollReveal>
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#1A1A1B] bg-[#0F0F10] px-3 py-1 mb-6">
+                  <div className="h-1.5 w-1.5 rounded-full bg-[#10B981]"></div>
+                  <span className="text-xs text-[#A1A1AA]">Brand Intelligence</span>
+                </div>
+                
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#FAFAFA] leading-tight mb-6">
+                  Extract your brand DNA automatically
+                </h2>
+                
+                <p className="text-lg text-[#D4D4D8] leading-relaxed mb-8">
+                  <span className="text-[#FAFAFA] font-semibold">Connect your sources.</span> Import your website, upload brand documents, or link social media. The Brand Room AI Council extracts logos, colors, fonts, and brand voice—all automatically.
+                </p>
 
-          <ScrollReveal>
-            <div className="mt-12 sm:mt-16">
-              {/* Browser Window Mockup */}
-              <div className="browser-mockup mx-auto max-w-5xl overflow-hidden rounded-xl border border-[#1A1A1B] bg-[#111113] shadow-2xl">
-                {/* Browser Chrome */}
-                <div className="flex items-center gap-2 border-b border-[#1A1A1B] bg-[#0F0F10] px-3 sm:px-4 py-2 sm:py-3">
-                  {/* Traffic Lights */}
-                  <div className="flex items-center gap-1.5 sm:gap-2">
-                    <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#FF5F57]"></div>
-                    <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#FEBC2E]"></div>
-                    <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-[#28C840]"></div>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="glow-dot glow-dot-purple mt-1.5"></div>
+                    <div>
+                      <h4 className="text-base font-semibold text-[#FAFAFA]">Multi-Source Intelligence</h4>
+                      <p className="text-sm text-[#A1A1AA] mt-1">Website, documents (PDF/DOCX/PPTX), and Meta social accounts</p>
+                    </div>
                   </div>
-                  {/* URL Bar */}
-                  <div className="ml-2 sm:ml-4 flex-1 rounded-md bg-[#1A1A1B] px-2 sm:px-4 py-1 sm:py-1.5">
-                    <div className="flex items-center gap-1.5 sm:gap-2">
-                      <svg className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[#71717A]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                      </svg>
-                      <span className="text-[10px] sm:text-xs text-[#A1A1AA] truncate">app.anots.com/brand-room</span>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="glow-dot glow-dot-red mt-1.5"></div>
+                    <div>
+                      <h4 className="text-base font-semibold text-[#FAFAFA]">AI Council Review</h4>
+                      <p className="text-sm text-[#A1A1AA] mt-1">Qubik, Themis, and Core validate and synthesize your brand standards</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="glow-dot glow-dot-cyan mt-1.5"></div>
+                    <div>
+                      <h4 className="text-base font-semibold text-[#FAFAFA]">Unified Brand Snapshot</h4>
+                      <p className="text-sm text-[#A1A1AA] mt-1">Smart conflict resolution across all sources with provenance tracking</p>
                     </div>
                   </div>
                 </div>
-                {/* Browser Content */}
-                <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '600px', maxHeight: '70vh' }}>
-                  <Image
-                    src="/Brand-Room-All.png"
-                    alt="ANOTS Brand Room - MAGIC Import Full Interface"
-                    fill
-                    className="object-cover object-top"
-                    priority
-                  />
-                </div>
               </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          <ScrollReveal>
-            <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {/* Qubik - Purple */}
-              <div className="linear-card hover-glow p-6 relative">
-                <div className="glow-dot glow-dot-purple absolute top-6 right-6"></div>
-                <div>
-                  <h3 className="heading-md text-[#FAFAFA] mb-2">Qubik Proposes</h3>
-                  <p className="body-sm text-secondary">
-                    Creative proposals with content, visuals, and strategy
-                  </p>
+            {/* Right: Browser Mockup with Perspective */}
+            <ScrollReveal>
+              <div className="perspective-[2000px]">
+                <div 
+                  className="browser-mockup overflow-hidden rounded-xl border border-[#1A1A1B] bg-[#111113] shadow-2xl transform-gpu"
+                  style={{
+                    transform: 'rotateY(-8deg) rotateX(8deg)',
+                    transformStyle: 'preserve-3d',
+                  }}
+                >
+                  {/* Browser Chrome */}
+                  <div className="flex items-center gap-2 border-b border-[#1A1A1B] bg-[#0F0F10] px-3 py-2">
+                    {/* Traffic Lights */}
+                    <div className="flex items-center gap-1.5">
+                      <div className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></div>
+                      <div className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></div>
+                      <div className="h-2.5 w-2.5 rounded-full bg-[#28C840]"></div>
+                    </div>
+                    {/* URL Bar */}
+                    <div className="ml-3 flex-1 rounded-md bg-[#1A1A1B] px-3 py-1">
+                      <div className="flex items-center gap-1.5">
+                        <svg className="h-2.5 w-2.5 text-[#71717A]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                        </svg>
+                        <span className="text-[9px] text-[#A1A1AA] truncate">app.anots.com/brand-room</span>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Browser Content */}
+                  <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '500px' }}>
+                    <Image
+                      src="/Brand-Room-All.png"
+                      alt="ANOTS Brand Room - MAGIC Import Interface"
+                      fill
+                      className="object-cover object-top"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
-
-              {/* Themis - Red */}
-              <div className="linear-card hover-glow p-6 relative">
-                <div className="glow-dot glow-dot-red absolute top-6 right-6"></div>
-                <div>
-                  <h3 className="heading-md text-[#FAFAFA] mb-2">Themis Reviews</h3>
-                  <p className="body-sm text-secondary">
-                    Risk analysis, cost estimates, and constraint validation
-                  </p>
-                </div>
-              </div>
-
-              {/* Core - Cyan */}
-              <div className="linear-card hover-glow p-6 relative">
-                <div className="glow-dot glow-dot-cyan absolute top-6 right-6"></div>
-                <div>
-                  <h3 className="heading-md text-[#FAFAFA] mb-2">Core Synthesizes</h3>
-                  <p className="body-sm text-secondary">
-                    Combined perspective and clear recommendation for you
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
