@@ -307,7 +307,7 @@ export default function UseCasesPage() {
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <a href="https://app.anots.com/signup">
-                  <Button variant="primary" size="lg">
+                  <Button variant="magic" size="lg">
                     Start Free
                   </Button>
                 </a>

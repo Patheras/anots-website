@@ -193,7 +193,7 @@ export function Navigation() {
               Log in
             </a>
             <a href="https://app.anots.com/signup">
-              <Button variant="primary" size="sm">
+              <Button variant="magic" size="sm">
                 Sign Up
               </Button>
             </a>
@@ -296,7 +296,7 @@ export function Navigation() {
                 Log in
               </a>
               <a href="https://app.anots.com/signup" className="block">
-                <Button variant="primary" size="md" className="w-full min-h-[44px]">
+                <Button variant="magic" size="md" className="w-full min-h-[44px]">
                   Sign Up
                 </Button>
               </a>

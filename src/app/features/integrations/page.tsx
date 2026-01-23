@@ -276,8 +276,7 @@ export default function IntegrationsPage() {
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <a href="https://app.anots.com/signup">
-                  <Button variant="primary" size="lg">
-                    Start Free
+                  <Button variant="magic" size="lg">`n                    Start Free
                   </Button>
                 </a>
                 <Link href="/features">

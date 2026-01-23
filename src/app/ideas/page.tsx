@@ -332,7 +332,7 @@ export default function IdeasPage() {
                     "If you've heard of us, ANOTS is working."
                   </p>
                   <Link href="/use-cases">
-                    <Button variant="primary" size="lg">
+                    <Button variant="magic" size="lg">
                       See How We Do It
                     </Button>
                   </Link>
@@ -356,7 +356,7 @@ export default function IdeasPage() {
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <a href="https://app.anots.com/signup">
-                  <Button variant="primary" size="lg">
+                  <Button variant="magic" size="lg">
                     Start Building
                   </Button>
                 </a>

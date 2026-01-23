@@ -138,8 +138,7 @@ export default function AboutPage() {
               </p>
               <div className="flex items-center justify-center gap-4">
                 <a href="https://app.anots.com/signup">
-                  <Button variant="primary" size="lg">
-                    Start Your Own ANOTs
+                  <Button variant="magic" size="lg">`n                    Start Your Own ANOTs
                   </Button>
                 </a>
                 <Link href="/use-cases">
@@ -276,8 +275,7 @@ export default function AboutPage() {
               </p>
               <div className="mt-8">
                 <a href="https://app.anots.com/signup">
-                  <Button variant="primary" size="lg">
-                    Get Started Free
+                  <Button variant="magic" size="lg">`n                    Get Started Free
                   </Button>
                 </a>
               </div>
