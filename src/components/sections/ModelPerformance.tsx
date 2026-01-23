@@ -96,11 +96,11 @@ export function ModelPerformance() {
 
                   {/* Features */}
                   <div className="pt-4 border-t border-[#1A1A1B]">
-                    <div className="flex items-center gap-2 text-sm text-[#A1A1AA]">
+                    <div className="flex items-center gap-2 text-sm text-[#10B981]">
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span>No multimodal support</span>
+                      <span>Multimodal support</span>
                     </div>
                   </div>
                 </div>
@@ -110,16 +110,16 @@ export function ModelPerformance() {
                   <p className="text-xs text-[#71717A] mb-3">AI Models:</p>
                   <div className="space-y-2">
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#5E6AD2]">Qubik:</span> Gemini 2.0 Flash
+                      <span className="text-[#5E6AD2]">Qubik:</span> Gemini 2.5 Flash
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
                       <span className="text-[#EF4444]">Themis:</span> DeepSeek R1
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#10B981]">Core:</span> Gemini 2.0 Flash
+                      <span className="text-[#10B981]">Core:</span> DeepSeek R1
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 3 Pro, Gemini 2.5 Pro
                     </div>
                     <div className="text-xs text-[#71717A] mt-2">
                       (3 excavations/month)
@@ -248,16 +248,16 @@ export function ModelPerformance() {
                   <p className="text-xs text-[#71717A] mb-3">AI Models:</p>
                   <div className="space-y-2">
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#5E6AD2]">Qubik:</span> Gemini 1.5 Pro
+                      <span className="text-[#5E6AD2]">Qubik:</span> Gemini 3 Flash
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
                       <span className="text-[#EF4444]">Themis:</span> Claude 3.5 Haiku
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#10B981]">Core:</span> DeepSeek R1
+                      <span className="text-[#10B981]">Core:</span> Gemini 3 Flash
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 3 Pro, Gemini 2.5 Pro
                     </div>
                     <div className="text-xs text-[#71717A] mt-2">
                       (10 excavations/month)
@@ -384,16 +384,16 @@ export function ModelPerformance() {
                   <p className="text-xs text-[#71717A] mb-3">Flagship Models:</p>
                   <div className="space-y-2">
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#5E6AD2]">Qubik:</span> GPT-4o (OpenAI)
+                      <span className="text-[#5E6AD2]">Qubik:</span> GPT-5.2 (OpenAI)
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#EF4444]">Themis:</span> Claude 3.5 Sonnet Extended
+                      <span className="text-[#EF4444]">Themis:</span> Claude Sonnet 4.5
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#10B981]">Core:</span> Claude 3.5 Sonnet Extended
+                      <span className="text-[#10B981]">Core:</span> Gemini 3 Pro
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 3 Pro, Gemini 2.5 Pro
                     </div>
                     <div className="text-xs text-[#71717A] mt-2">
                       (Unlimited excavations)

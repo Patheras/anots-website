@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: "group relative overflow-hidden bg-[#0A0A0B] border border-white/10 text-white shadow-[0_0_16px_-4px_rgba(255,255,255,0.2)] hover:shadow-[0_0_24px_-6px_rgba(255,255,255,0.4)] hover:border-white/20 hover:scale-[1.02] transition-all duration-500",
-        magic: "group relative overflow-hidden bg-gradient-to-r from-[#5E6AD2] via-[#7C85E3] to-[#5E6AD2] bg-[length:200%_100%] text-white shadow-[0_0_16px_-4px_rgba(94,106,210,0.4)] hover:shadow-[0_0_24px_-6px_rgba(94,106,210,0.6)] hover:bg-[position:100%_0] hover:scale-[1.02] transition-all duration-500 disabled:hover:shadow-[0_0_16px_-4px_rgba(94,106,210,0.4)] disabled:hover:scale-100",
+        magic: "group relative overflow-hidden bg-gradient-to-r from-[#5E6AD2] via-[#7C85E3] to-[#5E6AD2] bg-[length:200%_100%] text-[#18181B] shadow-[0_0_16px_-4px_rgba(94,106,210,0.4)] hover:shadow-[0_0_24px_-6px_rgba(94,106,210,0.6)] hover:bg-[position:100%_0] hover:scale-[1.02] transition-all duration-500 disabled:hover:shadow-[0_0_16px_-4px_rgba(94,106,210,0.4)] disabled:hover:scale-100 font-semibold",
         secondary: "bg-transparent border border-white/20 text-[#D4D4D8] hover:border-[#5E6AD2] hover:text-[#FAFAFA] anots-hover",
         ghost: "bg-transparent text-[#D4D4D8] hover:bg-[#1A1A1B] hover:text-[#FAFAFA]",
       },

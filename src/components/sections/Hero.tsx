@@ -49,7 +49,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
         <div className="mx-auto max-w-4xl text-center">
           {/* Headline with ANOT Gradient and Info Icon */}
           <FadeIn delay={0}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl text-[#FAFAFA] font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-[#FAFAFA] font-bold leading-tight tracking-tight">
               {headline.split('ANOTs').map((part, index, array) => (
                 <span key={index}>
                   {part}
@@ -68,12 +68,12 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
 
           {/* Subheadline with Purple Accent */}
           <FadeIn delay={200}>
-            <p className="mt-8 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8]/90 max-w-3xl mx-auto">
+            <p className="mt-6 text-lg sm:text-xl lg:text-2xl leading-relaxed text-[#D4D4D8] max-w-3xl mx-auto font-medium">
               {subheadline.split('You Approve').map((part, index, array) => (
                 <span key={index}>
                   {part}
                   {index < array.length - 1 && (
-                    <span className="text-purple-400 font-medium">You Approve</span>
+                    <span className="text-purple-400 font-semibold">You Approve</span>
                   )}
                 </span>
               ))}
@@ -82,22 +82,22 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
 
           {/* CTAs - Stacked Vertically */}
           <FadeIn delay={300}>
-            <div className="mt-12 flex flex-col items-center justify-center gap-3">
+            <div className="mt-10 flex flex-col items-center justify-center gap-4">
               <a href={primaryCTA.href} className="w-full sm:w-auto">
                 <Button 
                   variant="magic" 
                   size="xl" 
-                  className="w-full sm:w-auto font-bold min-h-[44px]"
+                  className="w-full sm:w-auto font-bold min-h-[56px] text-lg px-8"
                 >
                   {primaryCTA.text}
-                  <ArrowRight className="h-5 w-5" />
+                  <ArrowRight className="h-6 w-6" />
                 </Button>
               </a>
               <Link href={secondaryCTA.href} className="w-full sm:w-auto">
                 <Button 
                   variant="primary" 
                   size="lg" 
-                  className="w-full sm:w-auto min-h-[44px]"
+                  className="w-full sm:w-auto min-h-[48px] text-base"
                 >
                   <PlayCircle className="mr-2 h-5 w-5" />
                   {secondaryCTA.text}
@@ -108,10 +108,10 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
 
           {/* Pricing Transparency Badge */}
           <FadeIn delay={400}>
-            <div className="mt-8 flex items-center justify-center gap-2">
-              <CheckCircle className="h-4 w-4 text-emerald-400" />
-              <span className="text-sm text-zinc-400">
-                Starting at $0/mo • Full Marketing Room + 3 ANOTs • No credit card
+            <div className="mt-10 flex items-center justify-center gap-2 px-4">
+              <CheckCircle className="h-5 w-5 text-emerald-400 flex-shrink-0" />
+              <span className="text-base text-zinc-300">
+                Free forever • 3 ANOTs • Full AI team • No credit card
               </span>
             </div>
           </FadeIn>
