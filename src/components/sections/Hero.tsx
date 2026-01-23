@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { LambdaHero } from '@/components/infographics/LambdaHero';
+import { AnotExplainer } from '@/components/ui/Tooltip';
 import { useEffect, useState } from 'react';
 
 interface HeroProps {
@@ -52,9 +53,12 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
                 <span key={index}>
                   {part}
                   {index < array.length - 1 && (
-                    <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-                      ANOTs
-                    </span>
+                    <>
+                      <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+                        ANOTs
+                      </span>
+                      <AnotExplainer className="inline-block ml-2 align-middle" />
+                    </>
                   )}
                 </span>
               ))}

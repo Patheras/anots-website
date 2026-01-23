@@ -40,7 +40,7 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
     - Responsive typography works on mobile
     - Visual hierarchy is clear (headline > benefit > CTAs)
   
-  - [ ] 1.2 Create ANOT Explainer Tooltip Component
+  - [x] 1.2 Create ANOT Explainer Tooltip Component
     
     **Goal:** Add tooltip that explains what an ANOT is when user hovers/clicks on "ANOTs" in headline.
     
