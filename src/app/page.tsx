@@ -421,23 +421,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Horizontal Scroll Sections Container */}
-      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32 overflow-hidden">
-        <div className="relative">
-          {/* Scroll Indicator */}
-          <div className="absolute top-8 right-8 z-10 flex items-center gap-2 text-sm text-[#71717A]">
-            <span>Scroll →</span>
-            <svg className="w-4 h-4 animate-pulse" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </div>
-
-          {/* Horizontal Scroll Container */}
-          <div className="flex gap-0 overflow-x-scroll snap-x snap-mandatory scrollbar-hide scroll-smooth">
-            
-            {/* About Section - Full Width Panel */}
-            <div id="about" className="flex-shrink-0 w-screen snap-start px-4 sm:px-6 lg:px-8">
-              <div className="mx-auto max-w-7xl">
+      {/* About Section */}
+      <section id="about" className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-[#FAFAFA]">
@@ -518,12 +504,12 @@ export default function Home() {
               </Card>
             </ScrollReveal>
           </div>
-              </div>
-            </div>
+        </div>
+      </section>
 
-            {/* Brand Room Section - Full Width Panel */}
-            <div id="brand-room" className="flex-shrink-0 w-screen snap-start px-4 sm:px-6 lg:px-8 bg-[#0F0F10]">
-              <div className="mx-auto max-w-7xl">
+      {/* Brand Room Section */}
+      <section id="brand-room" className="bg-[#0F0F10] py-16 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-[#FAFAFA]">
@@ -832,14 +818,10 @@ export default function Home() {
               </div>
             </div>
           </ScrollReveal>
-              </div>
-            </div>
-
-          </div>
         </div>
       </section>
 
-      {/* Common Questions About ANOTS Section */}
+      {/* Quick FAQ Section */}
       <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
