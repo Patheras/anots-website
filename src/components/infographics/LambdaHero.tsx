@@ -150,54 +150,16 @@ export function LambdaHero() {
       if (!canvas || !ctx) return;
       animationFrame = requestAnimationFrame(animate);
 
-      // Subtle gradient background - düz siyah yerine
+      // Subtle gradient background - koyu gri tonlar
       const bgGradient = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height));
-      bgGradient.addColorStop(0, '#0a0a0f'); // Merkez hafif mor-siyah
-      bgGradient.addColorStop(0.5, '#050508'); // Orta koyu
-      bgGradient.addColorStop(1, '#030303'); // Kenarlar tam siyah
+      bgGradient.addColorStop(0, '#0f0f12'); // Merkez koyu gri
+      bgGradient.addColorStop(0.5, '#0a0a0d'); // Orta daha koyu
+      bgGradient.addColorStop(1, '#050508'); // Kenarlar çok koyu
       ctx.fillStyle = bgGradient;
       ctx.fillRect(0, 0, width, height);
 
       const cx = width / 2;
       const cy = height / 2;
-
-      // KATMAN 1: KÜRE ARKA PLANI
-      ctx.beginPath();
-      ctx.arc(cx, cy, sphereRadius, 0, Math.PI * 2);
-      const sphereGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, sphereRadius);
-      sphereGrad.addColorStop(0, 'rgba(0, 0, 0, 0)');
-      sphereGrad.addColorStop(0.85, 'rgba(0, 0, 0, 0)');
-      sphereGrad.addColorStop(0.95, 'rgba(60, 20, 100, 0.03)');
-      sphereGrad.addColorStop(1, 'rgba(100, 40, 180, 0.15)');
-      ctx.fillStyle = sphereGrad;
-      ctx.fill();
-
-      // KATMAN 2: KÜRE OUTLINE
-      ctx.beginPath();
-      ctx.arc(cx, cy, sphereRadius, 0, Math.PI * 2);
-      const outlineGrad = ctx.createLinearGradient(
-        cx + sphereRadius,
-        cy - sphereRadius,
-        cx - sphereRadius,
-        cy + sphereRadius
-      );
-      outlineGrad.addColorStop(0, 'rgba(139, 92, 246, 0.1)');
-      outlineGrad.addColorStop(0.5, 'rgba(139, 92, 246, 0.2)');
-      outlineGrad.addColorStop(1, 'rgba(255, 255, 255, 0.6)');
-      ctx.strokeStyle = outlineGrad;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-
-      // Alt Zemin Yansıması
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(cx, cy, sphereRadius, 0, Math.PI * 2);
-      const bottomGrad = ctx.createLinearGradient(cx, cy, cx, cy + sphereRadius);
-      bottomGrad.addColorStop(0.8, 'transparent');
-      bottomGrad.addColorStop(1, 'rgba(255, 255, 255, 0.03)');
-      ctx.fillStyle = bottomGrad;
-      ctx.fill();
-      ctx.restore();
 
       smoothMouseX += (targetMouse.x - smoothMouseX) * 0.05;
       smoothMouseY += (targetMouse.y - smoothMouseY) * 0.05;
@@ -218,9 +180,9 @@ export function LambdaHero() {
 
       particles.sort((a, b) => b.zDepth - a.zDepth);
 
-      // KATMAN 3: NETWORK AĞI
+      // KATMAN 3: NETWORK AĞI - Daha belirgin çizgiler
       ctx.globalCompositeOperation = 'lighter';
-      ctx.lineWidth = 0.8;
+      ctx.lineWidth = 1; // 0.8'den 1'e
 
       for (let i = 0; i < pLen; i++) {
         const p1 = particles[i];
@@ -248,12 +210,13 @@ export function LambdaHero() {
               ctx.moveTo(p1.sx, p1.sy);
               ctx.lineTo(p2.sx, p2.sy);
 
+              // Çizgileri daha belirgin yap (opacity 3x artırıldı)
               if (p1.type === 'red' || p2.type === 'red') {
-                ctx.strokeStyle = `rgba(255, 50, 100, ${dynamicAlpha * 0.06})`;
+                ctx.strokeStyle = `rgba(255, 50, 100, ${dynamicAlpha * 0.18})`; // 0.06 -> 0.18
               } else if (p1.type === 'blue' || p2.type === 'blue') {
-                ctx.strokeStyle = `rgba(50, 220, 255, ${dynamicAlpha * 0.06})`;
+                ctx.strokeStyle = `rgba(50, 220, 255, ${dynamicAlpha * 0.18})`; // 0.06 -> 0.18
               } else {
-                ctx.strokeStyle = `rgba(160, 100, 255, ${dynamicAlpha * 0.04})`;
+                ctx.strokeStyle = `rgba(160, 100, 255, ${dynamicAlpha * 0.12})`; // 0.04 -> 0.12
               }
               ctx.stroke();
             }

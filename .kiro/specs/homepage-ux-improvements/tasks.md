@@ -1,4 +1,4 @@
-# Homepage UX Improvements - Implementation Tasks
+landing'# Homepage UX Improvements - Implementation Tasks
 
 ## Overview
 
@@ -14,28 +14,35 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
   
   **Estimated Time:** 2-3 hours
   
-  - [ ] 1.1 Update Hero Value Proposition
+  - [x] 1.1 Update Hero Value Proposition
     
-    **Goal:** Make the headline clearer and add benefit statement.
+    **Goal:** Keep the powerful "If you're here..." meta-marketing hook while adding ANOT explainer and gradient.
     
     **Files to Modify:**
     - `src/components/sections/Hero.tsx`
+    - `src/app/page.tsx` (Hero props)
     
     **Changes:**
-    - Update headline to: "Your AI Marketing Team, Powered by ANOTs"
-    - Add benefit statement: "Create, review, and publish marketing content with AI agents that understand your brand. No execution without your approval."
-    - Ensure headline uses gradient on "ANOTs" word
-    - Add responsive font sizes (5xl desktop, 3xl mobile)
+    - ✅ **Keep LambdaHero background** - It's perfect! Don't touch it.
+    - ✅ **Keep scroll-fade effect** - The opacity transition is beautiful.
+    - Update headline to: "If You're Here, ANOTs Are Already Working"
+    - Add gradient to "ANOTs" text: `bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent`
+    - Update subheadline: "The same AI team that brought you here will power your marketing. Qubik proposes, Themis reviews, Core synthesizes—you approve."
+    - Add purple accent to "you approve" in purple-400 font-medium
+    - Ensure responsive font sizes: text-4xl sm:text-5xl lg:text-6xl
     
     **Definition of Done:**
-    - Headline is clear and benefit-focused
-    - Gradient applied to "ANOTs" text
+    - LambdaHero background still animates beautifully
+    - Scroll-fade effect still works
+    - Meta-marketing hook is preserved ("If you're here...")
+    - Gradient applied to "ANOTs" text (red→purple→blue)
+    - Subheadline mentions all three agents (Qubik, Themis, Core)
     - Responsive typography works on mobile
     - Visual hierarchy is clear (headline > benefit > CTAs)
   
   - [ ] 1.2 Create ANOT Explainer Tooltip Component
     
-    **Goal:** Add tooltip that explains what an ANOT is when user hovers/clicks.
+    **Goal:** Add tooltip that explains what an ANOT is when user hovers/clicks on "ANOTs" in headline.
     
     **Files to Create:**
     - `src/components/ui/Tooltip.tsx` (if not exists)
@@ -44,22 +51,25 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
     - `src/components/sections/Hero.tsx`
     
     **Changes:**
-    - Create reusable Tooltip component (or use existing)
-    - Add InfoIcon next to "ANOTs" in headline
-    - Tooltip content:
-      - Title: "What's an ANOT?"
-      - Definition: "ANOT = Autonomous Narrative Orchestration Task"
-      - Explanation: "Think of it as a smart marketing workflow that runs itself. Your AI team proposes, reviews, and executes - but only with your approval."
-      - Example: "Example: 'Create Instagram post about new product'"
-    - Ensure keyboard accessible (Tab to focus, Enter to open)
-    - Add ARIA labels for screen readers
+    - Create reusable Tooltip component (or use existing from shadcn/ui)
+    - Add InfoIcon next to "ANOTs" in headline (inline-block ml-2 h-5 w-5 text-purple-400)
+    - Tooltip content (max-w-xs):
+      - Title: "What's an ANOT?" (font-semibold text-sm)
+      - Definition: "ANOT = Autonomous Narrative Orchestration Task" (text-xs text-zinc-400)
+      - Explanation: "The atomic unit of AI-powered marketing. Each ANOT is a self-contained automation that runs after your approval." (text-xs text-zinc-300)
+      - Example with icon: "Example: 'Post to Instagram daily at 10am'" (text-xs text-zinc-500 with Sparkles icon)
+    - Ensure keyboard accessible (Tab to focus, Enter to open, Escape to close)
+    - Add ARIA labels: aria-describedby="anot-explainer"
+    - Mobile: Tooltip opens on tap, closes on tap outside
     
     **Definition of Done:**
-    - Tooltip appears on hover/click
+    - Tooltip appears on hover/click on "ANOTs" text
     - Tooltip content is clear and helpful
     - Keyboard navigation works (Tab, Enter, Escape)
     - Screen reader announces tooltip content
     - Mobile: Tooltip opens on tap, closes on tap outside
+    - InfoIcon is visible and purple-colored
+    - Tooltip styling matches design system (dark theme)
   
   - [ ] 1.3 Improve CTA Visual Hierarchy
     
@@ -72,22 +82,25 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
     **Changes:**
     - Primary CTA:
       - Text: "Start Free - 3 ANOTs"
-      - Style: bg-[#5E6AD2], large size (px-8 py-4), bold text
-      - Icon: ArrowRight
+      - Style: bg-[#5E6AD2] hover:bg-[#4E5AC2], large size (px-8 py-4), bold text
+      - Add shadow: shadow-lg shadow-purple-500/20
+      - Icon: ArrowRight (ml-2 h-5 w-5)
     - Secondary CTA:
       - Text: "Watch Demo (2 min)"
-      - Style: ghost variant, border border-white/20, subdued colors
-      - Icon: PlayCircle
-    - Desktop: Side-by-side layout
-    - Mobile: Stacked layout, full-width buttons
+      - Style: variant="secondary", border border-white/20, subdued colors
+      - Icon: PlayCircle (mr-2 h-5 w-5)
+    - Desktop: Side-by-side layout (flex-row)
+    - Mobile: Stacked layout (flex-col), full-width buttons
     - Ensure min 44x44px touch targets on mobile
+    - Keep existing FadeIn delay={300}
     
     **Definition of Done:**
-    - Primary CTA is visually dominant (bright purple, large)
-    - Secondary CTA is subdued (ghost, smaller)
+    - Primary CTA is visually dominant (bright purple, large, shadow)
+    - Secondary CTA is subdued (ghost/secondary variant, border)
     - CTAs are side-by-side on desktop, stacked on mobile
     - Touch targets meet 44x44px minimum on mobile
     - Hover states work correctly
+    - Icons are properly sized and positioned
   
   - [ ] 1.4 Add Pricing Transparency Badge
     
@@ -97,17 +110,22 @@ This task list implements the homepage UX improvements in 4 phases: Hero Enhance
     - `src/components/sections/Hero.tsx`
     
     **Changes:**
+    - Add new FadeIn component with delay={400}
     - Add badge below CTAs with:
-      - CheckCircle icon (emerald-400)
+      - CheckCircle icon (h-4 w-4 text-emerald-400)
       - Text: "Starting at $0/mo • No credit card required"
-      - Style: text-sm, text-zinc-400
+      - Style: text-sm text-zinc-400
+      - Layout: flex items-center justify-center gap-2
+      - Margin: mt-8
     - Center align on desktop and mobile
     
     **Definition of Done:**
-    - Badge appears below CTAs
-    - CheckCircle icon is visible
+    - Badge appears below CTAs with proper spacing
+    - CheckCircle icon is visible and emerald-colored
     - Text is clear and reassuring
+    - FadeIn animation works (400ms delay)
     - Styling matches design system
+    - Responsive on all screen sizes
 
 - [ ] 2. Mobile Responsiveness
   

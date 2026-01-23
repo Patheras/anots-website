@@ -53,11 +53,45 @@ const navLinks = [
       }
     ]
   },
+  { 
+    label: 'Resources', 
+    href: '#',
+    dropdown: [
+      {
+        category: 'Learn',
+        items: [
+          { 
+            label: 'Use Cases', 
+            description: 'Real-world examples and success stories',
+            href: '/use-cases'
+          },
+          { 
+            label: 'Ideas', 
+            description: 'Inspiration for your marketing automations',
+            href: '/ideas'
+          },
+          { 
+            label: 'Documentation', 
+            description: 'Complete guides and API reference',
+            href: 'https://app.anots.com/docs',
+            external: true
+          },
+        ]
+      },
+      {
+        category: 'Updates',
+        items: [
+          { 
+            label: 'Platform Updates', 
+            description: 'Latest features and improvements',
+            href: '/updates'
+          },
+        ]
+      }
+    ]
+  },
   { label: 'ANOTs', href: '/features/anot-library' },
-  { label: 'Use Cases', href: '/use-cases' },
-  { label: 'Ideas', href: '/ideas' },
   { label: 'Pricing', href: '/pricing' },
-  { label: 'Docs', href: 'https://app.anots.com/docs', external: true },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -109,6 +143,7 @@ export function Navigation() {
                                   <a
                                     key={item.label}
                                     href={item.href}
+                                    {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                                     className="block rounded-md p-3 transition-colors hover:bg-[#1A1A1B]"
                                   >
                                     <div className="text-sm font-medium text-[#FAFAFA]">{item.label}</div>
@@ -215,6 +250,7 @@ export function Navigation() {
                         <a
                           key={item.label}
                           href={item.href}
+                          {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                           className="block rounded-md px-3 py-2 text-sm text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
                           onClick={() => setMobileMenuOpen(false)}
                         >

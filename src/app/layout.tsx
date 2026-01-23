@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
 import { Footer } from "@/components/ui/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 
-const geistSans = localFont({
-  src: "../../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
-const geistMono = localFont({
-  src: "../../node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -140,7 +135,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} antialiased font-sans`}
       >
         {children}
         <Footer />

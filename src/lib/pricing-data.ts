@@ -4,9 +4,9 @@
  */
 
 export interface PricingTierData {
-  id: 'free' | 'standard' | 'pro';
+  id: 'free' | 'standard' | 'pro' | 'enterprise';
   name: string;
-  price: number | null;  // null for free tier
+  price: number | null;  // null for free tier or custom pricing
   billingPeriod: 'month' | 'year' | null;
   description: string;
   features: {
@@ -84,13 +84,38 @@ export const pricingTiers: PricingTierData[] = [
     cta: { text: 'Contact Sales', href: '/contact?plan=agency', variant: 'primary' },
     recommended: false,
   },
+  {
+    id: 'enterprise',
+    name: 'Enterprise',
+    price: null,
+    billingPeriod: null,
+    description: 'Custom solutions - Tailored for your organization',
+    features: [
+      { name: 'Everything in Agency', included: true },
+      { name: 'Custom deployment options', included: true },
+      { name: 'Dedicated infrastructure', included: true },
+      { name: 'SLA guarantees', included: true },
+      { name: 'Custom integrations & workflows', included: true },
+      { name: 'Advanced security & compliance', included: true },
+      { name: 'Dedicated account manager', included: true },
+      { name: 'Priority support (24/7)', included: true },
+      { name: 'Custom training & onboarding', included: true },
+      { name: 'Volume discounts', included: true },
+    ],
+    cta: { text: 'Contact Us', href: '/contact?plan=enterprise', variant: 'secondary' },
+    recommended: false,
+  },
 ];
 
 /**
  * Format price for display
  */
-export function formatPrice(price: number | null, period: 'month' | 'year' | null): string {
+export function formatPrice(price: number | null, period: 'month' | 'year' | null, tierId?: string): string {
   if (price === null || price === 0) {
+    // Enterprise tier has null price but should show "Custom"
+    if (tierId === 'enterprise') {
+      return 'Custom';
+    }
     return 'Free';
   }
   return `$${price.toFixed(2)}/${period}`;
