@@ -119,10 +119,10 @@ export function ModelPerformance() {
                       <span className="text-[#10B981]">Core:</span> Gemini 2.0 Flash
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 2.0 Flash Exp + 1.5 Pro
                     </div>
                     <div className="text-xs text-[#71717A] mt-2">
-                      (3 imports/month)
+                      (3 excavations/month)
                     </div>
                   </div>
                 </div>
@@ -143,8 +143,138 @@ export function ModelPerformance() {
               </div>
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-[#FAFAFA]">Pro</h3>
+                  <h3 className="text-2xl font-bold text-[#FAFAFA]">Standard</h3>
                   <p className="text-[#A1A1AA] text-sm mt-2">$9.90/month</p>
+                </div>
+
+                <div className="space-y-6">
+                  {/* Content Quality */}
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-[#D4D4D8]">Content Quality</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-[#10B981]">
+                          {modelPerformance.standard.improvement?.contentQuality}
+                        </span>
+                        <span className="text-sm font-semibold text-[#FAFAFA]">
+                          {modelPerformance.standard.contentQuality}/10
+                        </span>
+                      </div>
+                    </div>
+                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-[#5E6AD2] to-[#7C85E3]"
+                        style={{ width: `${modelPerformance.standard.contentQuality * 10}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Risk Detection */}
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-[#D4D4D8]">Risk Detection</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-[#10B981]">
+                          {modelPerformance.standard.improvement?.riskDetection}
+                        </span>
+                        <span className="text-sm font-semibold text-[#FAFAFA]">
+                          {modelPerformance.standard.riskDetection}/10
+                        </span>
+                      </div>
+                    </div>
+                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-[#EF4444] to-[#F87171]"
+                        style={{ width: `${modelPerformance.standard.riskDetection * 10}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Speed */}
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-[#D4D4D8]">Avg Response Time</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-[#10B981]">
+                          {modelPerformance.standard.improvement?.speed}
+                        </span>
+                        <span className="text-sm font-semibold text-[#FAFAFA]">
+                          {modelPerformance.standard.avgSpeed}s
+                        </span>
+                      </div>
+                    </div>
+                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-[#10B981] to-[#34D399]"
+                        style={{ width: `${100 - (modelPerformance.standard.avgSpeed / 3 * 100)}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Success Rate */}
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm text-[#D4D4D8]">Success Rate</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-[#10B981]">
+                          {modelPerformance.standard.improvement?.successRate}
+                        </span>
+                        <span className="text-sm font-semibold text-[#FAFAFA]">
+                          {modelPerformance.standard.successRate}%
+                        </span>
+                      </div>
+                    </div>
+                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-[#F59E0B] to-[#FBBF24]"
+                        style={{ width: `${modelPerformance.standard.successRate}%` }}
+                      />
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="pt-4 border-t border-[#1A1A1B]">
+                    <div className="flex items-center gap-2 text-sm text-[#10B981]">
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                      </svg>
+                      <span>Multimodal support</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Models */}
+                <div className="mt-6 pt-6 border-t border-[#1A1A1B]">
+                  <p className="text-xs text-[#71717A] mb-3">AI Models:</p>
+                  <div className="space-y-2">
+                    <div className="text-xs text-[#A1A1AA]">
+                      <span className="text-[#5E6AD2]">Qubik:</span> Gemini 1.5 Pro
+                    </div>
+                    <div className="text-xs text-[#A1A1AA]">
+                      <span className="text-[#EF4444]">Themis:</span> Claude 3.5 Haiku
+                    </div>
+                    <div className="text-xs text-[#A1A1AA]">
+                      <span className="text-[#10B981]">Core:</span> DeepSeek R1
+                    </div>
+                    <div className="text-xs text-[#A1A1AA]">
+                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                    </div>
+                    <div className="text-xs text-[#71717A] mt-2">
+                      (10 excavations/month)
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </ScrollReveal>
+
+          {/* Agency Tier */}
+          <ScrollReveal>
+            <Card className="border-[#5E6AD2]/20">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-[#FAFAFA]">Pro</h3>
+                  <p className="text-[#A1A1AA] text-sm mt-2">$49.90/month</p>
                 </div>
 
                 <div className="space-y-6">
@@ -233,136 +363,6 @@ export function ModelPerformance() {
                   </div>
 
                   {/* Features */}
-                  <div className="pt-4 border-t border-[#1A1A1B]">
-                    <div className="flex items-center gap-2 text-sm text-[#10B981]">
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                      </svg>
-                      <span>Multimodal support</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Models */}
-                <div className="mt-6 pt-6 border-t border-[#1A1A1B]">
-                  <p className="text-xs text-[#71717A] mb-3">AI Models:</p>
-                  <div className="space-y-2">
-                    <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#5E6AD2]">Qubik:</span> Gemini 1.5 Pro
-                    </div>
-                    <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#EF4444]">Themis:</span> Claude 3.5 Haiku
-                    </div>
-                    <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#10B981]">Core:</span> DeepSeek R1
-                    </div>
-                    <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash Exp + 1.5 Pro
-                    </div>
-                    <div className="text-xs text-[#71717A] mt-2">
-                      (10 imports/month)
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </ScrollReveal>
-
-          {/* Agency Tier */}
-          <ScrollReveal>
-            <Card className="border-[#5E6AD2]/20">
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold text-[#FAFAFA]">Agency</h3>
-                  <p className="text-[#A1A1AA] text-sm mt-2">$49.90/month</p>
-                </div>
-
-                <div className="space-y-6">
-                  {/* Content Quality */}
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-[#D4D4D8]">Content Quality</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-[#10B981]">
-                          {modelPerformance.agency.improvement?.contentQuality}
-                        </span>
-                        <span className="text-sm font-semibold text-[#FAFAFA]">
-                          {modelPerformance.agency.contentQuality}/10
-                        </span>
-                      </div>
-                    </div>
-                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-[#5E6AD2] to-[#7C85E3]"
-                        style={{ width: `${modelPerformance.agency.contentQuality * 10}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Risk Detection */}
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-[#D4D4D8]">Risk Detection</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-[#10B981]">
-                          {modelPerformance.agency.improvement?.riskDetection}
-                        </span>
-                        <span className="text-sm font-semibold text-[#FAFAFA]">
-                          {modelPerformance.agency.riskDetection}/10
-                        </span>
-                      </div>
-                    </div>
-                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-[#EF4444] to-[#F87171]"
-                        style={{ width: `${modelPerformance.agency.riskDetection * 10}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Speed */}
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-[#D4D4D8]">Avg Response Time</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-[#10B981]">
-                          {modelPerformance.agency.improvement?.speed}
-                        </span>
-                        <span className="text-sm font-semibold text-[#FAFAFA]">
-                          {modelPerformance.agency.avgSpeed}s
-                        </span>
-                      </div>
-                    </div>
-                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-[#10B981] to-[#34D399]"
-                        style={{ width: `${100 - (modelPerformance.agency.avgSpeed / 3 * 100)}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Success Rate */}
-                  <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-[#D4D4D8]">Success Rate</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-[#10B981]">
-                          {modelPerformance.agency.improvement?.successRate}
-                        </span>
-                        <span className="text-sm font-semibold text-[#FAFAFA]">
-                          {modelPerformance.agency.successRate}%
-                        </span>
-                      </div>
-                    </div>
-                    <div className="h-2 bg-[#1A1A1B] rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-[#F59E0B] to-[#FBBF24]"
-                        style={{ width: `${modelPerformance.agency.successRate}%` }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Features */}
                   <div className="pt-4 border-t border-[#1A1A1B] space-y-2">
                     <div className="flex items-center gap-2 text-sm text-[#10B981]">
                       <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -393,10 +393,10 @@ export function ModelPerformance() {
                       <span className="text-[#10B981]">Core:</span> Claude 3.5 Sonnet Extended
                     </div>
                     <div className="text-xs text-[#A1A1AA]">
-                      <span className="text-[#9333EA]">MAGIC:</span> Gemini 2.0 Flash Exp + 1.5 Pro
+                      <span className="text-[#9333EA]">Brand Archaeologist:</span> Gemini 2.0 Flash Exp + 1.5 Pro
                     </div>
                     <div className="text-xs text-[#71717A] mt-2">
-                      (Unlimited imports)
+                      (Unlimited excavations)
                     </div>
                   </div>
                 </div>

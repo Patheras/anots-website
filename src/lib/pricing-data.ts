@@ -48,7 +48,7 @@ export const modelPerformance: Record<string, ModelPerformance> = {
     successRate: 94,
     multimodal: false,
   },
-  pro: {
+  standard: {
     contentQuality: 9.1,
     riskDetection: 9.3,
     avgSpeed: 1.4,
@@ -61,7 +61,7 @@ export const modelPerformance: Record<string, ModelPerformance> = {
       successRate: '+4%',
     }
   },
-  agency: {
+  pro: {
     contentQuality: 9.8,
     riskDetection: 9.9,
     avgSpeed: 1.1,
@@ -90,7 +90,7 @@ export const pricingTiers: PricingTierData[] = [
       { name: 'Qubik: Gemini 2.0 Flash (Creative)', included: true },
       { name: 'Themis: DeepSeek R1 (Analytical with reasoning)', included: true },
       { name: 'Core: Gemini 2.0 Flash (Synthesizer)', included: true },
-      { name: 'MAGIC Import: Gemini 2.0 Flash Experimental + Gemini 1.5 Pro', included: true, limit: '3 imports/month' },
+      { name: 'Brand Archaeologist: Gemini 2.0 Flash Exp + Gemini 1.5 Pro', included: true, limit: '3 excavations/month' },
       { name: 'Approval gate for all actions', included: true },
       { name: 'Activity Hub (24h view)', included: true },
       { name: 'Marketing Room - Full Brand Archaeologist', included: true },
@@ -107,7 +107,7 @@ export const pricingTiers: PricingTierData[] = [
   },
   {
     id: 'standard',
-    name: 'Pro',
+    name: 'Standard',
     price: 9.90,
     billingPeriod: 'month',
     description: 'Powerful production - Scale your marketing automation',
@@ -116,7 +116,7 @@ export const pricingTiers: PricingTierData[] = [
       { name: 'Qubik: Gemini 1.5 Pro (Advanced creative + multimodal)', included: true },
       { name: 'Themis: Claude 3.5 Haiku (Fast analytical reasoning)', included: true },
       { name: 'Core: DeepSeek R1 (Visible reasoning chains)', included: true },
-      { name: 'MAGIC Import: Gemini 2.0 Flash Experimental + Gemini 1.5 Pro', included: true, limit: '10 imports/month' },
+      { name: 'Brand Archaeologist: Gemini 2.0 Flash Exp + Gemini 1.5 Pro', included: true, limit: '10 excavations/month' },
       { name: '+26% better content quality vs Free', included: true },
       { name: '+9% better risk detection vs Free', included: true },
       { name: '40% faster response time vs Free', included: true },
@@ -130,12 +130,12 @@ export const pricingTiers: PricingTierData[] = [
       { name: 'Advanced analytics', included: true },
       { name: 'BYOK (Bring Your Own Keys)', included: false },
     ],
-    cta: { text: 'Go Pro', href: 'https://app.anots.com/signup?plan=pro', variant: 'magic' },
+    cta: { text: 'Go Standard', href: 'https://app.anots.com/signup?plan=standard', variant: 'magic' },
     recommended: true,
   },
   {
     id: 'pro',
-    name: 'Agency',
+    name: 'Pro',
     price: 49.90,
     billingPeriod: 'month',
     description: 'Unlimited freedom - Flagship models from every provider',
@@ -145,10 +145,10 @@ export const pricingTiers: PricingTierData[] = [
       { name: 'Themis: Claude 3.5 Sonnet Extended Thinking (Anthropic flagship)', included: true },
       { name: 'Core: Claude 3.5 Sonnet Extended Thinking (Best reasoning)', included: true },
       { name: 'Gemini 1.5 Pro (Google flagship - Multimodal)', included: true },
-      { name: 'MAGIC Import: Gemini 2.0 Flash Experimental + Gemini 1.5 Pro (Unlimited)', included: true },
-      { name: '+8% better content quality vs Pro', included: true },
-      { name: '+6% better risk detection vs Pro', included: true },
-      { name: '21% faster response time vs Pro', included: true },
+      { name: 'Brand Archaeologist: Gemini 2.0 Flash Exp + Gemini 1.5 Pro (Unlimited)', included: true },
+      { name: '+8% better content quality vs Standard', included: true },
+      { name: '+6% better risk detection vs Standard', included: true },
+      { name: '21% faster response time vs Standard', included: true },
       { name: 'Extended thinking chains visible', included: true },
       { name: 'BYOK - Use your own OpenAI/Anthropic/Google keys', included: true },
       { name: 'Direct billing to your provider (Zero AI cost with BYOK)', included: true },
@@ -161,7 +161,7 @@ export const pricingTiers: PricingTierData[] = [
       { name: 'Advanced analytics', included: true },
       { name: 'Custom integrations', included: true },
     ],
-    cta: { text: 'Contact Sales', href: '/contact?plan=agency', variant: 'primary' },
+    cta: { text: 'Contact Sales', href: '/contact?plan=pro', variant: 'primary' },
     recommended: false,
   },
   {
