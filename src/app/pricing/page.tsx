@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Navigation } from "@/components/ui/Navigation";
 import { PricingTiers } from "@/components/sections/PricingTiers";
+import { ModelPerformance } from "@/components/sections/ModelPerformance";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { PricingComparison } from "@/components/infographics/PricingComparison";
@@ -41,6 +42,8 @@ export default function PricingPage() {
           </ScrollReveal>
         </div>
       </div>
+
+      <ModelPerformance />
 
       <PricingTiers />
     </>
