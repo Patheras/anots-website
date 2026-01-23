@@ -38,36 +38,39 @@ export function ScrollDrivenImage({ src, alt, className = '' }: ScrollDrivenImag
   // Animation stages based on scroll progress
   const getTransform = () => {
     if (scrollProgress < 0.3) {
-      // Stage 1: Start small and centered, scale up slightly
-      const scale = 0.15 + (scrollProgress / 0.3) * 0.1; // 0.15 to 0.25
-      const rotateX = 45; // Strong isometric angle
-      const rotateZ = -5; // Slight rotation for depth
-      return `scale(${scale}) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(0px)`;
+      // Stage 1: Start full size and flat (frontal view)
+      const scale = 1.0 - (scrollProgress / 0.3) * 0.5; // 1.0 to 0.5
+      const rotateX = (scrollProgress / 0.3) * 25; // 0 to 25deg
+      const rotateY = (scrollProgress / 0.3) * 35; // 0 to 35deg (right side view)
+      const rotateZ = (scrollProgress / 0.3) * -3; // 0 to -3deg
+      return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
     } else if (scrollProgress < 0.6) {
-      // Stage 2: Scroll through the content (move up to show bottom)
+      // Stage 2: Continue shrinking and rotating to isometric right view
       const localProgress = (scrollProgress - 0.3) / 0.3;
-      const translateY = -localProgress * 800; // Scroll through the long image
+      const scale = 0.5 - localProgress * 0.25; // 0.5 to 0.25
+      const rotateX = 25 + localProgress * 20; // 25 to 45deg
+      const rotateY = 35 + localProgress * 10; // 35 to 45deg (more side view)
+      const rotateZ = -3 - localProgress * 2; // -3 to -5deg
+      const translateY = -localProgress * 400; // Start scrolling through content
+      return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
+    } else {
+      // Stage 3: Settled in isometric view, scroll through content
+      const localProgress = (scrollProgress - 0.6) / 0.4;
       const scale = 0.25;
       const rotateX = 45;
+      const rotateY = 45; // Right side isometric view
       const rotateZ = -5;
-      return `scale(${scale}) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
-    } else {
-      // Stage 3: Settle and slightly zoom out
-      const localProgress = (scrollProgress - 0.6) / 0.4;
-      const scale = 0.25 - localProgress * 0.02; // Slightly smaller
-      const rotateX = 45 + localProgress * 5; // More perspective
-      const rotateZ = -5;
-      const translateY = -800;
-      return `scale(${scale}) rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
+      const translateY = -400 - localProgress * 400; // Continue scrolling
+      return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
     }
   };
 
   return (
     <div 
       ref={containerRef} 
-      className={`relative min-h-[200vh] flex items-center justify-center ${className}`}
+      className={`relative min-h-[200vh] flex items-start justify-center pt-16 ${className}`}
     >
-      <div className="sticky top-1/2 -translate-y-1/2 w-full flex items-center justify-center perspective-[2000px]">
+      <div className="sticky top-16 w-full flex items-center justify-center perspective-[2000px]">
         <div
           className="browser-mockup overflow-hidden rounded-lg border border-[#1A1A1B] bg-[#111113] shadow-2xl transition-transform duration-100 ease-out"
           style={{
