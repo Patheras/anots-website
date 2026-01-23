@@ -78,7 +78,7 @@ export default function Home() {
       
       <Hero
         headline="If You're Here, ANOTs Are Already Working"
-        subheadline="The same AI team that brought you here will power your marketing. Qubik proposes, Themis reviews, Core synthesizes—you approve."
+        subheadline="The same AI team that brought you here will power your marketing. Qubik proposes, Themis reviews, Core synthesizes; You Approve."
         primaryCTA={{ text: "Start Free - 3 ANOTs", href: "https://app.anots.com/signup" }}
         secondaryCTA={{ text: "See How We Did It", href: "/use-cases" }}
       />

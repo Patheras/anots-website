@@ -47,19 +47,19 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
       {/* Content Overlay */}
       <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Headline with ANOT Gradient */}
+          {/* Headline with ANOT Gradient and Info Icon */}
           <FadeIn delay={0}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl text-[#FAFAFA] font-bold leading-tight">
               {headline.split('ANOTs').map((part, index, array) => (
                 <span key={index}>
                   {part}
                   {index < array.length - 1 && (
-                    <>
+                    <span className="relative inline-block">
                       <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
                         ANOTs
                       </span>
-                      <AnotExplainer className="inline-block ml-2 align-middle" />
-                    </>
+                      <AnotExplainer className="absolute -top-1 -right-7" />
+                    </span>
                   )}
                 </span>
               ))}
@@ -69,20 +69,20 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
           {/* Subheadline with Purple Accent */}
           <FadeIn delay={200}>
             <p className="mt-8 text-base sm:text-lg lg:text-xl leading-relaxed text-[#D4D4D8]/90 max-w-3xl mx-auto">
-              {subheadline.split('you approve').map((part, index, array) => (
+              {subheadline.split('You Approve').map((part, index, array) => (
                 <span key={index}>
                   {part}
                   {index < array.length - 1 && (
-                    <span className="text-purple-400 font-medium">you approve</span>
+                    <span className="text-purple-400 font-medium">You Approve</span>
                   )}
                 </span>
               ))}
             </p>
           </FadeIn>
 
-          {/* CTAs */}
+          {/* CTAs - Stacked Vertically */}
           <FadeIn delay={300}>
-            <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <div className="mt-12 flex flex-col items-center justify-center gap-3">
               <a href={primaryCTA.href} className="w-full sm:w-auto">
                 <Button 
                   variant="magic" 
