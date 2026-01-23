@@ -66,9 +66,16 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
             </h1>
           </FadeIn>
 
+          {/* Subtitle - Medium size, regular weight */}
+          <FadeIn delay={100}>
+            <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl text-[#D4D4D8] font-normal leading-tight">
+              Your AI Marketing Team That Never Sleeps
+            </h2>
+          </FadeIn>
+
           {/* Subheadline with Purple Accent */}
           <FadeIn delay={200}>
-            <p className="mt-6 text-lg sm:text-xl lg:text-2xl leading-relaxed text-[#D4D4D8] max-w-3xl mx-auto font-medium">
+            <p className="mt-6 text-base leading-relaxed text-[#A1A1AA] max-w-3xl mx-auto font-normal">
               {subheadline.split('You Approve').map((part, index, array) => (
                 <span key={index}>
                   {part}

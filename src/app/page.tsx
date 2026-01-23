@@ -77,7 +77,7 @@ export default function Home() {
       <Navigation />
       
       <Hero
-        headline="Your AI Marketing Team That Never Sleeps"
+        headline="If You're Here, ANOTs Are Already Working"
         subheadline="Qubik creates. Themis reviews. Core synthesizes. You Approve. Then it runs automatically."
         primaryCTA={{ text: "Start Free", href: "https://app.anots.com/signup" }}
         secondaryCTA={{ text: "See How We Did It", href: "/use-cases" }}
