@@ -213,61 +213,37 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            {/* Right: Browser Mockup with Dramatic Perspective & Spotlight */}
+            {/* Right: Simple Browser Mockup */}
             <ScrollReveal>
-              <div className="relative perspective-[1200px]">
-                {/* Spotlight/Vignette Overlay */}
-                <div className="absolute inset-0 pointer-events-none z-10" style={{
-                  background: 'radial-gradient(ellipse 60% 50% at 50% 40%, transparent 0%, rgba(10, 10, 11, 0.4) 50%, rgba(10, 10, 11, 0.9) 100%)',
-                }}></div>
-                
-                <div 
-                  className="browser-mockup overflow-hidden rounded-xl border border-[#1A1A1B] bg-[#111113] shadow-2xl transform-gpu relative"
-                  style={{
-                    transform: 'rotateY(-25deg) rotateX(15deg) rotateZ(2deg)',
-                    transformStyle: 'preserve-3d',
-                  }}
-                >
-                  {/* Browser Chrome */}
-                  <div className="flex items-center gap-2 border-b border-[#1A1A1B] bg-[#0F0F10] px-3 py-2">
-                    {/* Traffic Lights */}
-                    <div className="flex items-center gap-1.5">
-                      <div className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></div>
-                      <div className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></div>
-                      <div className="h-2.5 w-2.5 rounded-full bg-[#28C840]"></div>
-                    </div>
-                    {/* URL Bar */}
-                    <div className="ml-3 flex-1 rounded-md bg-[#1A1A1B] px-3 py-1">
-                      <div className="flex items-center gap-1.5">
-                        <svg className="h-2.5 w-2.5 text-[#71717A]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                        </svg>
-                        <span className="text-[9px] text-[#A1A1AA] truncate">app.anots.com/brand-room</span>
-                      </div>
-                    </div>
+              <div className="browser-mockup overflow-hidden rounded-xl border border-[#1A1A1B] bg-[#111113] shadow-2xl">
+                {/* Browser Chrome */}
+                <div className="flex items-center gap-2 border-b border-[#1A1A1B] bg-[#0F0F10] px-3 py-2">
+                  {/* Traffic Lights */}
+                  <div className="flex items-center gap-1.5">
+                    <div className="h-2.5 w-2.5 rounded-full bg-[#FF5F57]"></div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-[#FEBC2E]"></div>
+                    <div className="h-2.5 w-2.5 rounded-full bg-[#28C840]"></div>
                   </div>
-                  {/* Browser Content with Gradient Fade */}
-                  <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '500px' }}>
-                    <Image
-                      src="/Brand-Room-All.png"
-                      alt="ANOTS Brand Room - MAGIC Import Interface"
-                      fill
-                      className="object-cover object-top"
-                      priority
-                    />
-                    {/* Gradient fade to background */}
-                    <div className="absolute inset-0 pointer-events-none" style={{
-                      background: 'linear-gradient(to bottom, transparent 20%, transparent 40%, rgba(10, 10, 11, 0.3) 70%, rgba(10, 10, 11, 0.8) 95%, rgba(10, 10, 11, 1) 100%)',
-                    }}></div>
+                  {/* URL Bar */}
+                  <div className="ml-3 flex-1 rounded-md bg-[#1A1A1B] px-3 py-1">
+                    <div className="flex items-center gap-1.5">
+                      <svg className="h-2.5 w-2.5 text-[#71717A]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                      </svg>
+                      <span className="text-[9px] text-[#A1A1AA] truncate">app.anots.com/brand-room</span>
+                    </div>
                   </div>
                 </div>
-                
-                {/* Edge blur effect */}
-                <div className="absolute inset-0 pointer-events-none" style={{
-                  backdropFilter: 'blur(0px)',
-                  WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 80%)',
-                  maskImage: 'radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 80%)',
-                }}></div>
+                {/* Browser Content */}
+                <div className="relative w-full overflow-hidden bg-[#0A0A0B]" style={{ height: '500px' }}>
+                  <Image
+                    src="/Brand-Room-All.png"
+                    alt="ANOTS Brand Room - MAGIC Import Interface"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
               </div>
             </ScrollReveal>
           </div>
