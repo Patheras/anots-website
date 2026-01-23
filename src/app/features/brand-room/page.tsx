@@ -7,15 +7,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "Brand Room - Multi-Source Brand Intelligence | ANOTS",
-  description: "Extract brand standards from websites, documents, and social media automatically. URL Archaeologist, document processing, and Meta OAuth integration for complete brand intelligence.",
-  keywords: ["Brand Room", "brand intelligence", "URL Archaeologist", "brand extraction", "logo detection", "color palette", "font detection", "brand voice"],
+  title: "Marketing Room - Brand Archaeologist | ANOTS",
+  description: "Brand Archaeologist automatically excavates brand DNA from websites, documents, and social media. Extract logos, colors, Google Fonts, tone of voice, and layout rules—no manual entry.",
+  keywords: ["Marketing Room", "Brand Archaeologist", "brand intelligence", "brand extraction", "logo detection", "color palette", "Google Fonts", "tone of voice", "layout rules"],
   alternates: {
     canonical: "https://anots.com/features/brand-room",
   },
   openGraph: {
-    title: "Brand Room - Automatic Brand Intelligence Extraction | ANOTS",
-    description: "Multi-source brand intelligence from websites, documents, and social media.",
+    title: "Marketing Room - Brand Archaeologist | ANOTS",
+    description: "Automatically excavate brand DNA from multiple sources with intelligent extraction.",
     url: "https://anots.com/features/brand-room",
   },
 };
@@ -37,11 +37,11 @@ export default function BrandRoomPage() {
                 Intelligence Engine
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#FAFAFA]">
-                Brand Room: Multi-Source Intelligence
+                Marketing Room: Brand Archaeologist
               </h1>
               <p className="mt-6 text-lg sm:text-xl text-[#D4D4D8] leading-relaxed">
-                Automatically extract and maintain your brand standards from websites, documents, and social media. 
-                No manual data entry, no guesswork—just intelligent brand intelligence.
+                Automatically excavate and maintain your brand DNA from websites, documents, and social media. 
+                The Brand Archaeologist extracts logos, colors, fonts, tone of voice, and layout rules—no manual entry required.
               </p>
             </div>
           </FadeIn>
@@ -54,8 +54,11 @@ export default function BrandRoomPage() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA]">
-                Three Sources, One Unified Brand Snapshot
+                Three Sources, One Unified Brand DNA
               </h2>
+              <p className="mt-4 text-lg text-[#D4D4D8]">
+                The Brand Archaeologist intelligently excavates your brand standards from multiple sources
+              </p>
             </div>
           </ScrollReveal>
 
@@ -68,9 +71,9 @@ export default function BrandRoomPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-[#FAFAFA] mb-4">Website Analysis</h3>
+                  <h3 className="text-xl font-bold text-[#FAFAFA] mb-4">Website Excavation</h3>
                   <p className="text-[#D4D4D8] text-sm mb-6">
-                    URL Archaeologist intelligently crawls up to 12 pages, extracting brand signals without overwhelming your site.
+                    Brand Archaeologist intelligently crawls up to 12 pages, extracting brand signals without overwhelming your site.
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start gap-2 text-sm text-[#D4D4D8]">
@@ -89,19 +92,19 @@ export default function BrandRoomPage() {
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span>Fonts: Google Fonts only</span>
+                      <span>Fonts: Google Fonts only (performance + compatibility)</span>
                     </div>
                     <div className="flex items-start gap-2 text-sm text-[#D4D4D8]">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span>Voice: hero copy, CTAs, headings</span>
+                      <span>Tone of Voice: hero copy, CTAs, headings</span>
                     </div>
                     <div className="flex items-start gap-2 text-sm text-[#D4D4D8]">
                       <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                       </svg>
-                      <span>Limits: 2MB, 10s timeout, same-origin</span>
+                      <span>Layout Rules: logo safe areas, positioning</span>
                     </div>
                   </div>
                 </CardContent>
@@ -213,10 +216,10 @@ export default function BrandRoomPage() {
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA]">
-                Let AI Learn Your Brand
+                Let the Brand Archaeologist Excavate Your DNA
               </h2>
               <p className="mt-4 text-lg text-[#D4D4D8]">
-                No manual data entry. Just connect your sources and watch Brand Room work.
+                No manual data entry. Just connect your sources and watch the excavation begin.
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <a href="https://app.anots.com/signup">

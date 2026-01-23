@@ -60,7 +60,7 @@ export default function Home() {
     },
     {
       title: "Multi-Source Brand Intelligence",
-      description: "ANOTS learns your brand from your website, documents, and social presence. Logos, colors, fonts, voice, and messaging—all extracted automatically.",
+      description: "Brand Archaeologist excavates your brand DNA from websites, documents, and social media. Logos, colors, Google Fonts, tone of voice, and layout rules—all extracted automatically.",
       icon: <BrandIcon />,
       image: "/Features/Multi-source-brand-intelligence.png",
     },
