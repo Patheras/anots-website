@@ -95,7 +95,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
               </a>
               <Link href={secondaryCTA.href} className="w-full sm:w-auto">
                 <Button 
-                  variant="secondary" 
+                  variant="primary" 
                   size="lg" 
                   className="w-full sm:w-auto min-h-[44px]"
                 >
