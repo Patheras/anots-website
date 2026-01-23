@@ -35,49 +35,33 @@ export function ScrollDrivenImage({ src, alt, className = '' }: ScrollDrivenImag
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Animation stages based on scroll progress
+  // Animation stages based on scroll progress - Linear style
   const getTransform = () => {
-    if (scrollProgress < 0.4) {
-      // Stage 1: Start full size, gradually shrink and add subtle rotation
-      const scale = 1.0 - (scrollProgress / 0.4) * 0.3; // 1.0 to 0.7
-      const rotateX = (scrollProgress / 0.4) * 12; // 0 to 12deg (subtle tilt)
-      const rotateY = (scrollProgress / 0.4) * 15; // 0 to 15deg (slight right turn)
-      const rotateZ = (scrollProgress / 0.4) * -2; // 0 to -2deg
-      return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
-    } else if (scrollProgress < 0.7) {
-      // Stage 2: Continue subtle rotation, scroll through content
-      const localProgress = (scrollProgress - 0.4) / 0.3;
-      const scale = 0.7 - localProgress * 0.1; // 0.7 to 0.6
-      const rotateX = 12 + localProgress * 3; // 12 to 15deg
-      const rotateY = 15 + localProgress * 5; // 15 to 20deg
-      const rotateZ = -2;
-      const translateY = -localProgress * 300; // Scroll through content
-      return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
+    if (scrollProgress < 0.5) {
+      // Stage 1: Just add subtle perspective tilt
+      const rotateX = scrollProgress * 24; // 0 to 12deg (subtle tilt)
+      const translateY = scrollProgress * -100; // Slight upward movement
+      return `rotateX(${rotateX}deg) translateY(${translateY}px)`;
     } else {
-      // Stage 3: Settled view, continue scrolling
-      const localProgress = (scrollProgress - 0.7) / 0.3;
-      const scale = 0.6;
-      const rotateX = 15;
-      const rotateY = 20; // Subtle right side view
-      const rotateZ = -2;
-      const translateY = -300 - localProgress * 300;
-      return `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg) translateY(${translateY}px)`;
+      // Stage 2: Maintain tilt, scroll through content
+      const localProgress = (scrollProgress - 0.5) / 0.5;
+      const rotateX = 12;
+      const translateY = -50 - localProgress * 500; // Scroll through the long image
+      return `rotateX(${rotateX}deg) translateY(${translateY}px)`;
     }
   };
 
   return (
     <div 
       ref={containerRef} 
-      className={`relative min-h-[200vh] flex items-start justify-center pt-16 ${className}`}
+      className={`relative min-h-[200vh] flex items-start justify-center pt-24 ${className}`}
     >
-      <div className="sticky top-16 w-full flex items-center justify-center perspective-[2000px]">
+      <div className="sticky top-24 w-full max-w-6xl mx-auto px-4 perspective-[2000px]">
         <div
-          className="browser-mockup overflow-hidden rounded-lg border border-[#1A1A1B] bg-[#111113] shadow-2xl transition-transform duration-100 ease-out"
+          className="browser-mockup overflow-hidden rounded-xl border border-[#1A1A1B] bg-[#111113] shadow-2xl transition-transform duration-100 ease-out"
           style={{
             transform: getTransform(),
             transformStyle: 'preserve-3d',
-            maxWidth: '1200px',
-            width: '100%',
           }}
         >
           {/* Browser Chrome */}
