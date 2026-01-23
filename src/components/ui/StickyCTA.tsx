@@ -83,7 +83,7 @@ export function StickyCTA() {
               Ready to start?
             </div>
             <div className="text-xs sm:text-sm text-[#A1A1AA]">
-              Full ANOTS features + 3 free ANOTs, no credit card required
+              Full Marketing Room + 3 ANOTs free, no credit card
             </div>
           </div>
 

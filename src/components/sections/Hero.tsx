@@ -111,7 +111,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
             <div className="mt-8 flex items-center justify-center gap-2">
               <CheckCircle className="h-4 w-4 text-emerald-400" />
               <span className="text-sm text-zinc-400">
-                Starting at $0/mo • No credit card required
+                Starting at $0/mo • Full Marketing Room + 3 ANOTs • No credit card
               </span>
             </div>
           </FadeIn>

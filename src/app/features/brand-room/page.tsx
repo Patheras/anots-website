@@ -213,6 +213,199 @@ export default function BrandRoomPage() {
       {/* CTA */}
       <section className="bg-[#0A0A0B] py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Tier Comparison */}
+          <ScrollReveal>
+            <div className="mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] text-center mb-12">
+                Marketing Room Across All Tiers
+              </h2>
+              
+              <div className="grid gap-6 lg:grid-cols-3">
+                {/* Free Tier */}
+                <Card className="border-[#5E6AD2]/20">
+                  <CardContent className="p-8">
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-[#FAFAFA]">Explorer</h3>
+                      <p className="text-[#D4D4D8] text-sm mt-2">Free Forever</p>
+                    </div>
+                    
+                    <div className="space-y-4 mb-8">
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">Full Brand Archaeologist</p>
+                          <p className="text-[#A1A1AA] text-sm">All extraction features</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">1 Publishing Platform</p>
+                          <p className="text-[#A1A1AA] text-sm">Instagram OR LinkedIn OR Twitter</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">SEO & Site Improvements</p>
+                          <p className="text-[#A1A1AA] text-sm">Unlimited</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">1 Analytics/Ads Platform</p>
+                          <p className="text-[#A1A1AA] text-sm">Google Analytics OR Meta Ads OR LinkedIn Ads</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <a href="https://app.anots.com/signup" className="block">
+                      <Button variant="primary" size="lg" className="w-full">
+                        Start Free
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* Pro Tier */}
+                <Card className="border-[#5E6AD2] relative">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-[#5E6AD2] px-3 py-1 text-xs font-semibold text-white">
+                      <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                      </svg>
+                      Recommended
+                    </span>
+                  </div>
+                  <CardContent className="p-8">
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-[#FAFAFA]">Pro</h3>
+                      <p className="text-[#D4D4D8] text-sm mt-2">$9.90/month</p>
+                    </div>
+                    
+                    <div className="space-y-4 mb-8">
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">Full Brand Archaeologist</p>
+                          <p className="text-[#A1A1AA] text-sm">All extraction features</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">All Publishing Platforms</p>
+                          <p className="text-[#A1A1AA] text-sm">Instagram, LinkedIn, Twitter, Facebook, etc.</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">SEO & Site Improvements</p>
+                          <p className="text-[#A1A1AA] text-sm">Unlimited</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">All Analytics/Ads Platforms</p>
+                          <p className="text-[#A1A1AA] text-sm">Google, Meta, LinkedIn, Twitter, etc.</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <a href="https://app.anots.com/signup?plan=pro" className="block">
+                      <Button variant="magic" size="lg" className="w-full">
+                        Go Pro
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+
+                {/* Agency Tier */}
+                <Card className="border-[#5E6AD2]/20">
+                  <CardContent className="p-8">
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-[#FAFAFA]">Agency</h3>
+                      <p className="text-[#D4D4D8] text-sm mt-2">$49.90/month</p>
+                    </div>
+                    
+                    <div className="space-y-4 mb-8">
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">Multi-Brand Marketing Room</p>
+                          <p className="text-[#A1A1AA] text-sm">Manage multiple brands</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">All Publishing Platforms</p>
+                          <p className="text-[#A1A1AA] text-sm">Unlimited across all brands</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">White Label Options</p>
+                          <p className="text-[#A1A1AA] text-sm">Your branding, your clients</p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-3">
+                        <svg className="h-5 w-5 flex-shrink-0 text-[#10B981] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                        <div>
+                          <p className="text-[#FAFAFA] font-medium">BYOK Support</p>
+                          <p className="text-[#A1A1AA] text-sm">Use your own API keys</p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <Link href="/contact?plan=agency" className="block">
+                      <Button variant="primary" size="lg" className="w-full">
+                        Contact Sales
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </ScrollReveal>
+
           <ScrollReveal>
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA]">
@@ -223,7 +416,8 @@ export default function BrandRoomPage() {
               </p>
               <div className="mt-8 flex items-center justify-center gap-4">
                 <a href="https://app.anots.com/signup">
-                  <Button variant="magic" size="lg">`n                    Start Free
+                  <Button variant="magic" size="lg">
+                    Start Free
                   </Button>
                 </a>
                 <Link href="/features">
