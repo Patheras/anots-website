@@ -584,3 +584,8 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Smooth horizontal scroll */
+.scroll-smooth {
+  scroll-behavior: smooth;
+}
