@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "About ANOTS - AI Marketing Automation Platform",
-  description: "ANOTS is an AI marketing automation platform with four specialized AI agents (Qubik, Themis, Core, Hephaestus) and Brand Archaeologist that extracts brand DNA from websites, documents, and social media. Learn about our mission, technology, and approach to AI-powered marketing.",
+  description: "ANOTS is an AI marketing automation platform with four specialized AI agents (Qubik, Themis, Athena, Hephaestus) and Brand Archaeologist that extracts brand DNA from websites, documents, and social media. Learn about our mission, technology, and approach to AI-powered marketing.",
   keywords: ["about ANOTS", "AI marketing platform", "marketing automation", "AI agents", "brand intelligence", "company information"],
   alternates: {
     canonical: "https://anots.com/about",
@@ -70,7 +70,7 @@ export default function AboutPage() {
                     <div className="space-y-4">
                       <div>
                         <div className="text-3xl font-bold text-[#5E6AD2]">4</div>
-                        <div className="text-sm text-[#A1A1AA]">AI Agents (Qubik, Themis, Core, Hephaestus)</div>
+                        <div className="text-sm text-[#A1A1AA]">AI Agents (Qubik, Themis, Athena, Hephaestus)</div>
                       </div>
                       <div>
                         <div className="text-3xl font-bold text-[#5E6AD2]">200+</div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
                     <div className="h-12 w-12 rounded-lg bg-[#10B981]/20 flex items-center justify-center mb-6">
                       <span className="text-2xl">⚡</span>
                     </div>
-                    <h3 className="text-xl font-semibold text-[#FAFAFA] mb-3">Core</h3>
+                    <h3 className="text-xl font-semibold text-[#FAFAFA] mb-3">Athena</h3>
                     <p className="text-sm text-[#A1A1AA] mb-4">Synthesizer</p>
                     <p className="text-[#D4D4D8]">
                       Combines both perspectives into clear recommendations. Uses models like Gemini 3 Pro (Pro) or DeepSeek R1 (Free) for synthesis and decision support.
@@ -260,7 +260,7 @@ export default function AboutPage() {
                       <li>• OpenAI ChatGPT-5 (Pro tier - Hephaestus)</li>
                       <li>• OpenAI GPT-5.2 (Pro tier - Qubik)</li>
                       <li>• Anthropic Claude Sonnet 4.5 (Pro tier - Themis)</li>
-                      <li>• Google Gemini 3 Pro (Pro tier - Core)</li>
+                      <li>• Google Gemini 3 Pro (Pro tier - Athena)</li>
                       <li>• Google Gemini 3 Flash (Standard tier)</li>
                       <li>• Google Gemini 2.5 Flash (Free tier)</li>
                       <li>• DeepSeek R1 (Free tier)</li>

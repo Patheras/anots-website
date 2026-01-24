@@ -9,13 +9,13 @@ import { QubikIcon, ThemisIcon, CoreIcon } from "@/components/infographics/Agent
 
 export const metadata: Metadata = {
   title: "AI Marketing Team - Six Specialized Agents | ANOTS",
-  description: "Meet your AI marketing team: Qubik (Creative), Themis (Analyst), Core (Synthesizer), Hephaestus (Builder), Echo (Assistant), and Hermes (coming soon). Six agents that work together to create, review, and execute your marketing automations.",
-  keywords: ["AI marketing team", "Qubik", "Themis", "Core", "Hephaestus", "Echo", "Hermes", "AI agents", "marketing automation agents"],
+  description: "Meet your AI marketing team: Qubik (Creative), Themis (Analyst), Athena (Synthesizer), Hephaestus (Builder), Echo (Assistant), and Hermes (coming soon). Six agents that work together to create, review, and execute your marketing automations.",
+  keywords: ["AI marketing team", "Qubik", "Themis", "Athena", "Hephaestus", "Echo", "Hermes", "AI agents", "marketing automation agents"],
   alternates: {
     canonical: "https://anots.com/features/ai-team",
   },
   openGraph: {
-    title: "AI Marketing Team - Qubik, Themis, Core, Hephaestus, Echo & Hermes | ANOTS",
+    title: "AI Marketing Team - Qubik, Themis, Athena, Hephaestus, Echo & Hermes | ANOTS",
     description: "Six specialized AI agents that work together for perfect marketing automation.",
     url: "https://anots.com/features/ai-team",
   },
@@ -141,10 +141,10 @@ export default function AITeamPage() {
                   <div className="flex justify-center mb-6">
                     <CoreIcon size={80} />
                   </div>
-                  <h3 className="text-2xl font-bold text-[#FAFAFA] text-center mb-2">Core</h3>
+                  <h3 className="text-2xl font-bold text-[#FAFAFA] text-center mb-2">Athena</h3>
                   <p className="text-sm text-[#71717A] text-center mb-6">Synthesizer</p>
                   <p className="text-[#D4D4D8] mb-6">
-                    Core is your strategic advisor. It synthesizes Qubik's creativity and Themis's analysis into clear, actionable recommendations that help you make informed decisions.
+                    Athena is your strategic advisor. It synthesizes Qubik's creativity and Themis's analysis into clear, actionable recommendations that help you make informed decisions.
                   </p>
                   <ul className="space-y-3 text-sm text-[#D4D4D8]">
                     <li className="flex items-start gap-2">
