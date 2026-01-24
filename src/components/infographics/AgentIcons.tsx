@@ -1,7 +1,7 @@
 // Agent icons using Lucide React + custom SVGs - professional icon library
 // ANOTS branding: dark minimal aesthetic with clean icons
 
-import { Sun, Scale, Radio, Send, Anvil } from 'lucide-react';
+import { Sun, Scale, Radio, Anvil } from 'lucide-react';
 
 // Qubik (Apollo): God of creativity, arts, music, poetry, light
 export const QubikIcon = ({ size = 48 }: { size?: number }) => (
@@ -91,10 +91,33 @@ export const HermesIcon = ({ size = 48 }: { size?: number }) => (
     className="flex items-center justify-center rounded-lg bg-[#0A0A0B] border border-[#5E6AD2]/30" 
     style={{ width: size, height: size }}
   >
-    <Send 
+    <svg 
       className="text-[#5E6AD2]" 
-      size={size * 0.5}
-      strokeWidth={0.75}
-    />
+      style={{ width: size * 0.5, height: size * 0.5 }}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="0.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* Hermes' Caduceus - winged staff with serpents */}
+      {/* Central staff */}
+      <line x1="12" y1="4" x2="12" y2="20" />
+      {/* Wings at top */}
+      <path d="M8 6 L12 4 L16 6" />
+      <path d="M7 7 L12 5 L17 7" />
+      {/* Left serpent */}
+      <path d="M12 8 Q9 9, 9 11 Q9 13, 12 14" />
+      <circle cx="9" cy="11" r="0.8" />
+      {/* Right serpent */}
+      <path d="M12 8 Q15 9, 15 11 Q15 13, 12 14" />
+      <circle cx="15" cy="11" r="0.8" />
+      {/* Lower serpents */}
+      <path d="M12 14 Q9 15, 9 17 Q9 19, 12 20" />
+      <path d="M12 14 Q15 15, 15 17 Q15 19, 12 20" />
+      {/* Top ornament */}
+      <circle cx="12" cy="4" r="1" />
+    </svg>
   </div>
 );
