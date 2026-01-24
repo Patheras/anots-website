@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "About ANOTS - AI Marketing Automation Platform",
-  description: "ANOTS is an AI marketing automation platform with three specialized AI agents (Qubik, Themis, Core) and Brand Archaeologist that extracts brand DNA from websites, documents, and social media. Learn about our mission, technology, and approach to AI-powered marketing.",
+  description: "ANOTS is an AI marketing automation platform with four specialized AI agents (Qubik, Themis, Core, Hephaestus) and Brand Archaeologist that extracts brand DNA from websites, documents, and social media. Learn about our mission, technology, and approach to AI-powered marketing.",
   keywords: ["about ANOTS", "AI marketing platform", "marketing automation", "AI agents", "brand intelligence", "company information"],
   alternates: {
     canonical: "https://anots.com/about",
@@ -51,7 +51,7 @@ export default function AboutPage() {
                   </h2>
                   <div className="space-y-4 text-lg text-[#D4D4D8]">
                     <p>
-                      ANOTS is an AI marketing automation platform that uses three specialized AI agents to create, review, and execute marketing campaigns automatically.
+                      ANOTS is an AI marketing automation platform that uses four specialized AI agents to create, review, and execute marketing campaigns automatically.
                     </p>
                     <p>
                       The name ANOTS stands for "Atomic Units of Agency" - representing the smallest independent marketing automation you can create. Each ANOT is a complete, self-contained marketing task that runs automatically after your approval.
@@ -69,8 +69,8 @@ export default function AboutPage() {
                     <h3 className="text-xl font-semibold text-[#FAFAFA] mb-4">Key Statistics</h3>
                     <div className="space-y-4">
                       <div>
-                        <div className="text-3xl font-bold text-[#5E6AD2]">3</div>
-                        <div className="text-sm text-[#A1A1AA]">AI Agents (Qubik, Themis, Core)</div>
+                        <div className="text-3xl font-bold text-[#5E6AD2]">4</div>
+                        <div className="text-sm text-[#A1A1AA]">AI Agents (Qubik, Themis, Core, Hephaestus)</div>
                       </div>
                       <div>
                         <div className="text-3xl font-bold text-[#5E6AD2]">200+</div>
@@ -97,11 +97,11 @@ export default function AboutPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <ScrollReveal>
               <h2 className="text-3xl font-bold text-[#FAFAFA] mb-12 text-center">
-                The AI Team: TCAM V2
+                The AI Team: TCAM V3
               </h2>
             </ScrollReveal>
 
-            <div className="grid gap-8 md:grid-cols-3">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
               <ScrollReveal>
                 <Card className="border-[#5E6AD2]/20">
                   <CardContent className="p-8">
@@ -142,6 +142,21 @@ export default function AboutPage() {
                     <p className="text-sm text-[#A1A1AA] mb-4">Synthesizer</p>
                     <p className="text-[#D4D4D8]">
                       Combines both perspectives into clear recommendations. Uses models like Gemini 3 Pro (Pro) or DeepSeek R1 (Free) for synthesis and decision support.
+                    </p>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
+
+              <ScrollReveal>
+                <Card className="border-[#F59E0B]/20">
+                  <CardContent className="p-8">
+                    <div className="h-12 w-12 rounded-lg bg-[#F59E0B]/20 flex items-center justify-center mb-6">
+                      <span className="text-2xl">🔨</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-[#FAFAFA] mb-3">Hephaestus</h3>
+                    <p className="text-sm text-[#A1A1AA] mb-4">ANOT Maker</p>
+                    <p className="text-[#D4D4D8]">
+                      Builds ActivePieces flows from natural language. Transforms your conversation into executable automation workflows. Uses ChatGPT-5 for chat-to-flow translation.
                     </p>
                   </CardContent>
                 </Card>
@@ -242,9 +257,10 @@ export default function AboutPage() {
                   <CardContent className="p-6">
                     <h3 className="text-lg font-semibold text-[#FAFAFA] mb-3">AI Models</h3>
                     <ul className="text-sm text-[#A1A1AA] space-y-2">
-                      <li>• OpenAI GPT-5.2 (Pro tier)</li>
-                      <li>• Anthropic Claude Sonnet 4.5 (Pro tier)</li>
-                      <li>• Google Gemini 3 Pro (Pro tier)</li>
+                      <li>• OpenAI ChatGPT-5 (Pro tier - Hephaestus)</li>
+                      <li>• OpenAI GPT-5.2 (Pro tier - Qubik)</li>
+                      <li>• Anthropic Claude Sonnet 4.5 (Pro tier - Themis)</li>
+                      <li>• Google Gemini 3 Pro (Pro tier - Core)</li>
                       <li>• Google Gemini 3 Flash (Standard tier)</li>
                       <li>• Google Gemini 2.5 Flash (Free tier)</li>
                       <li>• DeepSeek R1 (Free tier)</li>
@@ -328,7 +344,7 @@ export default function AboutPage() {
                   <CardContent className="p-8">
                     <h3 className="text-xl font-semibold text-[#FAFAFA] mb-4">Trust</h3>
                     <p className="text-[#D4D4D8]">
-                      Three-agent architecture ensures creative ideas are balanced with analytical rigor. Themis reviews every proposal for risks and constraints.
+                      Four-agent architecture ensures creative ideas are balanced with analytical rigor and practical implementation. Themis reviews every proposal for risks, while Hephaestus builds the actual workflows.
                     </p>
                   </CardContent>
                 </Card>

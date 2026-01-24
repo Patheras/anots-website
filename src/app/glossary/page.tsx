@@ -6,8 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Glossary - ANOTS AI Marketing Automation Terms & Definitions",
-  description: "Complete glossary of ANOTS terminology: ANOT, Brand Archaeologist, TCAM V2, Qubik, Themis, Core, Brand Room, Activity Hub, approval workflows, and AI marketing automation concepts. Understand every term used in the ANOTS platform.",
-  keywords: ["ANOTS glossary", "AI marketing terms", "ANOT definition", "Brand Archaeologist explained", "TCAM V2", "marketing automation glossary", "AI agents terminology"],
+  description: "Complete glossary of ANOTS terminology: ANOT, Brand Archaeologist, TCAM V3, Qubik, Themis, Core, Hephaestus, Brand Room, Activity Hub, approval workflows, and AI marketing automation concepts. Understand every term used in the ANOTS platform.",
+  keywords: ["ANOTS glossary", "AI marketing terms", "ANOT definition", "Brand Archaeologist explained", "TCAM V3", "Hephaestus ANOT Maker", "marketing automation glossary", "AI agents terminology"],
   alternates: {
     canonical: "https://anots.com/glossary",
   },
@@ -33,28 +33,34 @@ const glossaryTerms: GlossaryTerm[] = [
     relatedTerms: ["Approval Workflow", "Activity Hub", "TCAM V2"],
   },
   {
-    term: "TCAM V2",
-    definition: "Three-Agent Collaborative Architecture Model Version 2. The AI system powering ANOTS, consisting of three specialized agents: Qubik (Creative Motor), Themis (Analytical Motor), and Core (Synthesizer). This architecture ensures creative ideas are balanced with analytical rigor before execution.",
+    term: "TCAM V3",
+    definition: "Four-Agent Collaborative Architecture Model Version 3. The enhanced AI system powering ANOTS, consisting of four specialized agents: Qubik (Creative Motor), Themis (Analytical Motor), Core (Synthesizer), and Hephaestus (ANOT Maker). This architecture ensures creative ideas are balanced with analytical rigor and practical implementation.",
     category: "Core Concepts",
-    relatedTerms: ["Qubik", "Themis", "Core"],
+    relatedTerms: ["Qubik", "Themis", "Core", "Hephaestus"],
   },
   {
     term: "Qubik",
-    definition: "The Creative Motor in TCAM V2. Qubik generates creative proposals, content ideas, and marketing strategies. Uses AI models like Gemini 2.5 Flash (Free), Gemini 3 Flash (Standard), or GPT-5.2 (Pro). Named after quantum bits (qubits) representing creative superposition of possibilities.",
+    definition: "The Creative Motor in TCAM V3. Qubik generates creative proposals, content ideas, and marketing strategies. Uses AI models like Gemini 2.5 Flash (Free), Gemini 3 Flash (Standard), or GPT-5.2 (Pro). Named after quantum bits (qubits) representing creative superposition of possibilities.",
     category: "AI Agents",
-    relatedTerms: ["TCAM V2", "Themis", "Core"],
+    relatedTerms: ["TCAM V3", "Themis", "Core", "Hephaestus"],
   },
   {
     term: "Themis",
-    definition: "The Analytical Motor in TCAM V2. Themis reviews proposals for risks, costs, brand consistency, and practical constraints. Uses AI models like DeepSeek R1 (Free), Claude 3.5 Haiku (Standard), or Claude Sonnet 4.5 (Pro). Named after the Greek goddess of justice and order.",
+    definition: "The Analytical Motor in TCAM V3. Themis reviews proposals for risks, costs, brand consistency, and practical constraints. Uses AI models like DeepSeek R1 (Free), Claude 3.5 Haiku (Standard), or Claude Sonnet 4.5 (Pro). Named after the Greek goddess of justice and order.",
     category: "AI Agents",
-    relatedTerms: ["TCAM V2", "Qubik", "Core"],
+    relatedTerms: ["TCAM V3", "Qubik", "Core", "Hephaestus"],
   },
   {
     term: "Core",
-    definition: "The Synthesizer in TCAM V2. Core combines perspectives from Qubik and Themis into clear recommendations presented to you for approval. Uses AI models like DeepSeek R1 (Free), Gemini 3 Flash (Standard), or Gemini 3 Pro (Pro). Acts as the central decision support system.",
+    definition: "The Synthesizer in TCAM V3. Core combines perspectives from Qubik and Themis into clear recommendations presented to you for approval. Uses AI models like DeepSeek R1 (Free), Gemini 3 Flash (Standard), or Gemini 3 Pro (Pro). Acts as the central decision support system.",
     category: "AI Agents",
-    relatedTerms: ["TCAM V2", "Qubik", "Themis"],
+    relatedTerms: ["TCAM V3", "Qubik", "Themis", "Hephaestus"],
+  },
+  {
+    term: "Hephaestus",
+    definition: "The ANOT Maker in TCAM V3. Hephaestus builds ActivePieces flows from natural language conversations. Transforms your chat into executable automation workflows. Uses ChatGPT-5 for advanced chat-to-flow translation. Named after the Greek god of craftsmanship and forge.",
+    category: "AI Agents",
+    relatedTerms: ["TCAM V3", "Qubik", "Themis", "Core", "ActivePieces"],
   },
   {
     term: "Brand Archaeologist",
@@ -88,15 +94,15 @@ const glossaryTerms: GlossaryTerm[] = [
   },
   {
     term: "Approval Workflow",
-    definition: "The review process where nothing runs without your explicit permission. Process: (1) You chat with AI team, (2) Qubik creates proposal, (3) Themis reviews for risks, (4) Core synthesizes recommendation, (5) You approve or reject. Ensures full control over all marketing automation.",
+    definition: "The review process where nothing runs without your explicit permission. Process: (1) You chat with AI team, (2) Qubik creates proposal, (3) Themis reviews for risks, (4) Core synthesizes recommendation, (5) Hephaestus builds the flow, (6) You approve or reject. Ensures full control over all marketing automation.",
     category: "Core Concepts",
-    relatedTerms: ["TCAM V2", "ANOT", "Risk Detection"],
+    relatedTerms: ["TCAM V3", "ANOT", "Risk Detection", "Hephaestus"],
   },
   {
     term: "AI Council",
-    definition: "The collective decision-making body of Qubik, Themis, and Core. Reviews all Brand Archaeologist extractions and creates unified brand snapshots. Ensures multi-perspective validation before committing brand data.",
+    definition: "The collective decision-making body of Qubik, Themis, Core, and Hephaestus. Reviews all Brand Archaeologist extractions and creates unified brand snapshots. Ensures multi-perspective validation before committing brand data.",
     category: "AI Agents",
-    relatedTerms: ["TCAM V2", "Brand Archaeologist", "Brand Room"],
+    relatedTerms: ["TCAM V3", "Brand Archaeologist", "Brand Room"],
   },
   {
     term: "BYOK",

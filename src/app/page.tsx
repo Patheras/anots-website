@@ -19,14 +19,14 @@ import {
 
 export const metadata: Metadata = {
   title: "ANOTS - AI Marketing Automation Platform | AI Team, Brand Room & Activity Hub",
-  description: "AI marketing automation with 3 AI agents (Qubik, Themis, Core) that create, review, and execute campaigns. Brand Room automatically extracts logos, colors, fonts, and brand voice from your website, documents, and social media. Activity Hub tracks all automations. Connect to 200+ apps via ActivePieces. Start free with 3 ANOTs.",
+  description: "AI marketing automation with 4 AI agents (Qubik, Themis, Core, Hephaestus) that create, review, and execute campaigns. Brand Room automatically extracts logos, colors, fonts, and brand voice from your website, documents, and social media. Activity Hub tracks all automations. Connect to 200+ apps via ActivePieces. Start free with 3 ANOTs.",
   keywords: ["AI marketing automation", "AI team", "brand intelligence", "marketing AI agents", "brand extraction", "automated marketing", "brand standards", "AI brand analysis", "marketing workflow automation", "ActivePieces", "no-code marketing", "ANOT", "activity hub", "brand room", "qubik", "themis", "core", "social media automation", "blog articles", "logos colors", "reviews for risks"],
   alternates: {
     canonical: "https://anots.com",
   },
   openGraph: {
     title: "ANOTS - AI Marketing Automation | AI Team + Brand Room + Activity Hub",
-    description: "3 AI agents (Qubik, Themis, Core) that create, review, and execute your marketing automations. Brand Room extracts logos, colors, and brand voice. Activity Hub tracks everything. Start free with 3 ANOTs.",
+    description: "4 AI agents (Qubik, Themis, Core, Hephaestus) that create, review, and execute your marketing automations. Brand Room extracts logos, colors, and brand voice. Activity Hub tracks everything. Start free with 3 ANOTs.",
     url: "https://anots.com",
     images: ["/og-image.png"],
   },
@@ -78,7 +78,7 @@ export default function Home() {
       
       <Hero
         headline="If You're Here, ANOTs Are Already Working"
-        subheadline="Qubik creates. Themis reviews. Core synthesizes. You Approve. Then it runs automatically."
+        subheadline="Qubik creates. Themis reviews. Core synthesizes. Hephaestus builds. You Approve. Then it runs automatically."
         primaryCTA={{ text: "Start Free", href: "https://app.anots.com/signup" }}
         secondaryCTA={{ text: "See How We Did It", href: "/use-cases" }}
       />
@@ -198,7 +198,7 @@ export default function Home() {
                     <div className="glow-dot glow-dot-red mt-1.5"></div>
                     <div>
                       <h4 className="text-base font-semibold text-[#FAFAFA]">AI Council Review</h4>
-                      <p className="text-sm text-[#A1A1AA] mt-1">Qubik, Themis, and Core validate and synthesize your brand standards</p>
+                      <p className="text-sm text-[#A1A1AA] mt-1">Qubik, Themis, Core, and Hephaestus validate and synthesize your brand standards</p>
                     </div>
                   </div>
                   
@@ -398,7 +398,7 @@ export default function Home() {
                 </div>
                 <h3 className="heading-md text-[#FAFAFA] mb-3">Review & Approve</h3>
                 <p className="body-base text-secondary">
-                  Qubik creates a proposal. Themis reviews for risks. Core synthesizes both. You see everything before approving.
+                  Qubik creates a proposal. Themis reviews for risks. Core synthesizes both. Hephaestus builds the workflow. You see everything before approving.
                 </p>
               </div>
             </ScrollReveal>
