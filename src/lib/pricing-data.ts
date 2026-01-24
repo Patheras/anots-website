@@ -10,9 +10,12 @@ export interface PricingTierData {
   billingPeriod: 'month' | 'year' | null;
   description: string;
   features: {
-    name: string;
-    included: boolean;
-    limit?: string;
+    category: string;
+    items: {
+      name: string;
+      included: boolean;
+      limit?: string;
+    }[];
   }[];
   cta: {
     text: string;
@@ -85,22 +88,41 @@ export const pricingTiers: PricingTierData[] = [
     billingPeriod: null,
     description: 'Just to explore - Perfect for getting started',
     features: [
-      { name: 'Up to 3 active ANOTs', included: true, limit: '3 ANOTs' },
-      { name: 'TCAM V2 AI Team (Qubik + Themis + Core)', included: true },
-      { name: 'Qubik: Gemini 2.5 Flash (Creative)', included: true },
-      { name: 'Themis: DeepSeek R1 (Analytical with reasoning)', included: true },
-      { name: 'Core: DeepSeek R1 (Synthesizer)', included: true },
-      { name: 'Brand Archaeologist: Gemini 3 Pro, Gemini 2.5 Pro', included: true, limit: '3 excavations/month' },
-      { name: 'Approval gate for all actions', included: true },
-      { name: 'Activity Hub (24h view)', included: true },
-      { name: 'Marketing Room - Full Brand Archaeologist', included: true },
-      { name: '1 Publishing Platform (Instagram OR LinkedIn OR Twitter)', included: true, limit: '1 platform' },
-      { name: 'SEO & Site Improvements (Unlimited)', included: true },
-      { name: '1 Analytics/Ads Platform', included: true, limit: '1 platform' },
-      { name: 'Community support', included: true },
-      { name: 'Premium AI models', included: false },
-      { name: 'All publishing platforms', included: false },
-      { name: 'Cost estimates', included: false },
+      {
+        category: 'ANOTs & AI Team',
+        items: [
+          { name: 'Up to 3 active ANOTs', included: true, limit: '3 ANOTs' },
+          { name: 'TCAM V2 AI Team (Qubik + Themis + Core)', included: true },
+          { name: 'Qubik: Gemini 2.5 Flash', included: true },
+          { name: 'Themis: DeepSeek R1', included: true },
+          { name: 'Core: DeepSeek R1', included: true },
+        ]
+      },
+      {
+        category: 'Brand Intelligence',
+        items: [
+          { name: 'Brand Archaeologist', included: true, limit: '3 excavations/month' },
+          { name: 'Marketing Room', included: true },
+        ]
+      },
+      {
+        category: 'Platforms & Integrations',
+        items: [
+          { name: '1 Publishing Platform', included: true, limit: 'Instagram OR LinkedIn OR Twitter' },
+          { name: '1 Analytics/Ads Platform', included: true },
+          { name: 'SEO & Site Improvements', included: true },
+        ]
+      },
+      {
+        category: 'Features & Support',
+        items: [
+          { name: 'Approval gate for all actions', included: true },
+          { name: 'Activity Hub', included: true, limit: '24h view' },
+          { name: 'Community support', included: true },
+          { name: 'Premium AI models', included: false },
+          { name: 'Cost estimates', included: false },
+        ]
+      },
     ],
     cta: { text: 'Start Free', href: 'https://app.anots.com/signup?plan=free', variant: 'primary' },
     recommended: false,
@@ -112,23 +134,43 @@ export const pricingTiers: PricingTierData[] = [
     billingPeriod: 'month',
     description: 'Powerful production - Scale your marketing automation',
     features: [
-      { name: 'Up to 50 ANOTs per month', included: true, limit: '50 ANOTs' },
-      { name: 'Qubik: Gemini 3 Flash (Advanced creative + multimodal)', included: true },
-      { name: 'Themis: Claude 3.5 Haiku (Fast analytical reasoning)', included: true },
-      { name: 'Core: Gemini 3 Flash (Multimodal synthesis)', included: true },
-      { name: 'Brand Archaeologist: Gemini 3 Pro, Gemini 2.5 Pro', included: true, limit: '10 excavations/month' },
-      { name: '+14% better content quality vs Free', included: true },
-      { name: '+7% better risk detection vs Free', included: true },
-      { name: '76% faster response time vs Free', included: true },
-      { name: 'Credit-based billing for usage', included: true },
-      { name: 'Cost estimates before operations', included: true },
-      { name: 'Activity Hub (7-day view)', included: true },
-      { name: 'Marketing Room - Full Brand Archaeologist', included: true },
-      { name: 'All Publishing Platforms (Instagram, LinkedIn, Twitter, etc.)', included: true },
-      { name: 'All Analytics/Ads Platforms', included: true },
-      { name: 'Priority email support', included: true },
-      { name: 'Advanced analytics', included: true },
-      { name: 'BYOK (Bring Your Own Keys)', included: false },
+      {
+        category: 'ANOTs & AI Team',
+        items: [
+          { name: 'Up to 50 ANOTs per month', included: true, limit: '50 ANOTs' },
+          { name: 'Qubik: Gemini 3 Flash', included: true },
+          { name: 'Themis: Claude 3.5 Haiku', included: true },
+          { name: 'Core: Gemini 3 Flash', included: true },
+          { name: '+14% better content quality', included: true },
+          { name: '+7% better risk detection', included: true },
+          { name: '76% faster response time', included: true },
+        ]
+      },
+      {
+        category: 'Brand Intelligence',
+        items: [
+          { name: 'Brand Archaeologist', included: true, limit: '10 excavations/month' },
+          { name: 'Marketing Room', included: true },
+        ]
+      },
+      {
+        category: 'Platforms & Integrations',
+        items: [
+          { name: 'All Publishing Platforms', included: true },
+          { name: 'All Analytics/Ads Platforms', included: true },
+        ]
+      },
+      {
+        category: 'Features & Support',
+        items: [
+          { name: 'Activity Hub', included: true, limit: '7-day view' },
+          { name: 'Cost estimates before operations', included: true },
+          { name: 'Credit-based billing', included: true },
+          { name: 'Priority email support', included: true },
+          { name: 'Advanced analytics', included: true },
+          { name: 'BYOK (Bring Your Own Keys)', included: false },
+        ]
+      },
     ],
     cta: { text: 'Get Standard', href: 'https://app.anots.com/signup?plan=standard', variant: 'magic' },
     recommended: true,
@@ -140,25 +182,45 @@ export const pricingTiers: PricingTierData[] = [
     billingPeriod: 'month',
     description: 'Unlimited freedom - Flagship models from every provider',
     features: [
-      { name: 'Unlimited ANOTs', included: true },
-      { name: 'Qubik: GPT-5.2 (OpenAI flagship - Best reasoning + creative)', included: true },
-      { name: 'Themis: Claude Sonnet 4.5 (Anthropic flagship - Best analytical)', included: true },
-      { name: 'Core: Gemini 3 Pro (Google flagship - Best multimodal synthesis)', included: true },
-      { name: 'Brand Archaeologist: Gemini 3 Pro, Gemini 2.5 Pro (Unlimited)', included: true },
-      { name: '+9% better content quality vs Standard', included: true },
-      { name: '+10% better risk detection vs Standard', included: true },
-      { name: '38% faster response time vs Standard', included: true },
-      { name: 'Extended thinking chains visible', included: true },
-      { name: 'BYOK - Use your own OpenAI/Anthropic/Google keys', included: true },
-      { name: 'Direct billing to your provider (Zero AI cost with BYOK)', included: true },
-      { name: 'Activity Hub (custom range)', included: true },
-      { name: 'Multi-brand Marketing Room support', included: true },
-      { name: 'All Publishing Platforms', included: true },
-      { name: 'All Analytics/Ads Platforms', included: true },
-      { name: 'White label options', included: true },
-      { name: 'Dedicated support', included: true },
-      { name: 'Advanced analytics', included: true },
-      { name: 'Custom integrations', included: true },
+      {
+        category: 'ANOTs & AI Team',
+        items: [
+          { name: 'Unlimited ANOTs', included: true },
+          { name: 'Qubik: GPT-5.2 (OpenAI flagship)', included: true },
+          { name: 'Themis: Claude Sonnet 4.5 (Anthropic flagship)', included: true },
+          { name: 'Core: Gemini 3 Pro (Google flagship)', included: true },
+          { name: '+9% better content quality', included: true },
+          { name: '+10% better risk detection', included: true },
+          { name: '38% faster response time', included: true },
+          { name: 'Extended thinking chains visible', included: true },
+        ]
+      },
+      {
+        category: 'Brand Intelligence',
+        items: [
+          { name: 'Brand Archaeologist', included: true, limit: 'Unlimited' },
+          { name: 'Multi-brand Marketing Room', included: true },
+        ]
+      },
+      {
+        category: 'Platforms & Integrations',
+        items: [
+          { name: 'All Publishing Platforms', included: true },
+          { name: 'All Analytics/Ads Platforms', included: true },
+          { name: 'Custom integrations', included: true },
+        ]
+      },
+      {
+        category: 'Features & Support',
+        items: [
+          { name: 'Activity Hub', included: true, limit: 'Custom range' },
+          { name: 'BYOK - Use your own API keys', included: true },
+          { name: 'Direct billing to your provider', included: true },
+          { name: 'White label options', included: true },
+          { name: 'Dedicated support', included: true },
+          { name: 'Advanced analytics', included: true },
+        ]
+      },
     ],
     cta: { text: 'Get Pro', href: 'https://app.anots.com/signup?plan=pro', variant: 'primary' },
     recommended: false,
@@ -170,16 +232,20 @@ export const pricingTiers: PricingTierData[] = [
     billingPeriod: null,
     description: 'Custom solutions - Tailored for your organization',
     features: [
-      { name: 'Everything in Agency', included: true },
-      { name: 'Custom deployment options', included: true },
-      { name: 'Dedicated infrastructure', included: true },
-      { name: 'SLA guarantees', included: true },
-      { name: 'Custom integrations & workflows', included: true },
-      { name: 'Advanced security & compliance', included: true },
-      { name: 'Dedicated account manager', included: true },
-      { name: 'Priority support (24/7)', included: true },
-      { name: 'Custom training & onboarding', included: true },
-      { name: 'Volume discounts', included: true },
+      {
+        category: 'Everything in Pro, Plus',
+        items: [
+          { name: 'Custom deployment options', included: true },
+          { name: 'Dedicated infrastructure', included: true },
+          { name: 'SLA guarantees', included: true },
+          { name: 'Custom integrations & workflows', included: true },
+          { name: 'Advanced security & compliance', included: true },
+          { name: 'Dedicated account manager', included: true },
+          { name: 'Priority support (24/7)', included: true },
+          { name: 'Custom training & onboarding', included: true },
+          { name: 'Volume discounts', included: true },
+        ]
+      },
     ],
     cta: { text: 'Contact Us', href: '/contact?plan=enterprise', variant: 'secondary' },
     recommended: false,

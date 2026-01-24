@@ -33,11 +33,11 @@ export function PricingTiers() {
         </div>
 
         {/* Pricing Cards - Optimized gaps */}
-        <div className="mt-12 sm:mt-16 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2">
+        <div className="mt-12 sm:mt-16 grid gap-6 md:gap-8 grid-cols-1 md:grid-cols-2 md:items-stretch">
           {pricingTiers.map((tier, index) => (
             <ScrollReveal key={tier.id}>
               <Card
-                className={`linear-card hover-glow relative h-full ${
+                className={`linear-card hover-glow relative flex flex-col h-full ${
                   tier.recommended
                     ? 'border-[#5E6AD2] shadow-[0_0_30px_rgba(94,106,210,0.2)]'
                     : ''
@@ -63,79 +63,90 @@ export function PricingTiers() {
                   </div>
                 </CardHeader>
 
-                <CardContent className="space-y-6 pt-0">
-                  {/* Features List - Tighter spacing */}
-                  <ul className="space-y-2.5">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-start gap-2.5 text-sm"
-                      >
-                        {feature.included ? (
-                          <svg
-                            className="h-4 w-4 flex-shrink-0 text-[#10B981] mt-0.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="2.5"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        ) : (
-                          <svg
-                            className="h-4 w-4 flex-shrink-0 text-[#71717A] mt-0.5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="2.5"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M6 18L18 6M6 6l12 12"
-                            />
-                          </svg>
-                        )}
-                        <span
-                          className={
-                            feature.included ? 'text-[#D4D4D8] leading-tight' : 'text-[#71717A] leading-tight'
-                          }
-                        >
-                          {feature.name}
-                          {feature.limit && (
-                            <span className="text-[#A1A1AA]"> ({feature.limit})</span>
-                          )}
-                        </span>
-                      </li>
+                <CardContent className="space-y-6 pt-0 flex-1 flex flex-col">
+                  {/* Features List - Categorized */}
+                  <div className="space-y-5 flex-1">
+                    {tier.features.map((category, categoryIndex) => (
+                      <div key={categoryIndex}>
+                        <h4 className="text-xs font-semibold text-[#A1A1AA] uppercase tracking-wide mb-2.5">
+                          {category.category}
+                        </h4>
+                        <ul className="space-y-2">
+                          {category.items.map((feature, featureIndex) => (
+                            <li
+                              key={featureIndex}
+                              className="flex items-start gap-2.5 text-sm"
+                            >
+                              {feature.included ? (
+                                <svg
+                                  className="h-4 w-4 flex-shrink-0 text-[#10B981] mt-0.5"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  strokeWidth="2.5"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M5 13l4 4L19 7"
+                                  />
+                                </svg>
+                              ) : (
+                                <svg
+                                  className="h-4 w-4 flex-shrink-0 text-[#71717A] mt-0.5"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  strokeWidth="2.5"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                  />
+                                </svg>
+                              )}
+                              <span
+                                className={
+                                  feature.included ? 'text-[#D4D4D8] leading-tight' : 'text-[#71717A] leading-tight'
+                                }
+                              >
+                                {feature.name}
+                                {feature.limit && (
+                                  <span className="text-[#A1A1AA]"> ({feature.limit})</span>
+                                )}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
 
                   {/* CTA Button */}
-                  {tier.cta.href.startsWith('http') ? (
-                    <a href={tier.cta.href} className="block">
-                      <Button
-                        variant={tier.cta.variant}
-                        size="lg"
-                        className="w-full"
-                      >
-                        {tier.cta.text}
-                      </Button>
-                    </a>
-                  ) : (
-                    <Link href={tier.cta.href} className="block">
-                      <Button
-                        variant={tier.cta.variant}
-                        size="lg"
-                        className="w-full"
-                      >
-                        {tier.cta.text}
-                      </Button>
-                    </Link>
-                  )}
+                  <div className="mt-auto">
+                    {tier.cta.href.startsWith('http') ? (
+                      <a href={tier.cta.href} className="block">
+                        <Button
+                          variant={tier.cta.variant}
+                          size="lg"
+                          className="w-full"
+                        >
+                          {tier.cta.text}
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link href={tier.cta.href} className="block">
+                        <Button
+                          variant={tier.cta.variant}
+                          size="lg"
+                          className="w-full"
+                        >
+                          {tier.cta.text}
+                        </Button>
+                      </Link>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             </ScrollReveal>

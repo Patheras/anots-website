@@ -19,11 +19,11 @@ export function ModelPerformance() {
           </div>
         </ScrollReveal>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        <div className="grid gap-8 lg:grid-cols-3 lg:items-stretch">
           {/* Free Tier */}
           <ScrollReveal>
-            <Card className="border-[#5E6AD2]/20">
-              <CardContent className="p-8">
+            <Card className="border-[#5E6AD2]/20 flex flex-col h-full">
+              <CardContent className="p-8 flex flex-col flex-1">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-[#FAFAFA]">Explorer</h3>
                   <p className="text-[#A1A1AA] text-sm mt-2">Free Forever</p>
@@ -132,7 +132,7 @@ export function ModelPerformance() {
 
           {/* Pro Tier */}
           <ScrollReveal>
-            <Card className="border-[#5E6AD2] relative">
+            <Card className="border-[#5E6AD2] relative flex flex-col h-full">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <span className="inline-flex items-center gap-1 rounded-full bg-[#5E6AD2] px-3 py-1 text-xs font-semibold text-white">
                   <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -141,7 +141,7 @@ export function ModelPerformance() {
                   Recommended
                 </span>
               </div>
-              <CardContent className="p-8">
+              <CardContent className="p-8 flex flex-col flex-1">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-[#FAFAFA]">Standard</h3>
                   <p className="text-[#A1A1AA] text-sm mt-2">$9.90/month</p>
@@ -270,8 +270,8 @@ export function ModelPerformance() {
 
           {/* Agency Tier */}
           <ScrollReveal>
-            <Card className="border-[#5E6AD2]/20">
-              <CardContent className="p-8">
+            <Card className="border-[#5E6AD2]/20 flex flex-col h-full">
+              <CardContent className="p-8 flex flex-col flex-1">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-[#FAFAFA]">Pro</h3>
                   <p className="text-[#A1A1AA] text-sm mt-2">$49.90/month</p>

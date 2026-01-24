@@ -107,7 +107,7 @@ export default function Home() {
             </div>
 
             {/* Supabase */}
-            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square">
+            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '60ms' }}>
               <svg className="h-8 w-8 text-[#71717A] mb-3" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M21.362 9.354H12V.396a12.209 12.209 0 0 1 3.746.371 12.117 12.117 0 0 1 3.523 1.368A12.298 12.298 0 0 1 21.362 4.2a12.16 12.16 0 0 1 1.703 3.047 12.042 12.042 0 0 1 .396 3.107h-1.99zM11.804 24a12.042 12.042 0 0 1-3.107-.396 12.16 12.16 0 0 1-3.047-1.703A12.298 12.298 0 0 1 3.585 19.83a12.117 12.117 0 0 1-1.368-3.523A12.209 12.209 0 0 1 1.846 12.5a12.042 12.042 0 0 1 .396-3.107 12.16 12.16 0 0 1 1.703-3.047A12.298 12.298 0 0 1 6.01 4.281a12.117 12.117 0 0 1 3.523-1.368A12.209 12.209 0 0 1 12.279 2.542V24h-.475z"/>
               </svg>
@@ -115,7 +115,7 @@ export default function Home() {
             </div>
 
             {/* OpenAI */}
-            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square">
+            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '90ms' }}>
               <svg className="h-8 w-8 text-[#A1A1AA] mb-3" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
               </svg>
@@ -123,7 +123,7 @@ export default function Home() {
             </div>
 
             {/* Anthropic */}
-            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square">
+            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '120ms' }}>
               <svg className="h-8 w-8 text-[#A1A1AA] mb-3" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.4 0h3.99L14.93 24h-3.99L17.4 0zm-10.8 0h3.99L4.13 24H.14L6.6 0z"/>
               </svg>
@@ -131,7 +131,7 @@ export default function Home() {
             </div>
 
             {/* Google */}
-            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square">
+            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '150ms' }}>
               <svg className="h-8 w-8 text-[#A1A1AA] mb-3" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
               </svg>
@@ -139,7 +139,7 @@ export default function Home() {
             </div>
 
             {/* DeepSeek */}
-            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square">
+            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '180ms' }}>
               <svg className="h-8 w-8 text-[#71717A] mb-3" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0L1.608 6v12L12 24l10.392-6V6L12 0zm-1.073 1.853v6.914L4.146 5.62l6.781-3.767zm2.146 0l6.781 3.767-6.781 3.147V1.853zM3.394 7.097l6.781 3.147v7.767l-6.781-3.767V7.097zm9.073 3.147l6.781-3.147v7.147l-6.781 3.767v-7.767z"/>
               </svg>
@@ -147,7 +147,7 @@ export default function Home() {
             </div>
 
             {/* Ollama */}
-            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square">
+            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '210ms' }}>
               <svg className="h-8 w-8 text-[#A1A1AA] mb-3" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M7.42 0C5.336 0 3.638 1.697 3.638 3.781c0 .256.026.506.076.748A3.78 3.78 0 0 0 0 8.138v7.724a3.78 3.78 0 0 0 3.714 3.609 3.781 3.781 0 0 0 7.144 0h2.284a3.781 3.781 0 0 0 7.144 0A3.78 3.78 0 0 0 24 15.862V8.138a3.78 3.78 0 0 0-3.714-3.609 3.781 3.781 0 0 0-7.144 0H10.858a3.781 3.781 0 0 0-3.438-4.529zm0 1.5c1.26 0 2.281 1.021 2.281 2.281S8.68 6.062 7.42 6.062s-2.281-1.021-2.281-2.281S6.16 1.5 7.42 1.5zm9.158 4.529c1.26 0 2.281 1.021 2.281 2.281s-1.021 2.281-2.281 2.281-2.281-1.021-2.281-2.281 1.021-2.281 2.281-2.281zM3.781 6.638c1.26 0 2.281 1.021 2.281 2.281v7.724c0 1.26-1.021 2.281-2.281 2.281S1.5 17.903 1.5 16.643V8.919c0-1.26 1.021-2.281 2.281-2.281zm16.438 0c1.26 0 2.281 1.021 2.281 2.281v7.724c0 1.26-1.021 2.281-2.281 2.281s-2.281-1.021-2.281-2.281V8.919c0-1.26 1.021-2.281 2.281-2.281zM7.42 13.781c1.26 0 2.281 1.021 2.281 2.281S8.68 18.343 7.42 18.343s-2.281-1.021-2.281-2.281 1.021-2.281 2.281-2.281zm9.158 0c1.26 0 2.281 1.021 2.281 2.281s-1.021 2.281-2.281 2.281-2.281-1.021-2.281-2.281 1.021-2.281 2.281-2.281z"/>
               </svg>
@@ -155,7 +155,7 @@ export default function Home() {
             </div>
 
             {/* ActivePieces */}
-            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square">
+            <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '240ms' }}>
               <svg className="h-8 w-8 text-[#71717A] mb-3" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0L1.608 6v12L12 24l10.392-6V6L12 0zm0 2.5L20.5 7.5v9L12 21.5 3.5 16.5v-9L12 2.5z"/>
               </svg>
@@ -504,11 +504,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Brand Room Section */}
-      <section id="brand-room" className="bg-[#0F0F10] py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Brand Room Section - Vertical Roadmap */}
+      <section id="brand-room" className="bg-[#0F0F10] py-16 sm:py-24 lg:py-32 overflow-hidden">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
-            <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto max-w-3xl text-center mb-16 sm:mb-24">
               <h2 className="text-[#FAFAFA]">
                 How Brand Room Works
               </h2>
@@ -518,303 +518,271 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-12 sm:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {/* Vertical Timeline - Alternating Layout */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Timeline Line - Center - Glowy Gray */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-px -ml-px bg-gradient-to-b from-[#52525B] via-[#71717A] to-[#52525B] shadow-lg shadow-[#71717A]/30"></div>
+
+            {/* Step 1 - LEFT */}
             <ScrollReveal>
-              <div className="linear-card hover-glow p-8">
-                <div className="icon-container w-12 h-12 mb-6">
-                  <svg className="w-6 h-6 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
-                  </svg>
+              <div className="relative grid grid-cols-2 gap-8 mb-24 animate-fade-in" style={{ animationDelay: '0ms' }}>
+                {/* Content - Left Side */}
+                <div className="text-right pr-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 1</span>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">Connect Sources</h3>
+                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+                    Import your website URL, upload brand documents (PDF, DOCX, PPTX), or connect your Meta social accounts
+                  </p>
                 </div>
-                <h3 className="heading-md text-[#FAFAFA] mb-3">Connect Sources</h3>
-                <p className="body-base text-secondary">
-                  Import your website URL, upload brand documents (PDF, DOCX, PPTX), or connect your Meta social accounts
-                </p>
+                
+                {/* Empty - Right Side */}
+                <div></div>
+                
+                {/* Timeline Dot - Center - Glowy Gray */}
+                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
 
+            {/* Step 2 - RIGHT */}
             <ScrollReveal>
-              <div className="linear-card hover-glow p-8">
-                <div className="icon-container w-12 h-12 mb-6">
-                  <svg className="w-6 h-6 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
-                  </svg>
+              <div className="relative grid grid-cols-2 gap-8 mb-24 animate-fade-in" style={{ animationDelay: '100ms' }}>
+                {/* Empty - Left Side */}
+                <div></div>
+                
+                {/* Content - Right Side */}
+                <div className="text-left pl-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 2</span>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">AI Extracts Intelligence</h3>
+                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+                    Logos, colors, fonts, brand voice, product catalog, and company context—all detected automatically
+                  </p>
                 </div>
-                <h3 className="heading-md text-[#FAFAFA] mb-3">AI Extracts Intelligence</h3>
-                <p className="body-base text-secondary">
-                  Logos, colors, fonts, brand voice, product catalog, and company context—all detected automatically
-                </p>
+                
+                {/* Timeline Dot - Center - Glowy Gray */}
+                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
 
+            {/* Step 3 - LEFT */}
             <ScrollReveal>
-              <div className="linear-card hover-glow p-8">
-                <div className="icon-container w-12 h-12 mb-6">
-                  <svg className="w-6 h-6 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
+              <div className="relative grid grid-cols-2 gap-8 mb-24 animate-fade-in" style={{ animationDelay: '200ms' }}>
+                {/* Content - Left Side */}
+                <div className="text-right pr-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 3</span>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">Council Reviews</h3>
+                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+                    Qubik ensures creative consistency, Themis validates standards, Core synthesizes the final brand snapshot
+                  </p>
                 </div>
-                <h3 className="heading-md text-[#FAFAFA] mb-3">Council Reviews</h3>
-                <p className="body-base text-secondary">
-                  Qubik ensures creative consistency, Themis validates standards, Core synthesizes the final brand snapshot
-                </p>
+                
+                {/* Empty - Right Side */}
+                <div></div>
+                
+                {/* Timeline Dot - Center - Glowy Gray */}
+                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
 
+            {/* Step 4 - RIGHT */}
             <ScrollReveal>
-              <div className="linear-card hover-glow p-8">
-                <div className="icon-container w-12 h-12 mb-6">
-                  <svg className="w-6 h-6 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              <div className="relative grid grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: '300ms' }}>
+                {/* Empty - Left Side */}
+                <div></div>
+                
+                {/* Content - Right Side */}
+                <div className="text-left pl-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 4</span>
+                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">Brand Standards Ready</h3>
+                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+                    Unified brand snapshot across all sources, with smart conflict resolution and automatic updates
+                  </p>
                 </div>
-                <h3 className="heading-md text-[#FAFAFA] mb-3">Brand Standards Ready</h3>
-                <p className="body-base text-secondary">
-                  Unified brand snapshot across all sources, with smart conflict resolution and automatic updates
-                </p>
+                
+                {/* Timeline Dot - Center - Glowy Gray */}
+                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
           </div>
 
           {/* What We Extract */}
-          <ScrollReveal>
-            <div className="mt-16 sm:mt-24">
+          <div className="mt-16 sm:mt-24">
+            <ScrollReveal>
               <h3 className="text-center text-2xl sm:text-3xl font-semibold text-[#FAFAFA]">
                 What ANOTS Can Extract From Your Brand
               </h3>
-              <div className="mt-8 sm:mt-12 grid gap-6 sm:gap-8 md:grid-cols-3">
+            </ScrollReveal>
+            <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 md:grid-cols-3">
+              <ScrollReveal>
                 <Card>
-                  <CardContent className="p-6 sm:p-8">
-                    <h4 className="text-base sm:text-lg font-semibold text-[#FAFAFA]">Visual Identity</h4>
-                    <ul className="mt-4 space-y-2 text-sm sm:text-base text-[#D4D4D8]">
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Logo variations and brand marks
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Color palette (primary, secondary, accent)
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Typography and font families
-                      </li>
+                  <CardContent className="p-5">
+                    <h4 className="text-base font-semibold text-[#FAFAFA] mb-3">Visual Identity</h4>
+                    <ul className="space-y-1.5 text-sm text-[#A1A1AA]">
+                      <li>• Logo variations and brand marks</li>
+                      <li>• Color palette (primary, secondary, accent)</li>
+                      <li>• Typography and font families</li>
                     </ul>
                   </CardContent>
                 </Card>
+              </ScrollReveal>
 
+              <ScrollReveal>
                 <Card>
-                  <CardContent className="p-6 sm:p-8">
-                    <h4 className="text-base sm:text-lg font-semibold text-[#FAFAFA]">Brand Voice & Messaging</h4>
-                    <ul className="mt-4 space-y-2 text-sm sm:text-base text-[#D4D4D8]">
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Tone and communication style
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Key messaging and taglines
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Product and service descriptions
-                      </li>
+                  <CardContent className="p-5">
+                    <h4 className="text-base font-semibold text-[#FAFAFA] mb-3">Brand Voice & Messaging</h4>
+                    <ul className="space-y-1.5 text-sm text-[#A1A1AA]">
+                      <li>• Tone and communication style</li>
+                      <li>• Key messaging and taglines</li>
+                      <li>• Product and service descriptions</li>
                     </ul>
                   </CardContent>
                 </Card>
+              </ScrollReveal>
 
+              <ScrollReveal>
                 <Card>
-                  <CardContent className="p-6 sm:p-8">
-                    <h4 className="text-base sm:text-lg font-semibold text-[#FAFAFA]">Company Context</h4>
-                    <ul className="mt-4 space-y-2 text-sm sm:text-base text-[#D4D4D8]">
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        About summary and mission
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Product and service catalog
-                      </li>
-                      <li className="flex items-start">
-                        <svg className="mr-2 h-5 w-5 flex-shrink-0 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                        </svg>
-                        Industry positioning and tags
-                      </li>
+                  <CardContent className="p-5">
+                    <h4 className="text-base font-semibold text-[#FAFAFA] mb-3">Company Context</h4>
+                    <ul className="space-y-1.5 text-sm text-[#A1A1AA]">
+                      <li>• About summary and mission</li>
+                      <li>• Product and service catalog</li>
+                      <li>• Industry positioning and tags</li>
                     </ul>
                   </CardContent>
                 </Card>
-              </div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
+          </div>
+        </div>
+      </section>
 
-          {/* Data Collection Info */}
-          <ScrollReveal>
-            <div className="mt-12 sm:mt-16">
+      {/* URL Archaeologist Technical Deep Dive Section */}
+      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <h3 className="text-2xl sm:text-3xl font-semibold text-[#FAFAFA]">
+                  URL Archaeologist: How Website Analysis Works
+                </h3>
+                <p className="mt-4 text-base sm:text-lg text-[#D4D4D8]">
+                  Our bounded multi-page crawler extracts brand signals without overwhelming your site
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid gap-6 md:grid-cols-2">
               <Card className="border-[#1A1A1B] bg-[#111113]">
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0">
-                      <svg className="h-6 w-6 text-[#5E6AD2]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                      </svg>
+                <CardContent className="p-6">
+                  <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">Intelligent Page Selection</h4>
+                  <div className="space-y-3 text-sm text-[#D4D4D8]">
+                    <div className="flex items-start gap-2">
+                      <span className="text-[#5E6AD2] font-mono">1.</span>
+                      <span>Starts from your homepage</span>
                     </div>
-                    <div>
-                      <h4 className="text-base sm:text-lg font-semibold text-[#FAFAFA]">Smart Data Collection</h4>
-                      <p className="mt-2 text-sm sm:text-base leading-relaxed text-[#D4D4D8]">
-                        We don't "read your entire website"—we collect targeted brand signals. <strong>Website:</strong> 12 pages max, 2MB total, same domain only (home, about, products, pricing). <strong>Documents:</strong> 20MB max, 80k character snippets. <strong>Social:</strong> Meta bio + last 10 captions only. No illegal scraping, OAuth required for social.
-                      </p>
+                    <div className="flex items-start gap-2">
+                      <span className="text-[#5E6AD2] font-mono">2.</span>
+                      <span>Prioritizes: about, company, products, services, solutions, pricing, contact</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-[#5E6AD2] font-mono">3.</span>
+                      <span>Skips: blog, news, careers, terms, privacy, login, admin</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-[#5E6AD2] font-mono">4.</span>
+                      <span>Stops at 12 pages or 2MB total</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-[#1A1A1B] bg-[#111113]">
+                <CardContent className="p-6">
+                  <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">Strict Safety Limits</h4>
+                  <div className="space-y-3 text-sm text-[#D4D4D8]">
+                    <div className="flex items-start gap-2">
+                      <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      </svg>
+                      <span>Same-origin only (same domain + scheme)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      </svg>
+                      <span>10s timeout (aborts if exceeded)</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      </svg>
+                      <span>Max 5 redirects with SSRF validation</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                      </svg>
+                      <span>Blocks localhost, private IPs, file://</span>
                     </div>
                   </div>
                 </CardContent>
               </Card>
             </div>
-          </ScrollReveal>
 
-          {/* URL Archaeologist Technical Deep Dive */}
-          <ScrollReveal>
-            <div className="mt-16 sm:mt-24">
-              <div className="mx-auto max-w-4xl">
-                <div className="text-center mb-12">
-                  <h3 className="text-2xl sm:text-3xl font-semibold text-[#FAFAFA]">
-                    URL Archaeologist: How Website Analysis Works
-                  </h3>
-                  <p className="mt-4 text-base sm:text-lg text-[#D4D4D8]">
-                    Our bounded multi-page crawler extracts brand signals without overwhelming your site
-                  </p>
-                </div>
-
+            <Card className="mt-6 border-[#1A1A1B] bg-[#111113]">
+              <CardContent className="p-6">
+                <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">What Gets Extracted (No LLM, No Full HTML Dumps)</h4>
                 <div className="grid gap-6 md:grid-cols-2">
-                  <Card className="border-[#1A1A1B] bg-[#111113]">
-                    <CardContent className="p-6">
-                      <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">Intelligent Page Selection</h4>
-                      <div className="space-y-3 text-sm text-[#D4D4D8]">
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#5E6AD2] font-mono">1.</span>
-                          <span>Starts from your homepage</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#5E6AD2] font-mono">2.</span>
-                          <span>Prioritizes: about, company, products, services, solutions, pricing, contact</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#5E6AD2] font-mono">3.</span>
-                          <span>Skips: blog, news, careers, terms, privacy, login, admin</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <span className="text-[#5E6AD2] font-mono">4.</span>
-                          <span>Stops at 12 pages or 2MB total</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-[#1A1A1B] bg-[#111113]">
-                    <CardContent className="p-6">
-                      <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">Strict Safety Limits</h4>
-                      <div className="space-y-3 text-sm text-[#D4D4D8]">
-                        <div className="flex items-start gap-2">
-                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                          </svg>
-                          <span>Same-origin only (same domain + scheme)</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                          </svg>
-                          <span>10s timeout (aborts if exceeded)</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                          </svg>
-                          <span>Max 5 redirects with SSRF validation</span>
-                        </div>
-                        <div className="flex items-start gap-2">
-                          <svg className="h-5 w-5 flex-shrink-0 text-[#10B981]" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                          </svg>
-                          <span>Blocks localhost, private IPs, file://</span>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <Card className="mt-6 border-[#1A1A1B] bg-[#111113]">
-                  <CardContent className="p-6">
-                    <h4 className="text-lg font-semibold text-[#FAFAFA] mb-4">What Gets Extracted (No LLM, No Full HTML Dumps)</h4>
-                    <div className="grid gap-6 md:grid-cols-2">
-                      <div>
-                        <h5 className="text-sm font-semibold text-[#A1A1AA] uppercase tracking-wider mb-3">From Each Page</h5>
-                        <ul className="space-y-2 text-sm text-[#D4D4D8]">
-                          <li className="flex items-start gap-2">
-                            <span className="text-[#5E6AD2]">•</span>
-                            <span>Title + meta description</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="text-[#5E6AD2]">•</span>
-                            <span>H1 and top 2-3 headings</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="text-[#5E6AD2]">•</span>
-                            <span>3 short text snippets (160-220 chars): hero, about, product, CTA, footer</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h5 className="text-sm font-semibold text-[#A1A1AA] uppercase tracking-wider mb-3">Brand Assets</h5>
-                        <ul className="space-y-2 text-sm text-[#D4D4D8]">
-                          <li className="flex items-start gap-2">
-                            <span className="text-[#5E6AD2]">•</span>
-                            <span>Logo candidates: favicon, og:image, header logos</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="text-[#5E6AD2]">•</span>
-                            <span>Colors: CSS variables + inline styles (HEX normalized)</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="text-[#5E6AD2]">•</span>
-                            <span>Fonts: font-family declarations (Google Fonts only)</span>
-                          </li>
-                          <li className="flex items-start gap-2">
-                            <span className="text-[#5E6AD2]">•</span>
-                            <span>Tracking: GA4/gtag, Meta Pixel (boolean presence only)</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <div className="mt-6 flex items-start gap-3 p-4 rounded-lg bg-[#5E6AD2]/5 border border-[#5E6AD2]/20">
-                  <svg className="h-5 w-5 flex-shrink-0 text-[#5E6AD2] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                  </svg>
-                  <div className="text-sm text-[#D4D4D8]">
-                    <strong className="text-[#FAFAFA]">Deterministic & Traceable:</strong> Every extracted signal includes provenance (which page, which source). Conflicts are surfaced for manual resolution. No raw HTML is stored or sent to LLMs—only compact, structured signals.
+                  <div>
+                    <h5 className="text-sm font-semibold text-[#A1A1AA] uppercase tracking-wider mb-3">From Each Page</h5>
+                    <ul className="space-y-2 text-sm text-[#D4D4D8]">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#5E6AD2]">•</span>
+                        <span>Title + meta description</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#5E6AD2]">•</span>
+                        <span>H1 and top 2-3 headings</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#5E6AD2]">•</span>
+                        <span>3 short text snippets (160-220 chars): hero, about, product, CTA, footer</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="text-sm font-semibold text-[#A1A1AA] uppercase tracking-wider mb-3">Brand Assets</h5>
+                    <ul className="space-y-2 text-sm text-[#D4D4D8]">
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#5E6AD2]">•</span>
+                        <span>Logo candidates: favicon, og:image, header logos</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#5E6AD2]">•</span>
+                        <span>Colors: CSS variables + inline styles (HEX normalized)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#5E6AD2]">•</span>
+                        <span>Fonts: font-family declarations (Google Fonts only)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-[#5E6AD2]">•</span>
+                        <span>Tracking: GA4/gtag, Meta Pixel (boolean presence only)</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            <div className="mt-6 flex items-start gap-3 p-4 rounded-lg bg-[#5E6AD2]/5 border border-[#5E6AD2]/20">
+              <svg className="h-5 w-5 flex-shrink-0 text-[#5E6AD2] mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+              <div className="text-sm text-[#D4D4D8]">
+                <strong className="text-[#FAFAFA]">Deterministic & Traceable:</strong> Every extracted signal includes provenance (which page, which source). Conflicts are surfaced for manual resolution. No raw HTML is stored or sent to LLMs—only compact, structured signals.
               </div>
             </div>
-          </ScrollReveal>
+          </div>
         </div>
       </section>
 

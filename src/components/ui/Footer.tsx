@@ -267,6 +267,13 @@ export function Footer() {
             </div>
           </div>
           
+          {/* Tagline */}
+          <div className="mb-6 text-center">
+            <p className="text-sm text-[#A1A1AA]">
+              1 founder, 7 AI agents, infinite possibilities
+            </p>
+          </div>
+          
           <p className="text-center text-sm text-[#71717A]">
             © {currentYear} ANOTS. All rights reserved.
           </p>

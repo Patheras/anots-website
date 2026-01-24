@@ -1,12 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, PlayCircle, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { LambdaHero } from '@/components/infographics/LambdaHero';
-import { AnotExplainer } from '@/components/ui/Tooltip';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface HeroProps {
   headline: string;
@@ -22,13 +21,79 @@ interface HeroProps {
 }
 
 export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroProps) {
+  const [displayText, setDisplayText] = useState('');
+  const [textIndex, setTextIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
   const [scrollOpacity, setScrollOpacity] = useState(1);
 
+  const texts = [
+    "If You're Here, ANOTs Are Already Working",
+    "Your AI Marketing Team That Never Sleeps"
+  ];
+
+  const highlightWords = (text: string) => {
+    // ANOTs için gradient
+    if (text.includes('ANOTs')) {
+      return text.split('ANOTs').map((part, index, array) => (
+        <span key={index}>
+          {part}
+          {index < array.length - 1 && (
+            <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              ANOTs
+            </span>
+          )}
+        </span>
+      ));
+    }
+    // AI Marketing Team için gradient
+    if (text.includes('AI Marketing Team')) {
+      return text.split('AI Marketing Team').map((part, index, array) => (
+        <span key={index}>
+          {part}
+          {index < array.length - 1 && (
+            <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+              AI Marketing Team
+            </span>
+          )}
+        </span>
+      ));
+    }
+    return text;
+  };
+
+  useEffect(() => {
+    const currentText = texts[textIndex];
+    const typingSpeed = 80;
+
+    if (displayText.length < currentText.length) {
+      // Typing
+      const timeout = setTimeout(() => {
+        setDisplayText(currentText.substring(0, displayText.length + 1));
+      }, typingSpeed);
+      return () => clearTimeout(timeout);
+    } else {
+      // Pause then switch to next text instantly
+      const timeout = setTimeout(() => {
+        setTextIndex((prev) => (prev + 1) % texts.length);
+        setDisplayText('');
+      }, 2000);
+      return () => clearTimeout(timeout);
+    }
+  }, [displayText, textIndex]);
+
+  // Cursor blink
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Background fade on scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const windowHeight = window.innerHeight;
-      // 0'dan 1'e kadar scroll yapınca opacity 1'den 0'a düşer
       const opacity = Math.max(0, 1 - scrolled / windowHeight);
       setScrollOpacity(opacity);
     };
@@ -47,83 +112,40 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
       {/* Content Overlay */}
       <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Headline with ANOT Gradient and Info Icon */}
+          {/* Headline with Typing Animation */}
           <FadeIn delay={0}>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl text-[#FAFAFA] font-bold leading-tight tracking-tight">
-              {headline.split('ANOTs').map((part, index, array) => (
-                <span key={index}>
-                  {part}
-                  {index < array.length - 1 && (
-                    <span className="relative inline-block">
-                      <span className="bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-                        ANOTs
-                      </span>
-                      <AnotExplainer className="absolute -top-1 -right-7" />
-                    </span>
-                  )}
-                </span>
-              ))}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl text-[#FAFAFA] font-bold leading-tight tracking-tight min-h-[1.2em]">
+              {highlightWords(displayText)}
+              <span className={`inline-block w-1 h-[0.9em] ml-1 bg-[#5E6AD2] ${showCursor ? 'opacity-100' : 'opacity-0'}`}></span>
             </h1>
-          </FadeIn>
-
-          {/* Subtitle - Medium size, regular weight */}
-          <FadeIn delay={100}>
-            <h2 className="mt-6 text-2xl sm:text-3xl lg:text-4xl text-[#D4D4D8] font-normal leading-tight">
-              Your AI Marketing Team That Never Sleeps
-            </h2>
-          </FadeIn>
-
-          {/* Subheadline with Purple Accent */}
-          <FadeIn delay={200}>
-            <p className="mt-6 text-base leading-relaxed text-[#A1A1AA] max-w-3xl mx-auto font-normal">
-              {subheadline.split('You Approve').map((part, index, array) => (
-                <span key={index}>
-                  {part}
-                  {index < array.length - 1 && (
-                    <span className="text-purple-400 font-semibold">You Approve</span>
-                  )}
-                </span>
-              ))}
-            </p>
-          </FadeIn>
-
-          {/* CTAs - Stacked Vertically */}
-          <FadeIn delay={300}>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4">
-              <a href={primaryCTA.href} className="w-full sm:w-auto">
-                <Button 
-                  variant="magic" 
-                  size="xl" 
-                  className="w-full sm:w-auto font-bold min-h-[56px] text-lg px-8"
-                >
-                  {primaryCTA.text}
-                  <ArrowRight className="h-6 w-6" />
-                </Button>
-              </a>
-              <Link href={secondaryCTA.href} className="w-full sm:w-auto">
-                <Button 
-                  variant="primary" 
-                  size="lg" 
-                  className="w-full sm:w-auto min-h-[48px] text-base"
-                >
-                  <PlayCircle className="mr-2 h-5 w-5" />
-                  {secondaryCTA.text}
-                </Button>
-              </Link>
-            </div>
-          </FadeIn>
-
-          {/* Pricing Transparency Badge */}
-          <FadeIn delay={400}>
-            <div className="mt-10 flex items-center justify-center gap-2 px-4">
-              <CheckCircle className="h-5 w-5 text-emerald-400 flex-shrink-0" />
-              <span className="text-base text-zinc-300">
-                Free forever • 3 ANOTs • Full AI team • No credit card
-              </span>
-            </div>
           </FadeIn>
         </div>
       </div>
+
+      {/* CTAs - Fixed to Bottom */}
+      <FadeIn delay={200}>
+        <div className="absolute bottom-24 left-0 right-0 z-20 flex items-center justify-center gap-3 px-4">
+          <a href={primaryCTA.href}>
+            <Button 
+              variant="magic" 
+              size="lg" 
+              className="font-medium"
+            >
+              {primaryCTA.text}
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </a>
+          <Link href={secondaryCTA.href}>
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              className="border-[#27272A] hover:border-[#3F3F46] hover:bg-[#18181B]"
+            >
+              {secondaryCTA.text}
+            </Button>
+          </Link>
+        </div>
+      </FadeIn>
     </section>
   );
 }

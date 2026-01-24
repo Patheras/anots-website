@@ -97,6 +97,11 @@ const navLinks: NavLink[] = [
         category: 'Updates',
         items: [
           { 
+            label: 'Insights', 
+            description: 'Thoughts on AI, automation, and marketing',
+            href: '/insights'
+          },
+          { 
             label: 'Platform Updates', 
             description: 'Latest features and improvements',
             href: '/updates'

@@ -4,6 +4,7 @@ import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
 import { Footer } from "@/components/ui/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import { ChatBot } from "@/components/chat/ChatBot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -102,6 +103,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <StructuredData />
+        {/* RSS Feed */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="ANOTS Insights RSS Feed"
+          href="/insights/rss.xml"
+        />
         {/* Google Consent Mode v2 - Must be loaded BEFORE gtag */}
         <script
           dangerouslySetInnerHTML={{
@@ -140,6 +148,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <CookieConsent />
+        <ChatBot />
       </body>
     </html>
   );
