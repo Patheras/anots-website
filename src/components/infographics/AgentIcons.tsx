@@ -67,13 +67,21 @@ export const CoreIcon = ({ size = 48 }: { size?: number }) => (
       strokeWidth="1.5" 
       stroke="currentColor"
     >
-      {/* Athena's Shield - geometric protection and wisdom */}
-      <circle cx="12" cy="12" r="8" strokeWidth="1.5" />
-      <circle cx="12" cy="12" r="4" strokeWidth="1.5" />
-      <line x1="12" y1="4" x2="12" y2="8" strokeWidth="1.5" />
-      <line x1="12" y1="16" x2="12" y2="20" strokeWidth="1.5" />
-      <line x1="4" y1="12" x2="8" y2="12" strokeWidth="1.5" />
-      <line x1="16" y1="12" x2="20" y2="12" strokeWidth="1.5" />
+      {/* Athena's Owl - geometric wisdom symbol */}
+      {/* Head */}
+      <circle cx="12" cy="10" r="6" strokeWidth="1.5" />
+      {/* Eyes */}
+      <circle cx="10" cy="9" r="1.5" strokeWidth="1.5" />
+      <circle cx="14" cy="9" r="1.5" strokeWidth="1.5" />
+      {/* Beak */}
+      <path d="M12 11 L12 13" strokeWidth="1.5" strokeLinecap="round" />
+      {/* Body */}
+      <path d="M8 15 L12 16 L16 15" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9 16 L9 20" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M15 16 L15 20" strokeWidth="1.5" strokeLinecap="round" />
+      {/* Ear tufts */}
+      <line x1="8" y1="5" x2="7" y2="3" strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="16" y1="5" x2="17" y2="3" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   </div>
 );
