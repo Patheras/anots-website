@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { QubikIcon, ThemisIcon, CoreIcon } from "@/components/infographics/AgentIcons";
+import { QubikIcon, ThemisIcon, CoreIcon, HephaestusIcon, EchoIcon, HermesIcon } from "@/components/infographics/AgentIcons";
 
 export const metadata: Metadata = {
   title: "AI Marketing Team - Six Specialized Agents | ANOTS",
@@ -180,9 +180,7 @@ export default function AITeamPage() {
               <Card className="h-full border-[#F59E0B]/20 bg-gradient-to-br from-[#F59E0B]/5 to-transparent">
                 <CardContent className="p-8">
                   <div className="flex justify-center mb-6">
-                    <div className="h-20 w-20 rounded-2xl bg-[#F59E0B]/20 flex items-center justify-center">
-                      <span className="text-4xl">🔨</span>
-                    </div>
+                    <HephaestusIcon size={80} />
                   </div>
                   <h3 className="text-2xl font-bold text-[#FAFAFA] text-center mb-2">Hephaestus</h3>
                   <p className="text-sm text-[#71717A] text-center mb-6">ANOT Maker</p>
@@ -223,9 +221,7 @@ export default function AITeamPage() {
               <Card className="h-full border-[#52525B]/20 bg-gradient-to-br from-[#52525B]/5 to-transparent">
                 <CardContent className="p-8">
                   <div className="flex justify-center mb-6">
-                    <div className="h-20 w-20 rounded-2xl bg-[#52525B]/20 flex items-center justify-center">
-                      <span className="text-4xl">💬</span>
-                    </div>
+                    <EchoIcon size={80} />
                   </div>
                   <h3 className="text-2xl font-bold text-[#FAFAFA] text-center mb-2">Echo</h3>
                   <p className="text-sm text-[#71717A] text-center mb-6">Website Assistant</p>
@@ -269,9 +265,7 @@ export default function AITeamPage() {
                 </div>
                 <CardContent className="p-8 opacity-75">
                   <div className="flex justify-center mb-6">
-                    <div className="h-20 w-20 rounded-2xl bg-[#5E6AD2]/20 flex items-center justify-center">
-                      <span className="text-4xl">📨</span>
-                    </div>
+                    <HermesIcon size={80} />
                   </div>
                   <h3 className="text-2xl font-bold text-[#FAFAFA] text-center mb-2">Hermes</h3>
                   <p className="text-sm text-[#71717A] text-center mb-6">Mobile Messenger</p>

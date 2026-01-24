@@ -3,6 +3,7 @@ import { Navigation } from "@/components/ui/Navigation";
 import { Footer } from "@/components/ui/Footer";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Card, CardContent } from "@/components/ui/card";
+import { QubikIcon, ThemisIcon, CoreIcon, HephaestusIcon } from "@/components/infographics/AgentIcons";
 
 export const metadata: Metadata = {
   title: "About ANOTS - AI Marketing Automation Platform",
@@ -105,8 +106,8 @@ export default function AboutPage() {
               <ScrollReveal>
                 <Card className="border-[#5E6AD2]/20">
                   <CardContent className="p-8">
-                    <div className="h-12 w-12 rounded-lg bg-[#5E6AD2]/20 flex items-center justify-center mb-6">
-                      <span className="text-2xl">🎨</span>
+                    <div className="flex justify-center mb-6">
+                      <QubikIcon size={48} />
                     </div>
                     <h3 className="text-xl font-semibold text-[#FAFAFA] mb-3">Qubik</h3>
                     <p className="text-sm text-[#A1A1AA] mb-4">Creative Motor</p>
@@ -120,8 +121,8 @@ export default function AboutPage() {
               <ScrollReveal>
                 <Card className="border-[#EF4444]/20">
                   <CardContent className="p-8">
-                    <div className="h-12 w-12 rounded-lg bg-[#EF4444]/20 flex items-center justify-center mb-6">
-                      <span className="text-2xl">🔍</span>
+                    <div className="flex justify-center mb-6">
+                      <ThemisIcon size={48} />
                     </div>
                     <h3 className="text-xl font-semibold text-[#FAFAFA] mb-3">Themis</h3>
                     <p className="text-sm text-[#A1A1AA] mb-4">Analytical Motor</p>
@@ -135,8 +136,8 @@ export default function AboutPage() {
               <ScrollReveal>
                 <Card className="border-[#10B981]/20">
                   <CardContent className="p-8">
-                    <div className="h-12 w-12 rounded-lg bg-[#10B981]/20 flex items-center justify-center mb-6">
-                      <span className="text-2xl">⚡</span>
+                    <div className="flex justify-center mb-6">
+                      <CoreIcon size={48} />
                     </div>
                     <h3 className="text-xl font-semibold text-[#FAFAFA] mb-3">Athena</h3>
                     <p className="text-sm text-[#A1A1AA] mb-4">Synthesizer</p>
@@ -150,8 +151,8 @@ export default function AboutPage() {
               <ScrollReveal>
                 <Card className="border-[#F59E0B]/20">
                   <CardContent className="p-8">
-                    <div className="h-12 w-12 rounded-lg bg-[#F59E0B]/20 flex items-center justify-center mb-6">
-                      <span className="text-2xl">🔨</span>
+                    <div className="flex justify-center mb-6">
+                      <HephaestusIcon size={48} />
                     </div>
                     <h3 className="text-xl font-semibold text-[#FAFAFA] mb-3">Hephaestus</h3>
                     <p className="text-sm text-[#A1A1AA] mb-4">ANOT Maker</p>
