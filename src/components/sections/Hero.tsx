@@ -105,14 +105,14 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
   }, []);
 
   return (
-    <section className="relative w-full h-[80vh] sm:h-[90vh] md:h-screen min-h-[500px] max-h-[800px] overflow-hidden bg-[#0A0A0B]">
+    <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-[#0A0A0B]">
       {/* Neural Network Background with Fade */}
       <div style={{ opacity: scrollOpacity }} className="transition-opacity duration-100">
         <LambdaHero />
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8 pb-32">
         <div className="mx-auto max-w-4xl w-full text-center">
           {/* Headline with Typing Animation */}
           <FadeIn delay={0}>
@@ -128,7 +128,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
 
       {/* CTAs - Fixed to Bottom with responsive spacing */}
       <FadeIn delay={200}>
-        <div className="absolute bottom-12 sm:bottom-16 md:bottom-24 left-0 right-0 z-20 flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
+        <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 left-0 right-0 z-20 flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
           <a href={primaryCTA.href} className="w-full sm:w-auto">
             <Button 
               variant="magic" 
