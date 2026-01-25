@@ -145,7 +145,7 @@ export function ChatBot() {
     <>
       {/* Greeting Bubble */}
       {!isOpen && showGreeting && (
-        <div className="fixed bottom-28 sm:bottom-24 right-4 sm:right-6 z-[60] animate-fade-in">
+        <div className="fixed bottom-24 right-4 sm:right-6 z-40 animate-fade-in">
           <div className="relative">
             <div className="bg-[#111113] border border-[#1A1A1B] rounded-2xl px-4 py-3 shadow-xl">
               <p className="text-sm text-[#FAFAFA] font-medium">Hello! 👋</p>
@@ -160,7 +160,7 @@ export function ChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-[60] flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center transition-all hover:scale-105 animate-float"
+          className="fixed bottom-6 right-4 sm:right-6 z-40 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center transition-all hover:scale-105 animate-float"
           aria-label="Open chat"
           style={{ isolation: 'isolate' }}
         >
@@ -174,7 +174,7 @@ export function ChatBot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 left-4 sm:left-auto z-[60] flex h-[500px] sm:h-[500px] w-auto sm:w-[380px] max-w-[calc(100vw-2rem)] flex-col rounded-2xl border border-[#1A1A1B] bg-[#0A0A0B] shadow-2xl">
+        <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 left-4 sm:left-auto z-40 flex h-[500px] sm:h-[500px] w-auto sm:w-[380px] max-w-[calc(100vw-2rem)] flex-col rounded-2xl border border-[#1A1A1B] bg-[#0A0A0B] shadow-2xl">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-[#1A1A1B] p-4">
             <div className="flex items-center gap-3">
