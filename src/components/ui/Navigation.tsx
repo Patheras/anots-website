@@ -121,10 +121,19 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [expandedMenus, setExpandedMenus] = useState<string[]>([]);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const toggleMenu = (label: string) => {
+    setExpandedMenus(prev => 
+      prev.includes(label) 
+        ? prev.filter(item => item !== label)
+        : [...prev, label]
+    );
+  };
 
   const mobileMenu = mobileMenuOpen && mounted ? createPortal(
     <div 
@@ -135,28 +144,44 @@ export function Navigation() {
         {navLinks.map((link) => (
           link.dropdown ? (
             <div key={link.label} className="space-y-1">
-              <div className="px-3 py-2 text-sm font-semibold text-[#FAFAFA]">
-                {link.label}
-              </div>
-              {link.dropdown.map((section) => (
-                <div key={section.category} className="ml-4 space-y-1">
-                  <div className="px-3 py-1 text-xs font-medium uppercase tracking-wider text-[#71717A]">
-                    {section.category}
-                  </div>
-                  {section.items.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                      className="block rounded-md px-3 py-3 min-h-[44px] text-sm text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      <div className="font-medium">{item.label}</div>
-                      <div className="text-xs text-[#A1A1AA]">{item.description}</div>
-                    </a>
+              <button
+                onClick={() => toggleMenu(link.label)}
+                className="w-full flex items-center justify-between px-3 py-3 min-h-[44px] text-base font-semibold text-[#FAFAFA] rounded-md hover:bg-[#1A1A1B] transition-colors"
+              >
+                <span>{link.label}</span>
+                <svg 
+                  className={`h-5 w-5 transition-transform ${expandedMenus.includes(link.label) ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  strokeWidth="2" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+              {expandedMenus.includes(link.label) && (
+                <div className="ml-4 space-y-1 animate-fade-in">
+                  {link.dropdown.map((section) => (
+                    <div key={section.category} className="space-y-1">
+                      <div className="px-3 py-1 text-xs font-medium uppercase tracking-wider text-[#71717A]">
+                        {section.category}
+                      </div>
+                      {section.items.map((item) => (
+                        <a
+                          key={item.label}
+                          href={item.href}
+                          {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                          className="block rounded-md px-3 py-3 min-h-[44px] text-sm text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          <div className="font-medium">{item.label}</div>
+                          <div className="text-xs text-[#A1A1AA]">{item.description}</div>
+                        </a>
+                      ))}
+                    </div>
                   ))}
                 </div>
-              ))}
+              )}
             </div>
           ) : link.external ? (
             <a
