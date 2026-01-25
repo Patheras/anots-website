@@ -70,9 +70,9 @@ export default function Home() {
 
       {/* Tech Stack Grid */}
       {/* Tech Stack Grid */}
-      <section className="bg-[#0A0A0B] border-y border-[#1A1A1B] py-6 sm:py-12 md:py-16">
+      <section className="bg-[#0A0A0B] border-y border-[#1A1A1B] py-8 sm:py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs text-[#52525B] mb-4 sm:mb-8">Powered by</p>
+          <p className="text-center text-xs text-[#52525B] mb-4 sm:mb-6 md:mb-8">Powered by</p>
           
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-2 sm:gap-4">
             {/* Next.js */}
