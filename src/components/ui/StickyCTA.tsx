@@ -71,18 +71,18 @@ export function StickyCTA() {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0A0A0B]/95 backdrop-blur-xl transition-transform duration-300 ${
+      className={`fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-[#0A0A0B]/95 backdrop-blur-xl transition-transform duration-300 max-h-[72px] ${
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between gap-3 sm:gap-4 py-3 sm:py-4">
+        <div className="flex items-center justify-between gap-2 sm:gap-4 py-3">
           {/* Left: Message */}
-          <div className="flex-1 text-center sm:text-left">
-            <div className="text-sm sm:text-base font-semibold text-[#FAFAFA]">
+          <div className="flex-1 text-left">
+            <div className="text-xs sm:text-sm md:text-base font-semibold text-[#FAFAFA]">
               Ready to start?
             </div>
-            <div className="text-xs sm:text-sm text-[#A1A1AA]">
+            <div className="text-xs text-[#A1A1AA] hidden sm:block">
               Full Marketing Room + 3 ANOTs free, no credit card
             </div>
           </div>
@@ -91,12 +91,12 @@ export function StickyCTA() {
           <div className="flex items-center gap-2">
             <Button
               variant="magic"
-              size="lg"
+              size="sm"
               onClick={handleClick}
-              className="min-h-[44px]"
+              className="min-h-[44px] text-xs sm:text-sm"
             >
               Start Free
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-4 w-4" />
             </Button>
             
             {/* Close Button */}
@@ -105,7 +105,7 @@ export function StickyCTA() {
               className="flex items-center justify-center min-w-[44px] min-h-[44px] p-2 text-[#A1A1AA] hover:text-[#FAFAFA] transition-colors rounded-md hover:bg-white/5"
               aria-label="Close"
             >
-              <X className="h-5 w-5" />
+              <X className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
           </div>
         </div>

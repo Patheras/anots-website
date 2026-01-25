@@ -223,27 +223,27 @@ This implementation plan breaks down the mobile UX optimization into discrete, i
 - [ ] 10. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 11. Optimize Sticky CTA for mobile
-  - [ ] 11.1 Reduce CTA height for mobile
+- [-] 11. Optimize Sticky CTA for mobile
+  - [x] 11.1 Reduce CTA height for mobile
     - Ensure maximum height of 72px
     - Use py-3 for vertical padding
     - Test height on mobile viewport
     - _Requirements: 10.1_
   
-  - [ ] 11.2 Optimize CTA content for mobile
+  - [x] 11.2 Optimize CTA content for mobile
     - Keep message concise on mobile
     - Hide secondary text on mobile (hidden sm:block)
     - Use text-sm for mobile, text-base for desktop
     - Ensure minimum 14px font size
     - _Requirements: 10.7_
   
-  - [ ] 11.3 Ensure close button meets touch target
+  - [x] 11.3 Ensure close button meets touch target
     - Apply min-w-touch and min-h-touch
     - Use p-2 for padding
     - Test button dimensions
     - _Requirements: 10.4_
   
-  - [ ] 11.4 Implement backdrop blur
+  - [x] 11.4 Implement backdrop blur
     - Add backdrop-blur-xl class
     - Ensure bg-[#0A0A0B]/95 for transparency
     - Test visual separation
