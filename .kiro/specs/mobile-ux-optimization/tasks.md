@@ -139,26 +139,26 @@ This implementation plan breaks down the mobile UX optimization into discrete, i
 - [ ] 7. Checkpoint - Ensure all tests pass
   - Ensure all tests pass, ask the user if questions arise.
 
-- [ ] 8. Optimize horizontal scroll Features section
-  - [ ] 8.1 Implement responsive card widths
+- [-] 8. Optimize horizontal scroll Features section
+  - [x] 8.1 Implement responsive card widths
     - Set cards to w-[85vw] on mobile with max of 480px
     - Use sm:w-[480px] for larger screens
     - Test card widths at various viewports
     - _Requirements: 5.4_
   
-  - [ ] 8.2 Add visual scroll indicators
+  - [x] 8.2 Add visual scroll indicators
     - Add left fade gradient (bg-gradient-to-r from-[#0A0A0B])
     - Add right fade gradient (bg-gradient-to-l from-[#0A0A0B])
     - Position gradients absolutely with pointer-events-none
     - _Requirements: 5.1_
   
-  - [ ] 8.3 Implement snap scrolling
+  - [x] 8.3 Implement snap scrolling
     - Add snap-x snap-mandatory to container
     - Add snap-start to cards
     - Add scroll-smooth for smooth scrolling
     - _Requirements: 5.2, 5.3_
   
-  - [ ] 8.4 Optimize images in feature cards
+  - [x] 8.4 Optimize images in feature cards
     - Add proper sizes attribute to Image components
     - Use sizes="(max-width: 640px) 85vw, 480px"
     - Ensure lazy loading for below-fold images

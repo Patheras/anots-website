@@ -309,26 +309,33 @@ export default function Home() {
 
           {/* Horizontal Scroll Cards */}
           <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
-            <div className="flex gap-6 overflow-x-scroll pb-6 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scrollbar-hide">
+            {/* Left fade indicator */}
+            <div className="hidden md:block absolute left-0 top-0 bottom-6 w-24 bg-gradient-to-r from-[#0A0A0B] to-transparent pointer-events-none z-10"></div>
+            
+            {/* Right fade indicator */}
+            <div className="hidden md:block absolute right-0 top-0 bottom-6 w-24 bg-gradient-to-l from-[#0A0A0B] to-transparent pointer-events-none z-10"></div>
+            
+            <div className="flex gap-4 sm:gap-6 overflow-x-scroll pb-6 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scroll-smooth scrollbar-hide">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="linear-card hover-glow flex-shrink-0 w-[480px] snap-start group cursor-pointer overflow-hidden"
+                  className="linear-card hover-glow flex-shrink-0 w-[85vw] sm:w-[480px] max-w-[480px] snap-start group cursor-pointer overflow-hidden"
                 >
                   {/* Feature Image */}
                   {feature.image && (
-                    <div className="relative w-full h-[432px] -mx-0 -mt-0 rounded-t-xl overflow-hidden bg-[#0A0A0B]">
+                    <div className="relative w-full h-[300px] sm:h-[432px] -mx-0 -mt-0 rounded-t-xl overflow-hidden bg-[#0A0A0B]">
                       <Image
                         src={feature.image}
                         alt={feature.title}
                         fill
                         className="object-contain"
+                        sizes="(max-width: 640px) 85vw, 480px"
                       />
                     </div>
                   )}
                   
-                  <div className="p-8">
-                    <div className="flex items-start justify-between mb-6">
+                  <div className="p-6 sm:p-8">
+                    <div className="flex items-start justify-between mb-4 sm:mb-6">
                       {/* Badge */}
                       {feature.badge && (
                         <span className="inline-flex items-center rounded-full bg-[#5E6AD2]/10 px-3 py-1 text-xs font-medium text-[#5E6AD2]">
@@ -339,8 +346,8 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
                     </div>
-                    <div className="space-y-3">
-                      <h3 className="text-xl font-semibold text-[#FAFAFA]">
+                    <div className="space-y-2 sm:space-y-3">
+                      <h3 className="text-lg sm:text-xl font-semibold text-[#FAFAFA]">
                         {feature.title}
                       </h3>
                       <p className="text-sm text-[#A1A1AA] leading-relaxed">
