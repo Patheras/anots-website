@@ -63,7 +63,9 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
 
   useEffect(() => {
     const currentText = texts[textIndex];
-    const typingSpeed = 80;
+    // Mobilde daha hızlı typing (60ms), desktop'ta normal (80ms)
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+    const typingSpeed = isMobile ? 60 : 80;
 
     if (displayText.length < currentText.length) {
       // Typing
@@ -103,7 +105,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
   }, []);
 
   return (
-    <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-[#0A0A0B]">
+    <section className="relative w-full h-[80vh] sm:h-[90vh] md:h-screen min-h-[500px] max-h-[800px] overflow-hidden bg-[#0A0A0B]">
       {/* Neural Network Background with Fade */}
       <div style={{ opacity: scrollOpacity }} className="transition-opacity duration-100">
         <LambdaHero />
@@ -124,24 +126,24 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
         </div>
       </div>
 
-      {/* CTAs - Fixed to Bottom */}
+      {/* CTAs - Fixed to Bottom with responsive spacing */}
       <FadeIn delay={200}>
-        <div className="absolute bottom-24 left-0 right-0 z-20 flex items-center justify-center gap-3 px-4">
-          <a href={primaryCTA.href}>
+        <div className="absolute bottom-12 sm:bottom-16 md:bottom-24 left-0 right-0 z-20 flex flex-col sm:flex-row items-center justify-center gap-3 px-4">
+          <a href={primaryCTA.href} className="w-full sm:w-auto">
             <Button 
               variant="magic" 
               size="lg" 
-              className="font-medium"
+              className="font-medium w-full sm:w-auto min-h-[44px]"
             >
               {primaryCTA.text}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </a>
-          <Link href={secondaryCTA.href}>
+          <Link href={secondaryCTA.href} className="w-full sm:w-auto">
             <Button 
               variant="secondary" 
               size="lg" 
-              className="border-[#27272A] hover:border-[#3F3F46] hover:bg-[#18181B]"
+              className="border-[#27272A] hover:border-[#3F3F46] hover:bg-[#18181B] w-full sm:w-auto min-h-[44px]"
             >
               {secondaryCTA.text}
             </Button>

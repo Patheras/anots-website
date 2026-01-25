@@ -103,27 +103,27 @@ This implementation plan breaks down the mobile UX optimization into discrete, i
     - Test auto-close functionality
     - _Requirements: 1.3, 3.1, 3.2, 3.4, 3.5_
 
-- [ ] 6. Optimize Hero section for mobile
-  - [ ] 6.1 Implement responsive height system
+- [-] 6. Optimize Hero section for mobile
+  - [x] 6.1 Implement responsive height system
     - Change from h-screen to h-[80vh] on mobile
     - Add min-h-[500px] and max-h-[800px] constraints
     - Use sm:h-[90vh] and md:h-screen for larger screens
     - _Requirements: 4.1, 4.2_
   
-  - [ ] 6.2 Optimize typing animation for mobile
+  - [x] 6.2 Optimize typing animation for mobile
     - Reduce typing speed on mobile (60ms vs 80ms)
     - Scale heading text appropriately (32px on mobile)
     - Ensure animation completes within 3 seconds
     - _Requirements: 2.7, 4.3_
   
-  - [ ] 6.3 Optimize CTA positioning and layout
+  - [x] 6.3 Optimize CTA positioning and layout
     - Position CTAs at bottom with adequate spacing (bottom-16)
     - Stack CTAs vertically on mobile (flex-col)
     - Make CTAs full-width on mobile (w-full sm:w-auto)
     - Ensure min-h-touch for all CTAs
     - _Requirements: 4.4, 4.7_
   
-  - [ ] 6.4 Optimize background animation for mobile
+  - [x] 6.4 Optimize background animation for mobile
     - Add reducedComplexity prop to LambdaHero
     - Reduce particle count on mobile
     - Ensure smooth fade on scroll
