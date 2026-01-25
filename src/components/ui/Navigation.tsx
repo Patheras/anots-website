@@ -223,10 +223,7 @@ export function Navigation() {
           <button
             type="button"
             className="md:hidden inline-flex items-center justify-center rounded-md min-w-[44px] min-h-[44px] p-2 text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA] focus:outline-none focus:ring-2 focus:ring-[#5E6AD2]"
-            onClick={() => {
-              console.log('Hamburger clicked, current state:', mobileMenuOpen);
-              setMobileMenuOpen(!mobileMenuOpen);
-            }}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
           >
@@ -257,9 +254,8 @@ export function Navigation() {
 
       {/* Mobile menu - Full Screen Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-[100] bg-[#0A0A0B]/95 backdrop-blur-xl overflow-y-auto border-4 border-red-500">
+        <div className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-[100] bg-[#0A0A0B]/95 backdrop-blur-xl overflow-y-auto">
           <div className="space-y-1 px-4 pb-3 pt-2">
-            <div className="text-white text-center py-4">MENU AÇIK - Görüyor musun?</div>
             {navLinks.map((link) => (
               link.dropdown ? (
                 <div key={link.label} className="space-y-1">
