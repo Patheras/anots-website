@@ -49,8 +49,8 @@ function parseCommitMessage(message: string): { type: ParsedUpdate['type']; titl
 
 export async function GET() {
   try {
-    const owner = process.env.GITHUB_OWNER || 'Patheras';
-    const repo = process.env.GITHUB_REPO || 'anots-website';
+    const owner = process.env.GITHUB_OWNER || 'dataguess';
+    const repo = process.env.GITHUB_REPO || 'dataguess.com';
     const token = process.env.GITHUB_TOKEN;
     const perPage = 50;
     

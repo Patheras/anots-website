@@ -237,10 +237,10 @@ export default function Home() {
                 {/* Browser Content - Full Height */}
                 <div className="relative w-full bg-[#0A0A0B]">
                   <Image
-                    src="/Brand-Room-All.png"
+                    src="/magic-preview.png"
                     alt="ANOTS Brand Room - MAGIC Import Interface"
                     width={1920}
-                    height={3000}
+                    height={1080}
                     className="w-full h-auto"
                     priority
                   />

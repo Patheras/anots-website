@@ -3,6 +3,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Mobile UX Touch Target Utilities */
+@utility min-h-touch {
+  min-height: 44px;
+}
+
+@utility min-w-touch {
+  min-width: 44px;
+}
+
+@utility touch-gap {
+  gap: 8px;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -112,36 +125,100 @@
     @apply bg-background text-foreground antialiased;
   }
   
-  /* Typography improvements - Linear style */
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+  /* Mobile-First Typography - Linear style */
+  /* Base font size - prevents iOS zoom on inputs */
+  html {
+    font-size: 16px;
   }
   
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    text-wrap: balance;
+  }
+  
+  /* Mobile-first heading sizes */
   h1 {
-    @apply text-4xl sm:text-5xl lg:text-6xl;
-    line-height: 1.1;
+    font-size: 32px;
+    line-height: 1.2;
     letter-spacing: -0.02em;
   }
   
   h2 {
-    @apply text-3xl sm:text-4xl lg:text-5xl;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
-  }
-  
-  h3 {
-    @apply text-2xl sm:text-3xl;
+    font-size: 28px;
     line-height: 1.3;
     letter-spacing: -0.01em;
   }
   
+  h3 {
+    font-size: 24px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+  
   h4 {
-    @apply text-xl sm:text-2xl;
+    font-size: 20px;
     line-height: 1.4;
   }
   
+  /* Tablet breakpoint (sm: 640px) */
+  @media (min-width: 640px) {
+    h1 {
+      font-size: 40px;
+    }
+    
+    h2 {
+      font-size: 32px;
+    }
+    
+    h3 {
+      font-size: 28px;
+    }
+    
+    h4 {
+      font-size: 24px;
+    }
+  }
+  
+  /* Desktop breakpoint (md: 768px) */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 48px;
+    }
+    
+    h2 {
+      font-size: 40px;
+    }
+    
+    h3 {
+      font-size: 32px;
+    }
+  }
+  
+  /* Large desktop (lg: 1024px) */
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 60px;
+    }
+    
+    h2 {
+      font-size: 48px;
+    }
+    
+    h3 {
+      font-size: 36px;
+    }
+  }
+  
+  /* Body text with proper line height */
   p {
+    font-size: 16px;
     line-height: 1.6;
+  }
+  
+  @media (min-width: 640px) {
+    p {
+      font-size: 18px;
+    }
   }
   
   /* Smooth transitions */
