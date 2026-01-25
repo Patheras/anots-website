@@ -112,7 +112,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8 pb-32">
+      <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8 -mt-16">
         <div className="mx-auto max-w-4xl w-full text-center">
           {/* Headline with Typing Animation */}
           <FadeIn delay={0}>
