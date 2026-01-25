@@ -253,7 +253,7 @@ export function Navigation() {
 
       {/* Mobile menu - Full Screen Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 z-40 bg-[#0A0A0B]/95 backdrop-blur-xl overflow-y-auto">
+        <div className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-40 bg-[#0A0A0B]/95 backdrop-blur-xl overflow-y-auto">
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navLinks.map((link) => (
               link.dropdown ? (
