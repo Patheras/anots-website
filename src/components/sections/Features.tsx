@@ -1,6 +1,7 @@
 'use client';
 
 import { type ReactNode } from 'react';
+import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ScrollReveal } from '@/components/animations/ScrollReveal';
 import { Smartphone } from 'lucide-react';
@@ -10,6 +11,7 @@ export interface Feature {
   description: string;
   icon?: ReactNode;
   image?: string;
+  badge?: string;
 }
 
 interface FeaturesProps {
@@ -87,11 +89,13 @@ export function Features({ features, layout = 'grid', id }: FeaturesProps) {
                 </div>
                 <div className={index % 2 === 1 ? 'md:order-1' : ''}>
                   {feature.image ? (
-                    <div className="aspect-video overflow-hidden rounded-lg border border-[#1A1A1B] bg-[#111113]">
-                      <img
+                    <div className="relative aspect-video overflow-hidden rounded-lg border border-[#1A1A1B] bg-[#111113]">
+                      <Image
                         src={feature.image}
                         alt={feature.title}
-                        className="h-full w-full object-cover"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
                     </div>
                   ) : (

@@ -251,9 +251,9 @@ export function Navigation() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu - Full Screen Overlay */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#1A1A1B]">
+        <div className="md:hidden fixed inset-0 top-16 z-40 bg-[#0A0A0B]/95 backdrop-blur-xl overflow-y-auto">
           <div className="space-y-1 px-4 pb-3 pt-2">
             {navLinks.map((link) => (
               link.dropdown ? (
@@ -288,6 +288,7 @@ export function Navigation() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block rounded-md px-3 py-3 min-h-[44px] text-base font-medium text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
@@ -312,10 +313,11 @@ export function Navigation() {
               <a
                 href="https://app.anots.com/login"
                 className="block rounded-md px-3 py-3 min-h-[44px] text-base font-medium text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
+                onClick={() => setMobileMenuOpen(false)}
               >
                 Log in
               </a>
-              <a href="https://app.anots.com/signup" className="block">
+              <a href="https://app.anots.com/signup" className="block" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="magic" size="md" className="w-full min-h-[44px]">
                   Sign Up
                 </Button>

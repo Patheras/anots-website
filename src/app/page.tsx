@@ -35,40 +35,25 @@ export const metadata: Metadata = {
 export default function Home() {
   const features = [
     {
+      title: "Multi-Source Brand Intelligence",
+      description: "Your brand, understood by AI. Brand Room excavates your brand DNA from websites, documents, and social media. Logos, colors, Google Fonts, tone of voice—all extracted automatically.",
+      icon: <BrandIcon />,
+      image: "/Features/Multi-source-brand-intelligence.png",
+      badge: "✨ MAGIC Import",
+    },
+    {
       title: "Chat with Your AI Team",
-      description: "Tell Qubik what you need. It creates proposals. Themis reviews for risks. Athena synthesizes and presents to you.",
+      description: "Three agents, one goal: perfect content. Qubik proposes, Themis reviews for risks, Athena synthesizes. You approve, then it runs automatically.",
       icon: <ChatIcon />,
       image: "/Features/Chat-with-your-team.png",
-    },
-    {
-      title: "Approve Before Execution",
-      description: "Nothing runs without your approval. See the full plan, review risks, check costs, then decide. Trust by design.",
-      icon: <ApprovalIcon />,
-      image: "/Features/Approve-before-execution.png",
-    },
-    {
-      title: "Create Unlimited ANOTs",
-      description: "Each ANOT is a marketing automation: post to Instagram, write blog articles, send emails. Build as many as you need.",
-      icon: <UnlimitedIcon />,
-      image: "/Features/Create-unlimited-anots.png",
+      badge: "🛡️ Trust by Design",
     },
     {
       title: "Track Everything",
-      description: "Activity Hub shows what's running, what's scheduled, and what's been published. Daily focus view keeps you organized.",
+      description: "See everything, control everything. Activity Hub shows what's running, what's scheduled, and what's been published. Daily focus view keeps you organized.",
       icon: <TrackingIcon />,
       image: "/Features/Track-everything.png",
-    },
-    {
-      title: "Multi-Source Brand Intelligence",
-      description: "Brand Archaeologist excavates your brand DNA from websites, documents, and social media. Logos, colors, Google Fonts, tone of voice, and layout rules—all extracted automatically.",
-      icon: <BrandIcon />,
-      image: "/Features/Multi-source-brand-intelligence.png",
-    },
-    {
-      title: "Powered by ActivePieces",
-      description: "Self-hosted workflow engine connects to 200+ apps. Instagram, WordPress, Google Drive, Mailchimp, and more.",
-      icon: <IntegrationIcon />,
-      image: "/Features/Powered-by-activepieces.png",
+      badge: "📊 Full Visibility",
     },
   ];
 
@@ -343,7 +328,13 @@ export default function Home() {
                   )}
                   
                   <div className="p-8">
-                    <div className="flex items-start justify-end mb-6">
+                    <div className="flex items-start justify-between mb-6">
+                      {/* Badge */}
+                      {feature.badge && (
+                        <span className="inline-flex items-center rounded-full bg-[#5E6AD2]/10 px-3 py-1 text-xs font-medium text-[#5E6AD2]">
+                          {feature.badge}
+                        </span>
+                      )}
                       <svg className="h-5 w-5 text-[#71717A] group-hover:text-[#A1A1AA] transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
@@ -360,6 +351,19 @@ export default function Home() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* See All Features Link */}
+          <div className="mt-12 text-center">
+            <a
+              href="/features"
+              className="inline-flex items-center gap-2 text-[#5E6AD2] hover:text-[#7C85E3] transition-colors group"
+            >
+              <span className="text-base font-medium">See all features</span>
+              <svg className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>

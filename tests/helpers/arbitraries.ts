@@ -83,7 +83,11 @@ export const viewportType = () => fc.constantFrom('mobile', 'tablet', 'desktop')
  * Generate CSS color values (hex)
  */
 export const hexColor = () =>
-  fc.hexaString({ minLength: 6, maxLength: 6 }).map(hex => `#${hex}`);
+  fc.tuple(
+    fc.integer({ min: 0, max: 255 }),
+    fc.integer({ min: 0, max: 255 }),
+    fc.integer({ min: 0, max: 255 })
+  ).map(([r, g, b]) => `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`);
 
 /**
  * Generate line height values
