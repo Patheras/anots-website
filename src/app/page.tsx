@@ -70,11 +70,11 @@ export default function Home() {
 
       {/* Tech Stack Grid */}
       {/* Tech Stack Grid */}
-      <section className="bg-[#0A0A0B] border-y border-[#1A1A1B] py-12 sm:py-16">
+      <section className="bg-[#0A0A0B] border-y border-[#1A1A1B] py-6 sm:py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs text-[#52525B] mb-8">Powered by</p>
+          <p className="text-center text-xs text-[#52525B] mb-4 sm:mb-8">Powered by</p>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-9 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-2 sm:gap-4">
             {/* Next.js */}
             <div className="linear-card hover-glow flex flex-col items-center justify-center p-6 aspect-square animate-fade-in" style={{ animationDelay: '0ms' }}>
               <svg className="h-8 w-8 text-[#A1A1AA] mb-3" role="img" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -524,86 +524,86 @@ export default function Home() {
 
           {/* Vertical Timeline - Alternating Layout */}
           <div className="relative max-w-6xl mx-auto">
-            {/* Timeline Line - Center - Glowy Gray */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px -ml-px bg-gradient-to-b from-[#52525B] via-[#71717A] to-[#52525B] shadow-lg shadow-[#71717A]/30"></div>
+            {/* Timeline Line - Left on mobile, center on desktop */}
+            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px sm:-ml-px bg-gradient-to-b from-[#52525B] via-[#71717A] to-[#52525B] shadow-lg shadow-[#71717A]/30"></div>
 
-            {/* Step 1 - LEFT */}
+            {/* Step 1 - LEFT on desktop, single column on mobile */}
             <ScrollReveal>
-              <div className="relative grid grid-cols-2 gap-8 mb-24 animate-fade-in" style={{ animationDelay: '0ms' }}>
-                {/* Content - Left Side */}
-                <div className="text-right pr-12">
-                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 1</span>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">Connect Sources</h3>
-                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+              <div className="relative sm:grid sm:grid-cols-2 sm:gap-8 mb-16 sm:mb-24 animate-fade-in" style={{ animationDelay: '0ms' }}>
+                {/* Content - Left Side on desktop, full width on mobile */}
+                <div className="sm:text-right pl-12 sm:pl-0 sm:pr-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-2 sm:mb-3">Step 1</span>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FAFAFA] mb-3 sm:mb-4 text-balance">Connect Sources</h3>
+                  <p className="text-sm sm:text-base text-[#D4D4D8] leading-relaxed">
                     Import your website URL, upload brand documents (PDF, DOCX, PPTX), or connect your Meta social accounts
                   </p>
                 </div>
                 
-                {/* Empty - Right Side */}
-                <div></div>
+                {/* Empty - Right Side (desktop only) */}
+                <div className="hidden sm:block"></div>
                 
-                {/* Timeline Dot - Center - Glowy Gray */}
-                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
+                {/* Timeline Dot - Left on mobile, center on desktop */}
+                <div className="absolute left-4 sm:left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
 
-            {/* Step 2 - RIGHT */}
+            {/* Step 2 - RIGHT on desktop, single column on mobile */}
             <ScrollReveal>
-              <div className="relative grid grid-cols-2 gap-8 mb-24 animate-fade-in" style={{ animationDelay: '100ms' }}>
-                {/* Empty - Left Side */}
-                <div></div>
+              <div className="relative sm:grid sm:grid-cols-2 sm:gap-8 mb-16 sm:mb-24 animate-fade-in" style={{ animationDelay: '100ms' }}>
+                {/* Empty - Left Side (desktop only) */}
+                <div className="hidden sm:block"></div>
                 
-                {/* Content - Right Side */}
-                <div className="text-left pl-12">
-                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 2</span>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">AI Extracts Intelligence</h3>
-                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+                {/* Content - Right Side on desktop, full width on mobile */}
+                <div className="text-left pl-12 sm:pl-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-2 sm:mb-3">Step 2</span>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FAFAFA] mb-3 sm:mb-4 text-balance">AI Extracts Intelligence</h3>
+                  <p className="text-sm sm:text-base text-[#D4D4D8] leading-relaxed">
                     Logos, colors, fonts, brand voice, product catalog, and company context—all detected automatically
                   </p>
                 </div>
                 
-                {/* Timeline Dot - Center - Glowy Gray */}
-                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
+                {/* Timeline Dot - Left on mobile, center on desktop */}
+                <div className="absolute left-4 sm:left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
 
-            {/* Step 3 - LEFT */}
+            {/* Step 3 - LEFT on desktop, single column on mobile */}
             <ScrollReveal>
-              <div className="relative grid grid-cols-2 gap-8 mb-24 animate-fade-in" style={{ animationDelay: '200ms' }}>
-                {/* Content - Left Side */}
-                <div className="text-right pr-12">
-                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 3</span>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">Council Reviews</h3>
-                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+              <div className="relative sm:grid sm:grid-cols-2 sm:gap-8 mb-16 sm:mb-24 animate-fade-in" style={{ animationDelay: '200ms' }}>
+                {/* Content - Left Side on desktop, full width on mobile */}
+                <div className="sm:text-right pl-12 sm:pl-0 sm:pr-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-2 sm:mb-3">Step 3</span>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FAFAFA] mb-3 sm:mb-4 text-balance">Council Reviews</h3>
+                  <p className="text-sm sm:text-base text-[#D4D4D8] leading-relaxed">
                     Qubik ensures creative consistency, Themis validates standards, Athena synthesizes the final brand snapshot
                   </p>
                 </div>
                 
-                {/* Empty - Right Side */}
-                <div></div>
+                {/* Empty - Right Side (desktop only) */}
+                <div className="hidden sm:block"></div>
                 
-                {/* Timeline Dot - Center - Glowy Gray */}
-                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
+                {/* Timeline Dot - Left on mobile, center on desktop */}
+                <div className="absolute left-4 sm:left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
 
-            {/* Step 4 - RIGHT */}
+            {/* Step 4 - RIGHT on desktop, single column on mobile */}
             <ScrollReveal>
-              <div className="relative grid grid-cols-2 gap-8 animate-fade-in" style={{ animationDelay: '300ms' }}>
-                {/* Empty - Left Side */}
-                <div></div>
+              <div className="relative sm:grid sm:grid-cols-2 sm:gap-8 animate-fade-in" style={{ animationDelay: '300ms' }}>
+                {/* Empty - Left Side (desktop only) */}
+                <div className="hidden sm:block"></div>
                 
-                {/* Content - Right Side */}
-                <div className="text-left pl-12">
-                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-3">Step 4</span>
-                  <h3 className="text-3xl sm:text-4xl font-bold text-[#FAFAFA] mb-4">Brand Standards Ready</h3>
-                  <p className="text-base text-[#D4D4D8] leading-relaxed">
+                {/* Content - Right Side on desktop, full width on mobile */}
+                <div className="text-left pl-12 sm:pl-12">
+                  <span className="inline-block text-xs font-semibold text-[#A1A1AA] tracking-wider uppercase mb-2 sm:mb-3">Step 4</span>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#FAFAFA] mb-3 sm:mb-4 text-balance">Brand Standards Ready</h3>
+                  <p className="text-sm sm:text-base text-[#D4D4D8] leading-relaxed">
                     Unified brand snapshot across all sources, with smart conflict resolution and automatic updates
                   </p>
                 </div>
                 
-                {/* Timeline Dot - Center - Glowy Gray */}
-                <div className="absolute left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
+                {/* Timeline Dot - Left on mobile, center on desktop */}
+                <div className="absolute left-4 sm:left-1/2 top-0 w-3 h-3 -ml-1.5 rounded-full bg-[#A1A1AA] border-2 border-[#0F0F10] shadow-lg shadow-[#A1A1AA]/50"></div>
               </div>
             </ScrollReveal>
           </div>

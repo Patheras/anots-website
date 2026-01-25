@@ -145,7 +145,7 @@ export function ChatBot() {
     <>
       {/* Greeting Bubble */}
       {!isOpen && showGreeting && (
-        <div className="fixed bottom-24 right-6 z-[9999] animate-fade-in">
+        <div className="fixed bottom-28 sm:bottom-24 right-4 sm:right-6 z-[60] animate-fade-in">
           <div className="relative">
             <div className="bg-[#111113] border border-[#1A1A1B] rounded-2xl px-4 py-3 shadow-xl">
               <p className="text-sm text-[#FAFAFA] font-medium">Hello! 👋</p>
@@ -160,21 +160,21 @@ export function ChatBot() {
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 z-[9999] flex h-16 w-16 items-center justify-center transition-all hover:scale-105 animate-float"
+          className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-[60] flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center transition-all hover:scale-105 animate-float"
           aria-label="Open chat"
           style={{ isolation: 'isolate' }}
         >
           {/* White glow behind - soft blur */}
           <div className="absolute inset-0 rounded-full bg-white blur-md -z-10 animate-glow-pulse"></div>
           <div className="relative z-10">
-            <BotAvatar className="w-12 h-12" />
+            <BotAvatar className="w-10 h-10 sm:w-12 sm:h-12" />
           </div>
         </button>
       )}
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-[9999] flex h-[500px] w-[380px] flex-col rounded-2xl border border-[#1A1A1B] bg-[#0A0A0B] shadow-2xl">
+        <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 left-4 sm:left-auto z-[60] flex h-[500px] sm:h-[500px] w-auto sm:w-[380px] max-w-[calc(100vw-2rem)] flex-col rounded-2xl border border-[#1A1A1B] bg-[#0A0A0B] shadow-2xl">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-[#1A1A1B] p-4">
             <div className="flex items-center gap-3">
@@ -188,7 +188,7 @@ export function ChatBot() {
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-[#71717A] hover:text-[#FAFAFA] transition-colors"
+              className="min-w-[44px] min-h-[44px] flex items-center justify-center text-[#71717A] hover:text-[#FAFAFA] transition-colors"
               aria-label="Close chat"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -205,7 +205,7 @@ export function ChatBot() {
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
+                  className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-4 py-2 text-sm ${
                     message.role === 'user'
                       ? 'bg-gradient-to-r from-[#5E6AD2] to-[#7C85E3] text-white'
                       : 'bg-[#1A1A1B] text-[#D4D4D8]'

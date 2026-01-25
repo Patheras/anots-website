@@ -111,12 +111,14 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
 
       {/* Content Overlay */}
       <div className="relative z-10 flex items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-4xl w-full text-center">
           {/* Headline with Typing Animation */}
           <FadeIn delay={0}>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl text-[#FAFAFA] font-bold leading-tight tracking-tight min-h-[1.2em]">
-              {highlightWords(displayText)}
-              <span className={`inline-block w-1 h-[0.9em] ml-1 bg-[#5E6AD2] ${showCursor ? 'opacity-100' : 'opacity-0'}`}></span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FAFAFA] font-bold leading-tight tracking-tight min-h-[3em] sm:min-h-[2.5em] flex items-center justify-center">
+              <span className="block text-center">
+                {highlightWords(displayText)}
+                <span className={`inline-block w-1 h-[0.9em] ml-1 bg-[#5E6AD2] ${showCursor ? 'opacity-100' : 'opacity-0'}`}></span>
+              </span>
             </h1>
           </FadeIn>
         </div>
