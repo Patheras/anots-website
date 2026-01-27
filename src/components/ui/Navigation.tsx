@@ -122,9 +122,22 @@ export function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState<string[]>([]);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+  // Scroll detection for enhanced blur
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = (label: string) => {
@@ -147,6 +160,8 @@ export function Navigation() {
               <button
                 onClick={() => toggleMenu(link.label)}
                 className="w-full flex items-center justify-between px-3 py-3 min-h-[44px] text-base font-semibold text-[#FAFAFA] rounded-md hover:bg-[#1A1A1B] transition-colors"
+                aria-label={`Toggle ${link.label} menu`}
+                aria-expanded={expandedMenus.includes(link.label)}
               >
                 <span>{link.label}</span>
                 <svg 
@@ -155,6 +170,7 @@ export function Navigation() {
                   viewBox="0 0 24 24" 
                   strokeWidth="2" 
                   stroke="currentColor"
+                  aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
@@ -219,11 +235,11 @@ export function Navigation() {
           >
             Log in
           </a>
-          <a href="https://app.anots.com/signup" className="block" onClick={() => setMobileMenuOpen(false)}>
+          <Link href="/closed-beta" className="block" onClick={() => setMobileMenuOpen(false)}>
             <Button variant="magic" size="md" className="w-full min-h-[44px]">
               Sign Up
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>,
@@ -231,7 +247,9 @@ export function Navigation() {
   ) : null;
 
   return (
-    <nav className="sticky top-0 z-[100] border-b border-[#1A1A1B]/50 bg-[#0A0A0B]/80 backdrop-blur-xl">
+    <nav className={`sticky top-0 z-[100] border-b border-[#1A1A1B]/50 bg-[#0A0A0B]/80 transition-all duration-300 ${
+      scrolled ? 'backdrop-blur-2xl shadow-lg shadow-black/20' : 'backdrop-blur-xl'
+    }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -322,11 +340,11 @@ export function Navigation() {
             >
               Log in
             </a>
-            <a href="https://app.anots.com/signup">
+            <Link href="/closed-beta">
               <Button variant="magic" size="sm">
                 Sign Up
               </Button>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile menu button */}

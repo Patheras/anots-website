@@ -74,6 +74,10 @@ export const spacing = {
   16: '4rem',     // 64px
   24: '6rem',     // 96px
   32: '8rem',     // 128px
+  xl: '2rem',     // 32px (alias for 8)
+  lg: '1.5rem',   // 24px (alias for 6)
+  md: '1rem',     // 16px (alias for 4)
+  sm: '0.5rem',   // 8px (alias for 2)
 } as const;
 
 export const animation = {
@@ -87,6 +91,12 @@ export const animation = {
     in: 'cubic-bezier(0.4, 0, 1, 1)',         // ease-in
     out: 'cubic-bezier(0, 0, 0.2, 1)',        // ease-out
   },
+} as const;
+
+export const shadows = {
+  card: '0 1px 3px rgba(0, 0, 0, 0.3)',
+  elevated: '0 10px 40px rgba(0, 0, 0, 0.5)',
+  glow: '0 0 20px rgba(59, 130, 246, 0.3)',
 } as const;
 
 export const breakpoints = {

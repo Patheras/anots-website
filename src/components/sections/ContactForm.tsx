@@ -55,7 +55,7 @@ export function ContactForm({ type = 'contact' }: ContactFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       {/* Name Field */}
       <div className="space-y-2">
         <Label htmlFor="name" className="text-sm font-medium text-[#FAFAFA]">

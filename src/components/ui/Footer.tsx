@@ -52,7 +52,7 @@ export function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 rounded-md border border-[#1A1A1B] bg-[#0A0A0B] px-4 py-2 text-sm text-[#FAFAFA] placeholder-[#71717A] focus:border-[#5E6AD2] focus:outline-none focus:ring-1 focus:ring-[#5E6AD2]"
+                className="flex-1 rounded-md border border-[#1A1A1B] bg-[#0A0A0B] px-4 py-2 text-base text-[#FAFAFA] placeholder-[#71717A] focus:border-[#5E6AD2] focus:outline-none focus:ring-1 focus:ring-[#5E6AD2]"
               />
               <Button
                 type="submit"
@@ -185,7 +185,10 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <button className="text-sm text-[#A1A1AA] transition-colors hover:text-[#FAFAFA]">
+                <button 
+                  className="text-sm text-[#A1A1AA] transition-colors hover:text-[#FAFAFA]"
+                  aria-label="Open cookie settings"
+                >
                   Cookie Settings
                 </button>
               </li>

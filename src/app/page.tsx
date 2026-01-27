@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Navigation } from "@/components/ui/Navigation";
 import { Hero } from "@/components/sections/Hero";
 import { Features } from "@/components/sections/Features";
-import { PricingTiers } from "@/components/sections/PricingTiers";
+import { PricingSection } from "@/components/pricing/PricingSection";
 import { StickyCTA } from "@/components/ui/StickyCTA";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { Card, CardContent } from "@/components/ui/card";
@@ -64,13 +64,13 @@ export default function Home() {
       <Hero
         headline="If You're Here, ANOTs Are Already Working"
         subheadline="Qubik creates. Themis reviews. Athena synthesizes. Hephaestus builds. You Approve. Then it runs automatically."
-        primaryCTA={{ text: "Start Free", href: "https://app.anots.com/signup" }}
+        primaryCTA={{ text: "Join Closed Beta", href: "/closed-beta" }}
         secondaryCTA={{ text: "See How We Did It", href: "/use-cases" }}
       />
 
       {/* Tech Stack Grid */}
       {/* Tech Stack Grid */}
-      <section className="bg-[#0A0A0B] border-y border-[#1A1A1B] py-8 sm:py-12 md:py-16">
+      <section className="border-y border-[#1A1A1B] py-8 sm:py-12 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs text-[#52525B] mb-4 sm:mb-6 md:mb-8">Powered by</p>
           
@@ -151,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* See It In Action Section - Linear Style */}
-      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+      <section className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left: Text Content */}
@@ -227,7 +227,7 @@ export default function Home() {
                     width={1920}
                     height={1080}
                     className="w-full h-auto"
-                    priority
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       {/* Features Section - Linear Style */}
-      <section id="features" className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32 overflow-hidden">
+      <section id="features" className="py-16 sm:py-24 lg:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header with Visual */}
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center mb-16">
@@ -310,12 +310,12 @@ export default function Home() {
           {/* Horizontal Scroll Cards */}
           <div className="relative -mx-4 sm:-mx-6 lg:-mx-8">
             {/* Left fade indicator */}
-            <div className="hidden md:block absolute left-0 top-0 bottom-6 w-24 bg-gradient-to-r from-[#0A0A0B] to-transparent pointer-events-none z-10"></div>
+            <div className="hidden md:block absolute left-0 top-0 bottom-6 w-40 bg-gradient-to-r from-[#0A0A0B] via-[#0A0A0B]/60 to-transparent pointer-events-none z-10"></div>
             
             {/* Right fade indicator */}
-            <div className="hidden md:block absolute right-0 top-0 bottom-6 w-24 bg-gradient-to-l from-[#0A0A0B] to-transparent pointer-events-none z-10"></div>
+            <div className="hidden md:block absolute right-0 top-0 bottom-6 w-40 bg-gradient-to-l from-[#0A0A0B] via-[#0A0A0B]/60 to-transparent pointer-events-none z-10"></div>
             
-            <div className="flex gap-4 sm:gap-6 overflow-x-scroll pb-6 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scroll-smooth scrollbar-hide">
+            <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory scroll-smooth scrollbar-hide">
               {features.map((feature, index) => (
                 <div
                   key={index}
@@ -430,7 +430,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+      <section id="about" className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -667,7 +667,7 @@ export default function Home() {
       </section>
 
       {/* URL Archaeologist Technical Deep Dive Section */}
-      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+      <section className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <ScrollReveal>
@@ -797,8 +797,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Founder's Deal Pricing Section */}
+      <PricingSection />
+
       {/* Quick FAQ Section */}
-      <section className="bg-[#0A0A0B] py-16 sm:py-24 lg:py-32">
+      <section className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="mx-auto max-w-3xl text-center">
@@ -872,8 +875,6 @@ export default function Home() {
           </ScrollReveal>
         </div>
       </section>
-
-      <PricingTiers />
 
       <StickyCTA />
     </>

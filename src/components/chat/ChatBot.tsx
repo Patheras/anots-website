@@ -249,7 +249,7 @@ export function ChatBot() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about ANOTS..."
                 disabled={isLoading}
-                className="w-full rounded-lg border border-[#1A1A1B] bg-[#0F0F10] pl-4 pr-12 py-2.5 text-sm text-[#FAFAFA] placeholder-[#71717A] focus:border-[#5E6AD2] focus:outline-none focus:ring-1 focus:ring-[#5E6AD2] disabled:opacity-50 transition-all"
+                className="w-full rounded-lg border border-[#1A1A1B] bg-[#0F0F10] pl-4 pr-12 py-2.5 text-base text-[#FAFAFA] placeholder-[#71717A] focus:border-[#5E6AD2] focus:outline-none focus:ring-1 focus:ring-[#5E6AD2] disabled:opacity-50 transition-all"
               />
               <Button
                 type="submit"

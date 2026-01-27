@@ -5,6 +5,9 @@
 
 import '@testing-library/jest-dom';
 
+// Note: @fast-check/jest configuration is handled per-test using it.prop()
+// Global configuration can be set via jest.config.js or individual test files
+
 // Mock window.matchMedia for responsive tests
 Object.defineProperty(window, 'matchMedia', {
   writable: true,

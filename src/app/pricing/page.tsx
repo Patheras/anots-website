@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Navigation } from "@/components/ui/Navigation";
-import { PricingTiers } from "@/components/sections/PricingTiers";
+import { PricingSection } from "@/components/pricing/PricingSection";
 import { ModelPerformance } from "@/components/sections/ModelPerformance";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
@@ -8,13 +8,13 @@ import { PricingComparison } from "@/components/infographics/PricingComparison";
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description: "Simple, transparent pricing for ANOTS. Standard (Free) with 3 ANOTs, Pro ($9.90/mo) with 30 ANOTs, Agency ($49.90/mo) with unlimited ANOTs. Start free today.",
+  description: "Founder's Deal Pricing - Lock in lifetime pricing. Explorer ($29/mo), Pro ($49/mo), Enterprise (Custom). First 100 customers get grandfathered rates forever.",
   alternates: {
     canonical: "https://anots.com/pricing",
   },
   openGraph: {
-    title: "ANOTS Pricing - Start Free with 3 ANOTs",
-    description: "Choose the plan that's right for you. Standard (Free), Pro ($9.90/mo), or Agency ($49.90/mo).",
+    title: "ANOTS Pricing - Founder's Deal",
+    description: "Lock in lifetime pricing. First 100 customers get grandfathered rates forever.",
     url: "https://anots.com/pricing",
   },
 };
@@ -32,7 +32,7 @@ export default function PricingPage() {
                 Pricing Plans
               </h1>
               <p className="mt-4 text-lg text-[#D4D4D8]">
-                Start free, upgrade as you grow. No hidden fees.
+                Lock in lifetime pricing. First 100 customers get grandfathered rates forever.
               </p>
             </div>
           </FadeIn>
@@ -47,7 +47,7 @@ export default function PricingPage() {
         <ModelPerformance />
       </div>
 
-      <PricingTiers />
+      <PricingSection />
     </>
   );
 }

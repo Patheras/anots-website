@@ -30,15 +30,16 @@ export function ScrollReveal({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 12 }}
+      initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
       animate={
         isInView
           ? { opacity: 1, y: 0 }
-          : { opacity: 0, y: prefersReducedMotion ? 0 : 12 }
+          : { opacity: 0, y: prefersReducedMotion ? 0 : 20 }
       }
       transition={{
-        duration: prefersReducedMotion ? 0 : 0.4,
-        ease: [0.16, 1, 0.3, 1], // Linear-style ease
+        duration: prefersReducedMotion ? 0 : 0.6,
+        ease: [0.16, 1, 0.3, 1], // Premium ease-out-expo
+        delay: 0.1,
       }}
       className={className}
     >

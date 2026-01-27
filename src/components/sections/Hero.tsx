@@ -25,6 +25,17 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
   const [textIndex, setTextIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
   const [scrollOpacity, setScrollOpacity] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detect mobile for reduced complexity
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const texts = [
     "If You're Here, ANOTs Are Already Working",
@@ -108,7 +119,7 @@ export function Hero({ headline, subheadline, primaryCTA, secondaryCTA }: HeroPr
     <section className="relative w-full h-screen min-h-[600px] overflow-hidden bg-[#0A0A0B]">
       {/* Neural Network Background with Fade */}
       <div style={{ opacity: scrollOpacity }} className="transition-opacity duration-100">
-        <LambdaHero />
+        <LambdaHero reducedComplexity={isMobile} />
       </div>
 
       {/* Content Overlay */}

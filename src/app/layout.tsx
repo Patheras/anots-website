@@ -5,6 +5,7 @@ import { StructuredData } from "@/components/StructuredData";
 import { Footer } from "@/components/ui/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ChatBot } from "@/components/chat/ChatBot";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -145,6 +146,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} antialiased font-sans`}
       >
+        <ScrollProgress />
         {children}
         <Footer />
         <CookieConsent />

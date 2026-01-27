@@ -2,7 +2,11 @@
 
 import { useEffect, useRef } from 'react';
 
-export function LambdaHero() {
+interface LambdaHeroProps {
+  reducedComplexity?: boolean;
+}
+
+export function LambdaHero({ reducedComplexity = false }: LambdaHeroProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -17,9 +21,12 @@ export function LambdaHero() {
     let targetMouse = { x: 0, y: 0 };
 
     const isMobile = window.innerWidth < 768;
-    const PARTICLE_COUNT = isMobile ? 100 : 250;
+    // Reduce particle count further if reducedComplexity is enabled
+    const PARTICLE_COUNT = reducedComplexity 
+      ? (isMobile ? 50 : 150) 
+      : (isMobile ? 100 : 250);
     const CONNECTION_DIST = 250;
-    const ROTATION_SPEED = 0.001;
+    const ROTATION_SPEED = reducedComplexity ? 0.0005 : 0.001;
     let sphereRadius = 0;
 
     function resize() {
@@ -257,7 +264,7 @@ export function LambdaHero() {
       window.removeEventListener('resize', resize);
       cancelAnimationFrame(animationFrame);
     };
-  }, []);
+  }, [reducedComplexity]);
 
   return (
     <canvas
