@@ -13,10 +13,13 @@ export default function ClosedBetaPage() {
     minutes: 0,
     seconds: 0,
   });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+    
     const calculateTimeLeft = () => {
-      const launchDate = new Date('2025-04-06T00:00:00');
+      const launchDate = new Date('2025-04-06T00:00:00Z'); // UTC timezone
       const now = new Date();
       const difference = launchDate.getTime() - now.getTime();
 
@@ -67,47 +70,63 @@ export default function ClosedBetaPage() {
 
             {/* Countdown */}
             <div className="mb-16">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
-                {/* Days */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
-                    {String(timeLeft.days).padStart(2, '0')}
-                  </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
-                    Days
-                  </div>
+              {!mounted ? (
+                // Skeleton loader to prevent hydration mismatch
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+                  {[...Array(4)].map((_, i) => (
+                    <div key={i} className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
+                      <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
+                        00
+                      </div>
+                      <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                        {['Days', 'Hours', 'Minutes', 'Seconds'][i]}
+                      </div>
+                    </div>
+                  ))}
                 </div>
+              ) : (
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+                  {/* Days */}
+                  <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
+                    <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
+                      {String(timeLeft.days).padStart(2, '0')}
+                    </div>
+                    <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                      Days
+                    </div>
+                  </div>
 
-                {/* Hours */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
-                    {String(timeLeft.hours).padStart(2, '0')}
+                  {/* Hours */}
+                  <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
+                    <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
+                      {String(timeLeft.hours).padStart(2, '0')}
+                    </div>
+                    <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                      Hours
+                    </div>
                   </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
-                    Hours
-                  </div>
-                </div>
 
-                {/* Minutes */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
-                    {String(timeLeft.minutes).padStart(2, '0')}
+                  {/* Minutes */}
+                  <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
+                    <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
+                      {String(timeLeft.minutes).padStart(2, '0')}
+                    </div>
+                    <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                      Minutes
+                    </div>
                   </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
-                    Minutes
-                  </div>
-                </div>
 
-                {/* Seconds */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
-                    {String(timeLeft.seconds).padStart(2, '0')}
-                  </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
-                    Seconds
+                  {/* Seconds */}
+                  <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
+                    <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4">
+                      {String(timeLeft.seconds).padStart(2, '0')}
+                    </div>
+                    <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                      Seconds
+                    </div>
                   </div>
                 </div>
-              </div>
+              )}
 
               {/* Launch Date */}
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#FAFAFA] mb-4">
