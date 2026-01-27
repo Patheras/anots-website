@@ -7,8 +7,11 @@ import { Button } from '@/components/ui/button';
 import { Toaster, toast } from 'sonner';
 
 export default function ClosedBetaPage() {
+  // Manuel countdown - April 6, 2026'ya kadar
+  // Bugün: January 27, 2026
+  // Kalan: 69 gün (yaklaşık)
   const [timeLeft, setTimeLeft] = useState({
-    days: 0,
+    days: 69,
     hours: 0,
     minutes: 0,
     seconds: 0,
@@ -16,26 +19,24 @@ export default function ClosedBetaPage() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const launchDate = new Date('2025-04-06T00:00:00Z'); // UTC timezone
+      const launchDate = new Date('2026-04-06T00:00:00Z');
       const now = new Date();
       const difference = launchDate.getTime() - now.getTime();
 
       if (difference > 0) {
-        setTimeLeft({
+        const newTimeLeft = {
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
           minutes: Math.floor((difference / 1000 / 60) % 60),
           seconds: Math.floor((difference / 1000) % 60),
-        });
+        };
+        setTimeLeft(newTimeLeft);
       } else {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
 
-    // Run immediately
     calculateTimeLeft();
-    
-    // Then update every second
     const timer = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(timer);
@@ -69,44 +70,50 @@ export default function ClosedBetaPage() {
             </div>
 
             {/* Countdown */}
-            <div className="mb-16">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+            <div className="mb-16 max-w-5xl mx-auto">
+              <div className="flex items-center justify-center gap-3 sm:gap-6 lg:gap-8 mb-12">
                 {/* Days */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4" suppressHydrationWarning>
+                <div className="flex flex-col items-center min-w-[80px] sm:min-w-[120px] lg:min-w-[160px]">
+                  <div className="text-6xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent" suppressHydrationWarning>
                     {String(timeLeft.days).padStart(2, '0')}
                   </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                  <div className="text-sm sm:text-base lg:text-lg text-[#A1A1AA] uppercase tracking-wider mt-2">
                     Days
                   </div>
                 </div>
 
+                <div className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#5E6AD2] pb-8">:</div>
+
                 {/* Hours */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4" suppressHydrationWarning>
+                <div className="flex flex-col items-center min-w-[80px] sm:min-w-[120px] lg:min-w-[160px]">
+                  <div className="text-6xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent" suppressHydrationWarning>
                     {String(timeLeft.hours).padStart(2, '0')}
                   </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                  <div className="text-sm sm:text-base lg:text-lg text-[#A1A1AA] uppercase tracking-wider mt-2">
                     Hours
                   </div>
                 </div>
 
+                <div className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#5E6AD2] pb-8">:</div>
+
                 {/* Minutes */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4" suppressHydrationWarning>
+                <div className="flex flex-col items-center min-w-[80px] sm:min-w-[120px] lg:min-w-[160px]">
+                  <div className="text-6xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent" suppressHydrationWarning>
                     {String(timeLeft.minutes).padStart(2, '0')}
                   </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                  <div className="text-sm sm:text-base lg:text-lg text-[#A1A1AA] uppercase tracking-wider mt-2">
                     Minutes
                   </div>
                 </div>
 
+                <div className="text-5xl sm:text-7xl lg:text-8xl font-bold text-[#5E6AD2] pb-8">:</div>
+
                 {/* Seconds */}
-                <div className="bg-[#0F0F10] border border-[#1A1A1B] rounded-2xl p-8 lg:p-12">
-                  <div className="text-7xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent mb-4" suppressHydrationWarning>
+                <div className="flex flex-col items-center min-w-[80px] sm:min-w-[120px] lg:min-w-[160px]">
+                  <div className="text-6xl sm:text-8xl lg:text-9xl font-bold bg-gradient-to-br from-[#5E6AD2] to-[#7C85E3] bg-clip-text text-transparent" suppressHydrationWarning>
                     {String(timeLeft.seconds).padStart(2, '0')}
                   </div>
-                  <div className="text-lg sm:text-xl text-[#A1A1AA] uppercase tracking-wider">
+                  <div className="text-sm sm:text-base lg:text-lg text-[#A1A1AA] uppercase tracking-wider mt-2">
                     Seconds
                   </div>
                 </div>
@@ -114,7 +121,7 @@ export default function ClosedBetaPage() {
 
               {/* Launch Date */}
               <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#FAFAFA] mb-4">
-                April 6, 2025
+                April 6, 2026
               </div>
               <div className="text-lg sm:text-xl text-[#D4D4D8]">
                 Launching on Isaac Asimov's Memorial Day
@@ -218,7 +225,7 @@ export default function ClosedBetaPage() {
                   </Button>
                 </form>
                 <p className="text-sm text-[#71717A] mt-4">
-                  We'll notify you when we launch on April 6, 2025
+                  We'll notify you when we launch on April 6, 2026
                 </p>
               </div>
             </div>
