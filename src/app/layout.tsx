@@ -6,6 +6,7 @@ import { Footer } from "@/components/ui/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
 import { ChatBot } from "@/components/chat/ChatBot";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -147,6 +148,18 @@ export default function RootLayout({
         className={`${inter.variable} antialiased font-sans`}
       >
         <ScrollProgress />
+        <Toaster 
+          position="top-center" 
+          richColors
+          toastOptions={{
+            style: {
+              background: '#0F0F10',
+              border: '1px solid #1A1A1B',
+              color: '#FAFAFA',
+            },
+            className: 'sonner-toast',
+          }}
+        />
         {children}
         <Footer />
         <CookieConsent />

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contactFormSchema, type ContactFormData } from '@/lib/validation';
@@ -8,19 +8,19 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { toast } from 'sonner';
 
 interface ContactFormProps {
   type?: 'contact' | 'demo';
 }
 
 export function ContactForm({ type = 'contact' }: ContactFormProps) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const formRef = useRef<HTMLFormElement>(null);
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
@@ -28,8 +28,9 @@ export function ContactForm({ type = 'contact' }: ContactFormProps) {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
+    const currentForm = formRef.current;
+    
+    toast.loading('Sending message...', { id: 'contact' });
 
     try {
       const response = await fetch('/api/contact', {
@@ -40,22 +41,25 @@ export function ContactForm({ type = 'contact' }: ContactFormProps) {
         body: JSON.stringify(data),
       });
 
+      const result = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to submit form');
+        throw new Error(result.message || 'Failed to submit form');
       }
 
-      setSubmitStatus('success');
+      toast.success('Message sent successfully! We\'ll get back to you soon.', { id: 'contact' });
+      if (currentForm) {
+        currentForm.reset();
+      }
       reset();
     } catch (error) {
       console.error('Form submission error:', error);
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
+      toast.error('Failed to send message. Please try again.', { id: 'contact' });
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+    <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       {/* Name Field */}
       <div className="space-y-2">
         <Label htmlFor="name" className="text-sm font-medium text-[#FAFAFA]">
@@ -133,24 +137,6 @@ export function ContactForm({ type = 'contact' }: ContactFormProps) {
       >
         {isSubmitting ? 'Sending...' : 'Send Message'}
       </Button>
-
-      {/* Success Message */}
-      {submitStatus === 'success' && (
-        <div className="rounded-md bg-[#10B981]/10 border border-[#10B981]/20 p-4">
-          <p className="text-sm text-[#10B981]">
-            Thank you for contacting us! We'll get back to you soon.
-          </p>
-        </div>
-      )}
-
-      {/* Error Message */}
-      {submitStatus === 'error' && (
-        <div className="rounded-md bg-[#EF4444]/10 border border-[#EF4444]/20 p-4">
-          <p className="text-sm text-[#EF4444]">
-            Something went wrong. Please try again later.
-          </p>
-        </div>
-      )}
     </form>
   );
 }

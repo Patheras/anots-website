@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Navigation } from '@/components/ui/Navigation';
 import { FadeIn } from '@/components/animations/FadeIn';
 import { Button } from '@/components/ui/button';
+import { Toaster, toast } from 'sonner';
 
 export default function ClosedBetaPage() {
   const [timeLeft, setTimeLeft] = useState({
@@ -40,6 +41,16 @@ export default function ClosedBetaPage() {
   return (
     <>
       <Navigation />
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: '#0F0F10',
+            border: '1px solid #5E6AD2',
+            color: '#FAFAFA',
+          },
+        }}
+      />
       
       <div className="min-h-screen bg-[#0A0A0B] flex items-center justify-center px-4 py-20">
         <div className="max-w-6xl mx-auto text-center">
@@ -130,18 +141,49 @@ export default function ClosedBetaPage() {
               
               {/* Beta Application Form */}
               <div className="max-w-md mx-auto">
-                <form className="space-y-4" onSubmit={(e) => {
+                <form className="space-y-4" onSubmit={async (e) => {
                   e.preventDefault();
-                  const formData = new FormData(e.currentTarget);
-                  const email = formData.get('email');
-                  const name = formData.get('name');
-                  const company = formData.get('company');
+                  const form = e.currentTarget;
+                  const formData = new FormData(form);
+                  const email = formData.get('email') as string;
+                  const name = formData.get('name') as string;
+                  const company = formData.get('company') as string;
                   
-                  // TODO: Send to backend/newsletter API
-                  console.log('Beta application:', { email, name, company });
+                  // Show loading toast
+                  const loadingToast = toast.loading('Submitting your application...');
                   
-                  // Redirect to newsletter for now
-                  window.location.href = `/#newsletter?email=${email}`;
+                  try {
+                    const response = await fetch('/api/beta-signup', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ email, name, company }),
+                    });
+
+                    const data = await response.json();
+
+                    // Dismiss loading toast
+                    toast.dismiss(loadingToast);
+
+                    if (response.ok) {
+                      toast.success('🎉 Welcome to the waitlist!', {
+                        description: "We'll notify you on April 6, 2025 when we launch!",
+                        duration: 5000,
+                      });
+                      form.reset();
+                    } else {
+                      toast.error('Submission failed', {
+                        description: data.error || 'Something went wrong. Please try again.',
+                        duration: 4000,
+                      });
+                    }
+                  } catch (error) {
+                    toast.dismiss(loadingToast);
+                    console.error('Submission error:', error);
+                    toast.error('Connection error', {
+                      description: 'Please check your connection and try again.',
+                      duration: 4000,
+                    });
+                  }
                 }}>
                   <input
                     type="text"

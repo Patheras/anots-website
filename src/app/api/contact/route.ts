@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server';
 import { contactFormSchema } from '@/lib/validation';
+import { createClient } from '@supabase/supabase-js';
+import { sendContactConfirmation, sendContactNotification } from '@/lib/email';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+);
 
 export async function POST(request: Request) {
   try {
@@ -20,17 +27,33 @@ export async function POST(request: Request) {
 
     const { name, email, company, message } = validationResult.data;
 
-    // TODO: Send email notification (integrate with email service)
-    // For now, just log the submission
-    console.log('Contact form submission:', {
-      name,
-      email,
-      company,
-      message,
-      timestamp: new Date().toISOString(),
+    // Store submission in Supabase
+    const { error: dbError } = await supabase
+      .from('contact_messages')
+      .insert([
+        {
+          name,
+          email,
+          company: company || null,
+          message,
+          status: 'new',
+        },
+      ]);
+
+    if (dbError) {
+      console.error('Database error:', dbError);
+      throw new Error('Failed to save contact message');
+    }
+
+    // Send confirmation email to user (don't block on email failure)
+    sendContactConfirmation(name, email, message).catch((err) => {
+      console.error('Failed to send contact confirmation email:', err);
     });
 
-    // TODO: Store submission in database (optional)
+    // Send notification email to you (don't block on email failure)
+    sendContactNotification(name, email, company, message).catch((err) => {
+      console.error('Failed to send contact notification email:', err);
+    });
 
     return NextResponse.json(
       {

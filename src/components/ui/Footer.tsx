@@ -1,35 +1,59 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Button } from './button';
 
 export function Footer() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [message, setMessage] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const currentForm = formRef.current;
+    const currentEmail = email;
+
     setStatus('loading');
+    setMessage('');
 
     try {
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: currentEmail }),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setStatus('success');
+        setMessage('Successfully subscribed! Check your inbox.');
+        if (currentForm) {
+          currentForm.reset();
+        }
         setEmail('');
-        setTimeout(() => setStatus('idle'), 3000);
+        setTimeout(() => {
+          setStatus('idle');
+          setMessage('');
+        }, 5000);
       } else {
         setStatus('error');
-        setTimeout(() => setStatus('idle'), 3000);
+        setMessage(data.message || 'Failed to subscribe');
+        setTimeout(() => {
+          setStatus('idle');
+          setMessage('');
+        }, 5000);
       }
     } catch (error) {
       setStatus('error');
-      setTimeout(() => setStatus('idle'), 3000);
+      setMessage('Something went wrong. Please try again.');
+      setTimeout(() => {
+        setStatus('idle');
+        setMessage('');
+      }, 5000);
     }
   };
 
@@ -45,14 +69,15 @@ export function Footer() {
             <p className="mt-2 text-sm text-[#A1A1AA]">
               Get the latest updates on AI marketing automation and ANOTS features.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <form onSubmit={handleNewsletterSubmit} ref={formRef} className="mt-6 flex flex-col gap-3 sm:flex-row">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 required
-                className="flex-1 rounded-md border border-[#1A1A1B] bg-[#0A0A0B] px-4 py-2 text-base text-[#FAFAFA] placeholder-[#71717A] focus:border-[#5E6AD2] focus:outline-none focus:ring-1 focus:ring-[#5E6AD2]"
+                disabled={status === 'loading'}
+                className="flex-1 rounded-md border border-[#1A1A1B] bg-[#0A0A0B] px-4 py-2 text-base text-[#FAFAFA] placeholder-[#71717A] focus:border-[#5E6AD2] focus:outline-none focus:ring-1 focus:ring-[#5E6AD2] disabled:opacity-50 disabled:cursor-not-allowed"
               />
               <Button
                 type="submit"
@@ -60,11 +85,17 @@ export function Footer() {
                 size="md"
                 disabled={status === 'loading'}
               >
-                {status === 'loading' ? 'Subscribing...' : status === 'success' ? 'Subscribed!' : 'Subscribe'}
+                {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
               </Button>
             </form>
-            {status === 'error' && (
-              <p className="mt-2 text-sm text-red-500">Something went wrong. Please try again.</p>
+            {message && (
+              <div className={`mt-3 rounded-lg border px-4 py-3 text-sm ${
+                status === 'success' 
+                  ? 'border-[#10B981]/30 bg-[#10B981]/10 text-[#10B981]' 
+                  : 'border-[#EF4444]/30 bg-[#EF4444]/10 text-[#EF4444]'
+              }`}>
+                {message}
+              </div>
             )}
           </div>
         </div>
