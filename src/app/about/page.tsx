@@ -52,7 +52,7 @@ export default function AboutPage() {
             <FadeIn>
               <p className="text-xs font-mono text-[#3F3F46] tracking-widest uppercase mb-6">About</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FAFAFA] leading-tight mb-6">
-                We're building the internet for agents.
+                We're building the republic for agents.
               </h1>
               <p className="text-lg text-[#71717A] max-w-2xl leading-relaxed">
                 ΛNOTS is open infrastructure for AI agents — Memory, Gateway, and Network — governed by the community that uses it. Not owned by anyone. Built by everyone.
@@ -124,3 +124,4 @@ export default function AboutPage() {
     </>
   );
 }
+
