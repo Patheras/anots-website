@@ -22,98 +22,10 @@ type NavLink = {
 };
 
 const navLinks: NavLink[] = [
-  { label: 'Home', href: '/' },
-  { 
-    label: 'Features', 
-    href: '/features',
-    dropdown: [
-      {
-        category: 'Core Features',
-        items: [
-          { 
-            label: 'AI Marketing Team', 
-            description: 'Three AI agents that create, review, and execute',
-            href: '/features/ai-team'
-          },
-          { 
-            label: 'Brand Room', 
-            description: 'Multi-source brand intelligence extraction',
-            href: '/features/brand-room'
-          },
-          { 
-            label: 'Activity Hub', 
-            description: 'Track and manage all your automations',
-            href: '/features/activity-hub'
-          },
-        ]
-      },
-      {
-        category: 'Capabilities',
-        items: [
-          { 
-            label: 'Approval Workflows', 
-            description: 'Review and approve before execution',
-            href: '/features/approval-workflows'
-          },
-          { 
-            label: '200+ Integrations', 
-            description: 'Connect to your favorite tools',
-            href: '/features/integrations'
-          },
-          { 
-            label: 'ANOT Creation', 
-            description: 'Build unlimited marketing automations',
-            href: '/features/anot-creation'
-          },
-        ]
-      }
-    ]
-  },
-  { 
-    label: 'Resources', 
-    href: '#',
-    dropdown: [
-      {
-        category: 'Learn',
-        items: [
-          { 
-            label: 'Use Cases', 
-            description: 'Real-world examples and success stories',
-            href: '/use-cases'
-          },
-          { 
-            label: 'Ideas', 
-            description: 'Inspiration for your marketing automations',
-            href: '/ideas'
-          },
-          { 
-            label: 'Documentation', 
-            description: 'Complete guides and API reference',
-            href: 'https://app.anots.com/docs',
-            external: true
-          },
-        ]
-      },
-      {
-        category: 'Updates',
-        items: [
-          { 
-            label: 'Insights', 
-            description: 'Thoughts on AI, automation, and marketing',
-            href: '/insights'
-          },
-          { 
-            label: 'Platform Updates', 
-            description: 'Latest features and improvements',
-            href: '/updates'
-          },
-        ]
-      }
-    ]
-  },
-  { label: 'ANOTs', href: '/features/anot-library' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Manifesto', href: '/' },
+  { label: 'Docs', href: '/docs' },
+  { label: 'GitHub', href: 'https://github.com/anots', external: true },
+  { label: 'Constitution', href: '/docs/12-ANOTS-Constitution' },
 ];
 
 export function Navigation() {
@@ -226,20 +138,28 @@ export function Navigation() {
           )
         ))}
         
-        {/* Mobile Auth Buttons */}
+        {/* Mobile CTA */}
         <div className="space-y-2 pt-4 border-t border-[#1A1A1B]">
           <a
-            href="https://app.anots.com/login"
+            href="https://github.com/anots"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block rounded-md px-3 py-3 min-h-[44px] text-base font-medium text-[#D4D4D8] transition-colors hover:bg-[#1A1A1B] hover:text-[#FAFAFA]"
             onClick={() => setMobileMenuOpen(false)}
           >
-            Log in
+            GitHub
           </a>
-          <Link href="/closed-beta" className="block" onClick={() => setMobileMenuOpen(false)}>
+          <a
+            href="https://discord.gg/anots"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+            onClick={() => setMobileMenuOpen(false)}
+          >
             <Button variant="magic" size="md" className="w-full min-h-[44px]">
-              Sign Up
+              Join Discord
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>,
@@ -332,19 +252,25 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Auth Buttons */}
+          {/* CTA */}
           <div className="hidden md:flex md:items-center md:space-x-4">
             <a
-              href="https://app.anots.com/login"
+              href="https://github.com/anots"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm font-medium text-[#D4D4D8] transition-colors hover:text-[#FAFAFA]"
             >
-              Log in
+              GitHub
             </a>
-            <Link href="/closed-beta">
+            <a
+              href="https://discord.gg/anots"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button variant="magic" size="sm">
-                Sign Up
+                Join Discord
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
