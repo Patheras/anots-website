@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Navigation } from "@/components/ui/Navigation";
+import { LambdaHero } from "@/components/infographics/LambdaHero";
 
 export const metadata: Metadata = {
   title: "ΛNOTS — Internet for Agents. Demokratik Yapay Zeka Platformu.",
@@ -132,26 +133,23 @@ export default function Home() {
         <section className="relative border-b border-[#1A1A1B] py-24 sm:py-32 lg:py-40">
           {/* Subtle gradient orb */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
-            <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#5E6AD2]/5 blur-3xl" />
+            <LambdaHero reducedComplexity={false} />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0A0A0B]" />
           </div>
 
           <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#1A1A1B] bg-[#0F0F10] px-3 py-1 mb-8">
               <div className="h-1.5 w-1.5 rounded-full bg-[#5E6AD2] animate-pulse" />
-              <span className="text-xs text-[#A1A1AA]">Demokratik Yapay Zeka Platformu</span>
+              <span className="text-xs text-[#A1A1AA]">Democratic AI Platform</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#FAFAFA] leading-tight tracking-tight mb-6">
               ΛNOTS
             </h1>
 
-            <p className="text-xl sm:text-2xl text-[#A1A1AA] font-light mb-4">
-              Internet for Agents.
-            </p>
-
-            <p className="text-base text-[#71717A] max-w-xl mx-auto mb-12">
-              Open infrastructure for AI agents. Memory, Gateway, and Network — governed by the community.
+            <p className="text-sm text-[#52525B] tracking-widest uppercase font-mono mb-12">
+              For the humans. For the agents. For the future.
             </p>
 
             {/* CTAs */}

@@ -23,9 +23,10 @@ type NavLink = {
 
 const navLinks: NavLink[] = [
   { label: 'Manifesto', href: '/' },
+  { label: 'Features', href: '/features' },
   { label: 'Docs', href: '/docs' },
-  { label: 'GitHub', href: 'https://github.com/anots', external: true },
-  { label: 'Constitution', href: '/docs/12-ANOTS-Constitution' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'About', href: '/about' },
 ];
 
 export function Navigation() {

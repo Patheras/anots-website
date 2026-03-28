@@ -22,8 +22,17 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex items-center gap-6">
+            <Link href="/features" className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors">
+              Features
+            </Link>
+            <Link href="/docs" className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors">
+              Docs
+            </Link>
+            <Link href="/pricing" className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors">
+              Pricing
+            </Link>
             <a
-              href="https://github.com/anots"
+              href="https://github.com/Patheras/anots-website"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors"
@@ -32,9 +41,6 @@ export function Footer() {
             </a>
             <Link href="/privacy" className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors">
               Privacy
-            </Link>
-            <Link href="/terms" className="text-xs text-[#71717A] hover:text-[#FAFAFA] transition-colors">
-              Terms
             </Link>
           </div>
 

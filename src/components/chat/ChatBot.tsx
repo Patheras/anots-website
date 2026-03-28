@@ -78,7 +78,7 @@ export function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: "Hi! I'm Echo, your AI assistant for ANOTS questions. What would you like to know?"
+      content: "Hi! I'm Axiom, the ΛNOTS navigator. Ask me anything about the network, tools, or the manifesto. 🚩"
     }
   ]);
   const [input, setInput] = useState('');
@@ -182,8 +182,8 @@ export function ChatBot() {
                 <BotAvatar className="w-10 h-10" />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-[#FAFAFA]">Echo</h3>
-                <p className="text-xs text-[#71717A]">ANOTS Assistant</p>
+                <h3 className="text-sm font-semibold text-[#FAFAFA]">Axiom</h3>
+                <p className="text-xs text-[#71717A]">ΛNOTS Navigator</p>
               </div>
             </div>
             <button
